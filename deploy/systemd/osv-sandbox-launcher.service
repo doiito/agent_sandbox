@@ -1,0 +1,55 @@
+[Unit]
+Description=Privileged Firecracker Sandbox Launcher
+Documentation=file:/usr/share/doc/osv-sandbox/PRODUCTION.zh-CN.md
+After=local-fs.target
+Before=osv-sandboxd.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+EnvironmentFile=/etc/osv-sandbox/launcher.env
+ExecStart=/usr/local/libexec/osv-sandbox-launcher -config /etc/osv-sandbox/config.production.json -allowed-uid=${SANDBOX_API_UID} -socket-uid=${SANDBOX_API_UID} -socket-gid=${SANDBOX_API_GID}
+RuntimeDirectory=osv-sandbox
+RuntimeDirectoryMode=0711
+StateDirectory=osv-sandbox
+StateDirectoryMode=0700
+LogsDirectory=osv-sandbox
+LogsDirectoryMode=0700
+# jailer creates chroot metadata that the post-drop UID must traverse. Every
+# sensitive launcher object is explicitly 0600/0700; staged guest artifacts
+# and their directories are intentionally 0444/0755.
+UMask=0022
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=no
+PrivateNetwork=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectHostname=yes
+ProtectClock=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=no
+ReadOnlyPaths=/var/lib/osv-sandbox/artifacts /etc/osv-sandbox
+ReadWritePaths=/run/osv-sandbox /var/lib/osv-sandbox/run /var/log/osv-sandbox /sys/fs/cgroup
+DevicePolicy=closed
+DeviceAllow=/dev/kvm rw
+RestrictAddressFamilies=AF_UNIX
+RestrictNamespaces=mnt
+RestrictSUIDSGID=yes
+RestrictRealtime=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+CapabilityBoundingSet=CAP_CHOWN CAP_DAC_OVERRIDE CAP_FOWNER CAP_KILL CAP_MKNOD CAP_SETGID CAP_SETUID CAP_SYS_ADMIN CAP_SYS_CHROOT CAP_SYS_RESOURCE
+SystemCallArchitectures=native
+TasksMax=4096
+LimitNOFILE=8192
+KillMode=control-group
+TimeoutStopSec=20
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

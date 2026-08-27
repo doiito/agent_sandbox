@@ -1,0 +1,39 @@
+{
+  "listen": "127.0.0.1:18081",
+  "artifact_root": "/opt/osv-sandbox/linux-artifacts",
+  "run_root": "/opt/osv-sandbox/linux-run",
+  "backend": "firecracker-linux",
+  "hypervisor_path": "/usr/local/bin/firecracker",
+  "jailer": {
+    "path": "/usr/local/bin/jailer",
+    "uid": 65534,
+    "gid": 65534,
+    "cgroup_version": 2,
+    "memory_overhead_mib": 128,
+    "no_file_limit": 128
+  },
+  "linux_guest": {
+    "scratch_mib": 256,
+    "vsock_port": 5000,
+    "mkfs_path": "/usr/sbin/mkfs.ext4"
+  },
+  "kernel": {
+    "path": "vmlinux-firecracker",
+    "sha256": "435466ec838656f59e464ce941e7fe9f3697d5da6a73c5e5dad60dae5ad93ceb"
+  },
+  "image": {
+    "path": "linux-agent-rootfs.ext4",
+    "sha256": "b86db1dcf186d8100909ebe7c220227a4488a4e98245828c06794635ec51f783",
+    "format": "raw"
+  },
+  "allowed_entrypoints": ["/bin/sh", "/bin/echo", "/bin/true", "/bin/false", "/bin/sleep", "/bin/id", "/bin/uname", "/bin/ls", "/bin/cat", "/bin/touch"],
+  "defaults": {"memory_mib": 256, "vcpus": 1, "timeout_ms": 30000},
+  "limits": {
+    "max_concurrent": 16,
+    "min_memory_mib": 128,
+    "max_memory_mib": 2048,
+    "max_vcpus": 4,
+    "max_timeout_ms": 300000,
+    "max_output_bytes": 1048576
+  }
+}

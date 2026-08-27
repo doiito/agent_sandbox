@@ -1,0 +1,63 @@
+{
+  "production": true,
+  "listen": "0.0.0.0:8443",
+  "launcher_socket": "/run/osv-sandbox/launcher.sock",
+  "auth_policy_path": "/etc/osv-sandbox/auth.production.json",
+  "audit_log_path": "/var/log/osv-sandbox/audit.jsonl",
+  "tls": {
+    "cert_file": "/etc/osv-sandbox/tls/server.crt",
+    "key_file": "/etc/osv-sandbox/tls/server.key",
+    "client_ca_file": "/etc/osv-sandbox/tls/client-ca.crt"
+  },
+  "artifact_root": "/var/lib/osv-sandbox/artifacts",
+  "run_root": "/var/lib/osv-sandbox/run",
+  "backend": "firecracker-linux",
+  "hypervisor_path": "/usr/local/bin/firecracker",
+  "jailer": {
+    "path": "/usr/local/bin/jailer",
+    "uid": 200000,
+    "gid": 200000,
+    "identity_pool_size": 16,
+    "cgroup_version": 2,
+    "parent_cgroup": "osv-sandbox",
+    "cpu_period_us": 100000,
+    "cpu_quota_per_vcpu_us": 100000,
+    "pids_max": 64,
+    "io_read_bps": 104857600,
+    "io_write_bps": 52428800,
+    "memory_overhead_mib": 128,
+    "no_file_limit": 128,
+    "file_size_limit_mib": 1024
+  },
+  "linux_guest": {
+    "scratch_mib": 256,
+    "input_mib": 32,
+    "vsock_port": 5000,
+    "mkfs_path": "/usr/sbin/mkfs.ext4"
+  },
+  "kernel": {
+    "path": "vmlinux-firecracker",
+    "sha256": "435466ec838656f59e464ce941e7fe9f3697d5da6a73c5e5dad60dae5ad93ceb"
+  },
+  "image": {
+    "path": "linux-agent-rootfs.ext4",
+    "sha256": "b86db1dcf186d8100909ebe7c220227a4488a4e98245828c06794635ec51f783",
+    "format": "raw"
+  },
+  "artifact_manifest": {
+    "path": "manifest.json",
+    "signature_path": "manifest.json.sig",
+    "public_key_path": "/etc/osv-sandbox/artifact-signing.public",
+    "sbom_path": "sbom.cdx.json"
+  },
+  "allowed_entrypoints": ["/bin/sh", "/bin/echo", "/bin/true", "/bin/false", "/bin/sleep", "/bin/id", "/bin/uname", "/bin/ls", "/bin/cat", "/bin/touch"],
+  "defaults": {"memory_mib": 256, "vcpus": 1, "timeout_ms": 30000},
+  "limits": {
+    "max_concurrent": 16,
+    "min_memory_mib": 128,
+    "max_memory_mib": 2048,
+    "max_vcpus": 4,
+    "max_timeout_ms": 300000,
+    "max_output_bytes": 1048576
+  }
+}
