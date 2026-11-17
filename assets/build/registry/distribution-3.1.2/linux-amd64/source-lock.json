@@ -1,0 +1,12 @@
+{
+  "protocol": "osv-external-registry-tool/v1",
+  "upstream": "https://github.com/distribution/distribution",
+  "version": "3.1.2",
+  "release": "https://github.com/distribution/distribution/releases/tag/v3.1.2",
+  "architecture": "amd64",
+  "archive_sha256": "40df2224d410f72ae425c3371873b078bbdbda3b8b612be9571f0e6751f3acc8",
+  "binary_sha256": "7f9e0df42bd028efb1a11eb7f92ef494156bf308770303a256d3acdcadb378cd",
+  "license_sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+  "runtime_dependency_of_sandbox": false,
+  "purpose": "Independent OCI registry interoperation and repeatable offline CI"
+}

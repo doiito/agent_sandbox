@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:osv-sandbox:contracts:http-errors:v2",
+  "title": "OSv Sandbox v2 control API error response",
+  "description": "Application error envelope. TLS/HTTP parsing, health/doctor reports, successful task results and browser preview upstream responses have their own contracts. Unknown code values must be handled by clients.",
+  "type": "object",
+  "required": ["code", "error"],
+  "additionalProperties": false,
+  "properties": {
+    "code": {"type": "string", "minLength": 1},
+    "error": {"type": "string"}
+  },
+  "examples": [
+    {"code": "not_found", "error": "route not found"},
+    {"code": "method_not_allowed", "error": "method not allowed"},
+    {"code": "unauthorized", "error": "unauthorized"},
+    {"code": "template_mismatch", "error": "requested template does not match"}
+  ]
+}

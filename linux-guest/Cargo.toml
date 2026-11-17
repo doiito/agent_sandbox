@@ -1,0 +1,51 @@
+[package]
+name = "firecracker-linux-agent"
+version = "0.1.0"
+edition = "2024"
+license = "BSD-3-Clause"
+publish = false
+
+[features]
+default = ["mimalloc"]
+mimalloc = ["osv-runtime-allocator/mimalloc", "osv-runtime-allocator/secure"]
+workload-validation = []
+
+[dependencies]
+osv-runtime-allocator = { path = "../runtime-allocator", default-features = false }
+base64 = "0.22.1"
+libc = "0.2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "z"
+panic = "abort"
+strip = true
+
+[profile.release.package.libmimalloc-sys]
+opt-level = 3
+
+[[bin]]
+name = "agent-init"
+path = "src/main.rs"
+
+[[bin]]
+name = "osv-workload-supervisor"
+path = "src/bin/workload_supervisor.rs"
+
+[[bin]]
+name = "workload-validation-init"
+path = "validation/workload_init.rs"
+required-features = ["workload-validation"]
+
+[[bin]]
+name = "kernel-validation-init"
+path = "validation/kernel_init.rs"
+required-features = ["workload-validation"]
+
+[[bin]]
+name = "context-validation-init"
+path = "validation/context_init.rs"
+required-features = ["workload-validation"]

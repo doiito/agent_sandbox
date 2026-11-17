@@ -1,0 +1,11 @@
+osv_vsock_listen
+osv_vsock_accept
+osv_vsock_connect
+osv_vsock_recv
+osv_vsock_send
+osv_vsock_shutdown
+osv_vsock_close
+osv_vsock_cid
+osv_sandbox_run_module
+osv_sandbox_register_exit_callback
+osv_sandbox_mount_inputs_v1

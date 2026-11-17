@@ -1,0 +1,24 @@
+[package]
+name = "osv-runtime-allocator"
+version = "0.1.0"
+edition = "2024"
+license = "BSD-3-Clause"
+publish = false
+
+[features]
+default = ["mimalloc", "secure"]
+mimalloc = ["dep:mimalloc"]
+secure = ["mimalloc", "mimalloc/secure"]
+
+[target.'cfg(target_env = "musl")'.dependencies]
+mimalloc = { version = "=0.1.52", default-features = false, features = ["no_thp"], optional = true }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "z"
+panic = "abort"
+strip = true
+
+[profile.release.package.libmimalloc-sys]
+opt-level = 3

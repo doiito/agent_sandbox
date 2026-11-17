@@ -1,0 +1,1400 @@
+// Generated from the canonical HTTP wire contract. DO NOT EDIT.
+syntax = "proto3";
+package sandbox.control.v1;
+option go_package = "github.com/doiito/agent_sandbox/api/control/v1;controlv1";
+
+enum JsonNull { JSON_NULL = 0; }
+
+message APIErrorResponseOutput {
+  optional string code = 1 [json_name = "code"];
+  optional string error = 2 [json_name = "error"];
+}
+
+message CancelCodeExecutionRequest {
+  optional string context_id = 1 [json_name = "context_id"];
+  optional string execution = 2 [json_name = "execution"];
+  optional uint64 generation = 3 [json_name = "generation"];
+  optional string id = 4 [json_name = "id"];
+}
+
+message CancelPortConnectionRequest {
+  optional string connection = 1 [json_name = "connection"];
+  optional string id = 2 [json_name = "id"];
+  optional uint64 port = 3 [json_name = "port"];
+}
+
+message CancelSessionCommandRequest {
+  optional string command = 1 [json_name = "command"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message CapabilitiesRequest {
+  optional string artifact_manifest_sha256 = 1 [json_name = "artifact_manifest_sha256"];
+  optional string backend = 2 [json_name = "backend"];
+}
+
+message CapabilityFeaturesOutput {
+  optional bool argv = 1 [json_name = "argv"];
+  optional bool background_commands = 2 [json_name = "background_commands"];
+  optional bool cancellation = 3 [json_name = "cancellation"];
+  optional bool code_contexts = 4 [json_name = "code_contexts"];
+  optional bool environment = 5 [json_name = "environment"];
+  optional bool exit_code = 6 [json_name = "exit_code"];
+  optional bool file_watch = 7 [json_name = "file_watch"];
+  optional bool file_watch_entry = 8 [json_name = "file_watch_entry"];
+  optional bool inference_billing = 9 [json_name = "inference_billing"];
+  optional bool input_files = 10 [json_name = "input_files"];
+  optional bool interactive_stdin = 11 [json_name = "interactive_stdin"];
+  optional bool network_egress = 12 [json_name = "network_egress"];
+  optional bool network_fetch = 13 [json_name = "network_fetch"];
+  optional bool one_shot_job = 14 [json_name = "one_shot_job"];
+  optional bool pause_resume = 15 [json_name = "pause_resume"];
+  optional bool persistent_workspace = 16 [json_name = "persistent_workspace"];
+  optional bool port_forward = 17 [json_name = "port_forward"];
+  optional bool port_preview = 18 [json_name = "port_preview"];
+  optional bool recursive_file_watch = 19 [json_name = "recursive_file_watch"];
+  optional bool remote_inference = 20 [json_name = "remote_inference"];
+  optional bool session_environment = 21 [json_name = "session_environment"];
+  optional bool session_files = 22 [json_name = "session_files"];
+  optional bool session_listing = 23 [json_name = "session_listing"];
+  optional bool session_timeout_update = 24 [json_name = "session_timeout_update"];
+  optional bool session_working_directory = 25 [json_name = "session_working_directory"];
+  optional bool sessions = 26 [json_name = "sessions"];
+  optional bool snapshots = 27 [json_name = "snapshots"];
+  optional bool stderr = 28 [json_name = "stderr"];
+  optional bool stdin = 29 [json_name = "stdin"];
+  optional bool stdout = 30 [json_name = "stdout"];
+  optional bool streaming_output = 31 [json_name = "streaming_output"];
+  optional bool timeout = 32 [json_name = "timeout"];
+  optional bool warm_pool = 33 [json_name = "warm_pool"];
+  optional bool working_directory = 34 [json_name = "working_directory"];
+  optional bool session_artifacts = 35 [json_name = "session_artifacts"];
+}
+
+message CapabilityLimitsOutput {
+  optional int64 code_contexts = 1 [json_name = "code_contexts"];
+  optional int64 code_event_page = 2 [json_name = "code_event_page"];
+  optional int64 code_execution_ids = 3 [json_name = "code_execution_ids"];
+  optional int64 code_output_bytes = 4 [json_name = "code_output_bytes"];
+  optional int64 code_source_bytes = 5 [json_name = "code_source_bytes"];
+  optional int64 command_history = 6 [json_name = "command_history"];
+  optional int64 command_input_chunk_bytes = 7 [json_name = "command_input_chunk_bytes"];
+  optional int64 command_input_requests = 8 [json_name = "command_input_requests"];
+  optional int64 command_input_total_bytes = 9 [json_name = "command_input_total_bytes"];
+  optional int64 command_output_bytes = 10 [json_name = "command_output_bytes"];
+  optional int64 command_output_events = 11 [json_name = "command_output_events"];
+  optional int64 file_watch_active = 12 [json_name = "file_watch_active"];
+  optional int64 file_watch_bytes = 13 [json_name = "file_watch_bytes"];
+  optional int64 file_watch_directories = 14 [json_name = "file_watch_directories"];
+  optional int64 file_watch_events = 15 [json_name = "file_watch_events"];
+  optional int64 file_watch_history = 16 [json_name = "file_watch_history"];
+  optional int64 file_watch_page = 17 [json_name = "file_watch_page"];
+  optional int64 max_argument_bytes = 18 [json_name = "max_argument_bytes"];
+  optional int64 max_arguments = 19 [json_name = "max_arguments"];
+  optional int64 max_concurrent = 20 [json_name = "max_concurrent"];
+  optional int64 max_env_bytes = 21 [json_name = "max_env_bytes"];
+  optional int64 max_env_entries = 22 [json_name = "max_env_entries"];
+  optional int64 max_input_bytes = 23 [json_name = "max_input_bytes"];
+  optional int64 max_input_files = 24 [json_name = "max_input_files"];
+  optional int64 max_memory_mib = 25 [json_name = "max_memory_mib"];
+  optional int64 max_output_bytes = 26 [json_name = "max_output_bytes"];
+  optional int64 max_stdin_bytes = 27 [json_name = "max_stdin_bytes"];
+  optional int64 max_timeout_ms = 28 [json_name = "max_timeout_ms"];
+  optional int64 max_vcpus = 29 [json_name = "max_vcpus"];
+  optional int64 min_memory_mib = 30 [json_name = "min_memory_mib"];
+  optional int64 port_connection_ids = 31 [json_name = "port_connection_ids"];
+  optional int64 port_connections = 32 [json_name = "port_connections"];
+  optional int64 port_frame_bytes = 33 [json_name = "port_frame_bytes"];
+  optional int64 port_max_bytes = 34 [json_name = "port_max_bytes"];
+  optional int64 port_tenant_connections = 35 [json_name = "port_tenant_connections"];
+  optional int64 port_timeout_ms = 36 [json_name = "port_timeout_ms"];
+  optional int64 preview_grant_ids = 37 [json_name = "preview_grant_ids"];
+  optional int64 preview_grants = 38 [json_name = "preview_grants"];
+  optional int64 preview_request_bytes = 39 [json_name = "preview_request_bytes"];
+  optional int64 preview_requests = 40 [json_name = "preview_requests"];
+  optional int64 preview_ttl_ms = 41 [json_name = "preview_ttl_ms"];
+  optional int64 session_file_max_bytes = 42 [json_name = "session_file_max_bytes"];
+  optional int64 session_list_page_max = 43 [json_name = "session_list_page_max"];
+  optional int64 session_max_lifetime_ms = 44 [json_name = "session_max_lifetime_ms"];
+  optional int64 session_max_ttl_ms = 45 [json_name = "session_max_ttl_ms"];
+  optional int64 session_artifact_count = 46 [json_name = "session_artifact_count"];
+  optional int64 session_artifact_depth = 47 [json_name = "session_artifact_depth"];
+  optional int64 session_artifact_entries = 48 [json_name = "session_artifact_entries"];
+  optional int64 session_artifact_max_bytes = 49 [json_name = "session_artifact_max_bytes"];
+  optional int64 session_artifact_path_bytes = 50 [json_name = "session_artifact_path_bytes"];
+  optional int64 session_artifact_read_bytes = 51 [json_name = "session_artifact_read_bytes"];
+}
+
+message CapabilityReportOutput {
+  CapabilityReportOutputAllowedEntrypoints allowed_entrypoints = 1 [json_name = "allowed_entrypoints"];
+  optional bool artifact_authenticated = 2 [json_name = "artifact_authenticated"];
+  optional string artifact_manifest_protocol = 3 [json_name = "artifact_manifest_protocol"];
+  optional string artifact_manifest_sha256 = 4 [json_name = "artifact_manifest_sha256"];
+  optional string backend = 5 [json_name = "backend"];
+  CapabilityReportOutputCodeLanguages code_languages = 6 [json_name = "code_languages"];
+  SignedCodeRuntimeOutput code_runtime = 7 [json_name = "code_runtime"];
+  CapabilityFeaturesOutput features = 8 [json_name = "features"];
+  optional string guest_result_protocol = 9 [json_name = "guest_result_protocol"];
+  CapabilityLimitsOutput limits = 10 [json_name = "limits"];
+  CapabilityReportOutputMethods methods = 11 [json_name = "methods"];
+  EgressPolicyOutput network_fetch_policy = 12 [json_name = "network_fetch_policy"];
+  PortPolicyOutput port_forward_policy = 13 [json_name = "port_forward_policy"];
+  optional string protocol = 14 [json_name = "protocol"];
+  InferenceCapabilitiesOutput remote_inference_policy = 15 [json_name = "remote_inference_policy"];
+  optional string stage = 16 [json_name = "stage"];
+  optional string template_id = 17 [json_name = "template_id"];
+  optional string workload = 18 [json_name = "workload"];
+}
+
+message CapabilityReportOutputAllowedEntrypoints {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message CapabilityReportOutputCodeLanguages {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message CapabilityReportOutputMethods {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message CodeContextCreateRequestInput {
+  optional string context_id = 1 [json_name = "context_id"];
+  optional string cwd = 2 [json_name = "cwd"];
+  optional string language = 3 [json_name = "language"];
+}
+
+message CodeContextDefaultRequestInput {
+  optional string language = 1 [json_name = "language"];
+}
+
+message CodeContextOutput {
+  optional string cwd = 1 [json_name = "cwd"];
+  optional uint64 discarded_late_bytes = 2 [json_name = "discarded_late_bytes"];
+  optional uint64 discarded_late_events = 3 [json_name = "discarded_late_events"];
+  optional string failure = 4 [json_name = "failure"];
+  optional uint64 generation = 5 [json_name = "generation"];
+  optional string id = 6 [json_name = "id"];
+  optional string language = 7 [json_name = "language"];
+  optional uint64 pid = 8 [json_name = "pid"];
+  optional string session_id = 9 [json_name = "session_id"];
+  optional string state = 10 [json_name = "state"];
+}
+
+message CodeContextRemovedResponseOutput {
+  optional string context_id = 1 [json_name = "context_id"];
+  optional bool removed = 2 [json_name = "removed"];
+  optional string session_id = 3 [json_name = "session_id"];
+}
+
+message CodeContextRestartRequestInput {
+  optional uint64 generation = 1 [json_name = "generation"];
+}
+
+message CodeContextsResponseOutput {
+  CodeContextsResponseOutputContexts contexts = 1 [json_name = "contexts"];
+  optional string session_id = 2 [json_name = "session_id"];
+}
+
+message CodeContextsResponseOutputContexts {
+  repeated CodeContextOutput values = 1 [json_name = "values"];
+}
+
+message CodeEventOutput {
+  oneof event {
+    CodeEventOutputError error = 1 [json_name = "error"];
+    CodeEventOutputFinished finished = 2 [json_name = "finished"];
+    CodeEventOutputResult result = 3 [json_name = "result"];
+    CodeEventOutputStarted started = 4 [json_name = "started"];
+    CodeEventOutputStderr stderr = 5 [json_name = "stderr"];
+    CodeEventOutputStdout stdout = 6 [json_name = "stdout"];
+  }
+}
+
+message CodeEventOutputError {
+  optional string name = 1 [json_name = "name"];
+  optional string traceback = 2 [json_name = "traceback"];
+  optional string value = 3 [json_name = "value"];
+}
+
+message CodeEventOutputFinished {
+  optional bool context_usable = 1 [json_name = "context_usable"];
+  optional string status = 2 [json_name = "status"];
+}
+
+message CodeEventOutputResult {
+  CodeEventOutputResultData data = 1 [json_name = "data"];
+  optional bool is_main_result = 2 [json_name = "is_main_result"];
+}
+
+message CodeEventOutputResultData {
+  map<string, JsonValue> values = 1 [json_name = "values"];
+}
+
+message CodeEventOutputStarted {
+}
+
+message CodeEventOutputStderr {
+  optional bytes data = 1 [json_name = "data"];
+}
+
+message CodeEventOutputStdout {
+  optional bytes data = 1 [json_name = "data"];
+}
+
+message CodeExecutionAcceptedResponseOutput {
+  optional bool accepted = 1 [json_name = "accepted"];
+  optional string execution_id = 2 [json_name = "execution_id"];
+  optional string session_id = 3 [json_name = "session_id"];
+}
+
+message CodeExecutionPageOutput {
+  optional string context_id = 1 [json_name = "context_id"];
+  CodeExecutionPageOutputEvents events = 2 [json_name = "events"];
+  optional bool events_evicted = 3 [json_name = "events_evicted"];
+  optional string failure = 4 [json_name = "failure"];
+  optional uint64 generation = 5 [json_name = "generation"];
+  optional string id = 6 [json_name = "id"];
+  optional string language = 7 [json_name = "language"];
+  optional uint64 last_sequence = 8 [json_name = "last_sequence"];
+  optional uint64 next_sequence = 9 [json_name = "next_sequence"];
+  optional string session_id = 10 [json_name = "session_id"];
+  optional string status = 11 [json_name = "status"];
+}
+
+message CodeExecutionPageOutputEvents {
+  repeated CodeSequencedEventOutput values = 1 [json_name = "values"];
+}
+
+message CodeExecutionRequestInput {
+  optional string code = 1 [json_name = "code"];
+  optional string context_id = 2 [json_name = "context_id"];
+  CodeExecutionRequestInputEnvironment environment = 3 [json_name = "environment"];
+  optional string execution_id = 4 [json_name = "execution_id"];
+  optional uint64 generation = 5 [json_name = "generation"];
+  optional uint64 timeout_ms = 6 [json_name = "timeout_ms"];
+}
+
+message CodeExecutionRequestInputEnvironment {
+  map<string, string> values = 1 [json_name = "values"];
+}
+
+message CodeSequencedEventOutput {
+  CodeEventOutput event = 1 [json_name = "event"];
+  optional uint64 sequence = 2 [json_name = "sequence"];
+}
+
+message CommandCancelResponseOutput {
+  optional bool killed = 1 [json_name = "killed"];
+}
+
+message CreateCodeContextRequest {
+  CodeContextCreateRequestInput body = 1 [json_name = "body"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message CreatePreviewRequest {
+  PreviewCreateRequestInput body = 1 [json_name = "body"];
+  optional string id = 2 [json_name = "id"];
+  optional uint64 port = 3 [json_name = "port"];
+  optional string preview = 4 [json_name = "preview"];
+}
+
+message CreateSessionArtifactRequest {
+  SessionArtifactCreateRequestInput body = 1 [json_name = "body"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message CreateSessionRequest {
+  SessionCreateRequestInput body = 1 [json_name = "body"];
+}
+
+message DefaultCodeContextRequest {
+  CodeContextDefaultRequestInput body = 1 [json_name = "body"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message DeleteSessionArtifactRequest {
+  optional string artifact = 1 [json_name = "artifact"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message DeleteSessionArtifactResponse {
+}
+
+message DeleteSessionRequest {
+  optional string id = 1 [json_name = "id"];
+}
+
+message DeleteSessionResponse {
+}
+
+message DoctorCheckOutput {
+  optional string detail = 1 [json_name = "detail"];
+  optional string name = 2 [json_name = "name"];
+  optional bool ok = 3 [json_name = "ok"];
+  optional bool warning = 4 [json_name = "warning"];
+}
+
+message DoctorReportOutput {
+  DoctorReportOutputChecks checks = 1 [json_name = "checks"];
+  optional bool ready = 2 [json_name = "ready"];
+  VMCapacitySnapshotOutput vm_capacity = 3 [json_name = "vm_capacity"];
+  VMInstanceSnapshotOutput vm_instances = 4 [json_name = "vm_instances"];
+  WarmPoolSnapshotOutput warm_pool = 5 [json_name = "warm_pool"];
+}
+
+message DoctorReportOutputChecks {
+  repeated DoctorCheckOutput values = 1 [json_name = "values"];
+}
+
+message EgressPolicyOutput {
+  EgressPolicyOutputAllowedCidrs allowed_cidrs = 1 [json_name = "allowed_cidrs"];
+  EgressPolicyOutputAllowedOrigins allowed_origins = 2 [json_name = "allowed_origins"];
+  optional int64 max_concurrent = 3 [json_name = "max_concurrent"];
+  optional int64 max_redirects = 4 [json_name = "max_redirects"];
+  optional int64 max_request_bytes = 5 [json_name = "max_request_bytes"];
+  optional int64 max_response_bytes = 6 [json_name = "max_response_bytes"];
+  optional int64 timeout_ms = 7 [json_name = "timeout_ms"];
+}
+
+message EgressPolicyOutputAllowedCidrs {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message EgressPolicyOutputAllowedOrigins {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message ErrorDetail {
+  optional string code = 1 [json_name = "code"];
+  optional uint64 http_status = 2 [json_name = "http_status"];
+  optional string invocation_id = 3 [json_name = "invocation_id"];
+  optional string message = 4 [json_name = "message"];
+}
+
+message GetCodeContextRequest {
+  optional string context = 1 [json_name = "context"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message GetCodeExecutionRequest {
+  optional uint64 after = 1 [json_name = "after"];
+  optional string execution = 2 [json_name = "execution"];
+  optional string id = 3 [json_name = "id"];
+}
+
+message GetPortConnectionRequest {
+  optional string connection = 1 [json_name = "connection"];
+  optional string id = 2 [json_name = "id"];
+  optional uint64 port = 3 [json_name = "port"];
+}
+
+message GetPreviewRequest {
+  optional string id = 1 [json_name = "id"];
+  optional string preview = 2 [json_name = "preview"];
+}
+
+message GetSessionRequest {
+  optional string id = 1 [json_name = "id"];
+}
+
+message HealthRequest {
+}
+
+message HostDoctorRequest {
+}
+
+message InferenceAPIErrorResponseOutput {
+  optional string code = 1 [json_name = "code"];
+  optional string error = 2 [json_name = "error"];
+  optional string invocation_id = 3 [json_name = "invocation_id"];
+}
+
+message InferenceBillOutput {
+  optional uint64 budget_units = 1 [json_name = "budget_units"];
+  optional bool closed = 2 [json_name = "closed"];
+  optional uint64 held_units = 3 [json_name = "held_units"];
+  InferenceBillOutputInvocations invocations = 4 [json_name = "invocations"];
+  optional string lease_id = 5 [json_name = "lease_id"];
+  optional int64 max_invocations = 6 [json_name = "max_invocations"];
+  optional string protocol = 7 [json_name = "protocol"];
+  optional uint64 settled_units = 8 [json_name = "settled_units"];
+  optional string task_id = 9 [json_name = "task_id"];
+  optional string tenant = 10 [json_name = "tenant"];
+  optional string unit = 11 [json_name = "unit"];
+  optional string vm_id = 12 [json_name = "vm_id"];
+}
+
+message InferenceBillOutputInvocations {
+  repeated InferenceInvocationReceiptOutput values = 1 [json_name = "values"];
+}
+
+message InferenceBillRequest {
+  optional string task = 1 [json_name = "task"];
+}
+
+message InferenceCapabilitiesOutput {
+  optional uint64 budget_units = 1 [json_name = "budget_units"];
+  InferenceCapabilitiesOutputEndpoints endpoints = 2 [json_name = "endpoints"];
+  optional int64 max_invocations = 3 [json_name = "max_invocations"];
+  optional int64 max_request_bytes = 4 [json_name = "max_request_bytes"];
+  optional int64 max_response_bytes = 5 [json_name = "max_response_bytes"];
+  optional string protocol = 6 [json_name = "protocol"];
+  optional int64 timeout_ms = 7 [json_name = "timeout_ms"];
+}
+
+message InferenceCapabilitiesOutputEndpoints {
+  repeated InferenceEndpointCapabilityOutput values = 1 [json_name = "values"];
+}
+
+message InferenceEndpointCapabilityOutput {
+  optional string name = 1 [json_name = "name"];
+  InferencePriceOutput price = 2 [json_name = "price"];
+}
+
+message InferenceInvocationReceiptOutput {
+  optional string code = 1 [json_name = "code"];
+  optional bool dispatched = 2 [json_name = "dispatched"];
+  optional uint64 duration_ms = 3 [json_name = "duration_ms"];
+  optional string endpoint = 4 [json_name = "endpoint"];
+  optional string epoch = 5 [json_name = "epoch"];
+  optional string finished_at = 6 [json_name = "finished_at"];
+  optional int64 http_status = 7 [json_name = "http_status"];
+  optional string id = 8 [json_name = "id"];
+  optional uint64 input_bytes = 9 [json_name = "input_bytes"];
+  optional uint64 max_output_bytes = 10 [json_name = "max_output_bytes"];
+  optional uint64 output_bytes = 11 [json_name = "output_bytes"];
+  InferencePriceOutput price = 12 [json_name = "price"];
+  optional uint64 reserved_units = 13 [json_name = "reserved_units"];
+  optional uint64 settled_units = 14 [json_name = "settled_units"];
+  optional string started_at = 15 [json_name = "started_at"];
+  optional string state = 16 [json_name = "state"];
+}
+
+message InferenceInvokeRequestInput {
+  optional string endpoint = 1 [json_name = "endpoint"];
+  optional string id = 2 [json_name = "id"];
+  JsonValue payload = 3 [json_name = "payload"];
+  optional uint64 timeout_ms = 4 [json_name = "timeout_ms"];
+}
+
+message InferenceInvokeResultOutput {
+  JsonValue data = 1 [json_name = "data"];
+  InferenceInvocationReceiptOutput invocation = 2 [json_name = "invocation"];
+  optional string protocol = 3 [json_name = "protocol"];
+  optional string task_id = 4 [json_name = "task_id"];
+}
+
+message InferencePriceOutput {
+  optional uint64 input_byte_units = 1 [json_name = "input_byte_units"];
+  optional uint64 output_byte_units = 2 [json_name = "output_byte_units"];
+  optional uint64 request_units = 3 [json_name = "request_units"];
+}
+
+message InputFileInput {
+  optional bytes data = 1 [json_name = "data"];
+  optional uint64 mode = 2 [json_name = "mode"];
+  optional string path = 3 [json_name = "path"];
+}
+
+message InvokeInferenceRequest {
+  InferenceInvokeRequestInput body = 1 [json_name = "body"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message JsonArray {
+  repeated JsonValue values = 1 [json_name = "values"];
+}
+
+message JsonObject {
+  map<string, JsonValue> values = 1 [json_name = "values"];
+}
+
+message JsonValue {
+  oneof kind {
+    JsonArray array = 1 [json_name = "array"];
+    bool boolean = 2 [json_name = "boolean"];
+    JsonNull null_value = 3 [json_name = "null_value"];
+    string number = 4 [json_name = "number"];
+    JsonObject object = 5 [json_name = "object"];
+    string text = 6 [json_name = "text"];
+  }
+}
+
+message LegacyAPIErrorResponseOutput {
+  optional string error = 1 [json_name = "error"];
+}
+
+message ListCodeContextsRequest {
+  optional string id = 1 [json_name = "id"];
+}
+
+message ListSessionCommandsRequest {
+  optional string id = 1 [json_name = "id"];
+}
+
+message ListSessionWatchesRequest {
+  optional string id = 1 [json_name = "id"];
+}
+
+message ListSessionsRequest {
+  optional string cursor = 1 [json_name = "cursor"];
+  optional uint64 limit = 2 [json_name = "limit"];
+  optional string order = 3 [json_name = "order"];
+}
+
+message MetricsText {
+  optional string text = 1 [json_name = "text"];
+}
+
+message NetworkFetchRequest {
+  NetworkFetchRequestInput body = 1 [json_name = "body"];
+}
+
+message NetworkFetchRequestInput {
+  optional bytes body_base64 = 1 [json_name = "body_base64"];
+  optional bool follow_redirects = 2 [json_name = "follow_redirects"];
+  NetworkFetchRequestInputHeaders headers = 3 [json_name = "headers"];
+  optional string method = 4 [json_name = "method"];
+  optional int64 timeout_ms = 5 [json_name = "timeout_ms"];
+  optional string url = 6 [json_name = "url"];
+}
+
+message NetworkFetchRequestInputHeaders {
+  map<string, string> values = 1 [json_name = "values"];
+}
+
+message NetworkFetchResultOutput {
+  optional string body_base64 = 1 [json_name = "body_base64"];
+  optional int64 body_bytes = 2 [json_name = "body_bytes"];
+  optional int64 duration_ms = 3 [json_name = "duration_ms"];
+  NetworkFetchResultOutputHeaders headers = 4 [json_name = "headers"];
+  optional string protocol = 5 [json_name = "protocol"];
+  optional int64 redirects = 6 [json_name = "redirects"];
+  optional int64 request_bytes = 7 [json_name = "request_bytes"];
+  optional string request_id = 8 [json_name = "request_id"];
+  optional int64 response_bytes = 9 [json_name = "response_bytes"];
+  optional int64 status = 10 [json_name = "status"];
+  optional string url = 11 [json_name = "url"];
+}
+
+message NetworkFetchResultOutputHeaders {
+  map<string, NetworkFetchResultOutputHeadersEntry> values = 1 [json_name = "values"];
+}
+
+message NetworkFetchResultOutputHeadersEntry {
+  oneof nullable {
+    JsonNull null_value = 1 [json_name = "null_value"];
+    NetworkFetchResultOutputHeadersEntryValue value = 2 [json_name = "value"];
+  }
+}
+
+message NetworkFetchResultOutputHeadersEntryValue {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message OpenPortTunnelRequest {
+  SessionPortLimitsInput body = 1 [json_name = "body"];
+  optional string connection = 2 [json_name = "connection"];
+  optional string id = 3 [json_name = "id"];
+  optional uint64 port = 4 [json_name = "port"];
+}
+
+message PollCommandInputRequest {
+  optional string command = 1 [json_name = "command"];
+  optional string id = 2 [json_name = "id"];
+  optional uint64 sequence = 3 [json_name = "sequence"];
+}
+
+message PollSessionCommandRequest {
+  optional uint64 after = 1 [json_name = "after"];
+  optional string command = 2 [json_name = "command"];
+  optional string id = 3 [json_name = "id"];
+}
+
+message PollSessionWatchRequest {
+  optional uint64 after = 1 [json_name = "after"];
+  optional string id = 2 [json_name = "id"];
+  optional string watch = 3 [json_name = "watch"];
+}
+
+message PortClientFrame {
+  oneof frame {
+    TransportEmpty cancel = 1 [json_name = "cancel"];
+    bytes data = 2 [json_name = "data"];
+    TransportEmpty eof = 3 [json_name = "eof"];
+    OpenPortTunnelRequest open = 4 [json_name = "open"];
+  }
+}
+
+message PortConnectionResponseOutput {
+  SessionPortInfoOutput connection = 1 [json_name = "connection"];
+  optional string session_id = 2 [json_name = "session_id"];
+}
+
+message PortOpened {
+  optional string connection = 1 [json_name = "connection"];
+  optional string id = 2 [json_name = "id"];
+  optional uint64 port = 3 [json_name = "port"];
+}
+
+message PortPolicyOutput {
+  PortPolicyOutputAllowedPorts allowed_ports = 1 [json_name = "allowed_ports"];
+  optional int64 max_concurrent = 2 [json_name = "max_concurrent"];
+  optional bool preview = 3 [json_name = "preview"];
+}
+
+message PortPolicyOutputAllowedPorts {
+  repeated PortRangeOutput values = 1 [json_name = "values"];
+}
+
+message PortRangeOutput {
+  optional uint64 from = 1 [json_name = "from"];
+  optional uint64 to = 2 [json_name = "to"];
+}
+
+message PortServerFrame {
+  oneof frame {
+    bytes data = 1 [json_name = "data"];
+    TransportEmpty eof = 2 [json_name = "eof"];
+    SessionPortInfoOutput finished = 3 [json_name = "finished"];
+    PortOpened opened = 4 [json_name = "opened"];
+  }
+}
+
+message PreviewCreateRequestInput {
+  optional uint64 ttl_ms = 1 [json_name = "ttl_ms"];
+}
+
+message PreviewGrantInfoOutput {
+  optional string bootstrap_url = 1 [json_name = "bootstrap_url"];
+  optional string created_at = 2 [json_name = "created_at"];
+  optional string expires_at = 3 [json_name = "expires_at"];
+  optional string id = 4 [json_name = "id"];
+  optional string origin = 5 [json_name = "origin"];
+  optional uint64 port = 6 [json_name = "port"];
+  optional string protocol = 7 [json_name = "protocol"];
+  optional string session_id = 8 [json_name = "session_id"];
+  optional string status = 9 [json_name = "status"];
+}
+
+message PrometheusMetricsRequest {
+}
+
+message ReadSessionArtifactRequest {
+  optional string artifact = 1 [json_name = "artifact"];
+  SessionArtifactReadRequestInput body = 2 [json_name = "body"];
+  optional string id = 3 [json_name = "id"];
+}
+
+message ReadinessRequest {
+}
+
+message RemoveCodeContextRequest {
+  optional string context = 1 [json_name = "context"];
+  optional uint64 generation = 2 [json_name = "generation"];
+  optional string id = 3 [json_name = "id"];
+}
+
+message RestartCodeContextRequest {
+  CodeContextRestartRequestInput body = 1 [json_name = "body"];
+  optional string context = 2 [json_name = "context"];
+  optional string id = 3 [json_name = "id"];
+}
+
+message RevokePreviewRequest {
+  optional string id = 1 [json_name = "id"];
+  optional string preview = 2 [json_name = "preview"];
+}
+
+message RunJobRequest {
+  RunRequestV2Input body = 1 [json_name = "body"];
+}
+
+message RunLegacyJobRequest {
+  RunRequestInput body = 1 [json_name = "body"];
+}
+
+message RunRequestInput {
+  RunRequestInputArgs args = 1 [json_name = "args"];
+  optional string artifact_manifest_sha256 = 2 [json_name = "artifact_manifest_sha256"];
+  optional string backend = 3 [json_name = "backend"];
+  optional string cwd = 4 [json_name = "cwd"];
+  optional string entrypoint = 5 [json_name = "entrypoint"];
+  RunRequestInputEnvironment environment = 6 [json_name = "environment"];
+  RunRequestInputInputFiles input_files = 7 [json_name = "input_files"];
+  optional uint64 memory_mib = 8 [json_name = "memory_mib"];
+  optional string network = 9 [json_name = "network"];
+  optional bytes stdin = 10 [json_name = "stdin"];
+  optional uint64 timeout_ms = 11 [json_name = "timeout_ms"];
+  optional uint64 vcpus = 12 [json_name = "vcpus"];
+}
+
+message RunRequestInputArgs {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message RunRequestInputEnvironment {
+  map<string, string> values = 1 [json_name = "values"];
+}
+
+message RunRequestInputInputFiles {
+  repeated InputFileInput values = 1 [json_name = "values"];
+}
+
+message RunRequestV2Input {
+  RunRequestV2InputArgs args = 1 [json_name = "args"];
+  optional string artifact_manifest_sha256 = 2 [json_name = "artifact_manifest_sha256"];
+  optional string backend = 3 [json_name = "backend"];
+  optional string cwd = 4 [json_name = "cwd"];
+  optional string entrypoint = 5 [json_name = "entrypoint"];
+  RunRequestV2InputEnvironment environment = 6 [json_name = "environment"];
+  RunRequestV2InputInputFiles input_files = 7 [json_name = "input_files"];
+  optional uint64 memory_mib = 8 [json_name = "memory_mib"];
+  optional string network = 9 [json_name = "network"];
+  optional bytes stdin = 10 [json_name = "stdin"];
+  optional uint64 timeout_ms = 11 [json_name = "timeout_ms"];
+  optional uint64 vcpus = 12 [json_name = "vcpus"];
+}
+
+message RunRequestV2InputArgs {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message RunRequestV2InputEnvironment {
+  map<string, string> values = 1 [json_name = "values"];
+}
+
+message RunRequestV2InputInputFiles {
+  repeated InputFileInput values = 1 [json_name = "values"];
+}
+
+message RunResultOutput {
+  optional string artifact_manifest_sha256 = 1 [json_name = "artifact_manifest_sha256"];
+  optional string backend = 2 [json_name = "backend"];
+  optional int64 duration_ms = 3 [json_name = "duration_ms"];
+  optional int64 exit_code = 4 [json_name = "exit_code"];
+  JsonValue guest_result = 5 [json_name = "guest_result"];
+  optional string id = 6 [json_name = "id"];
+  optional string output = 7 [json_name = "output"];
+  optional bool output_truncated = 8 [json_name = "output_truncated"];
+  optional bool protocol_ok = 9 [json_name = "protocol_ok"];
+  optional int64 startup_duration_us = 10 [json_name = "startup_duration_us"];
+  optional string startup_mode = 11 [json_name = "startup_mode"];
+  StartupTimingOutput startup_timing = 12 [json_name = "startup_timing"];
+  optional string state = 13 [json_name = "state"];
+  optional string template_id = 14 [json_name = "template_id"];
+  optional bool timed_out = 15 [json_name = "timed_out"];
+  optional int64 vm_boot_duration_us = 16 [json_name = "vm_boot_duration_us"];
+}
+
+message RunSessionCommandRequest {
+  SessionCommandRequestInput body = 1 [json_name = "body"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message SessionArtifactChunkOutput {
+  optional string archive_sha256 = 1 [json_name = "archive_sha256"];
+  optional bytes data_base64 = 2 [json_name = "data_base64"];
+  optional string data_sha256 = 3 [json_name = "data_sha256"];
+  optional bool eof = 4 [json_name = "eof"];
+  optional string id = 5 [json_name = "id"];
+  optional uint64 offset = 6 [json_name = "offset"];
+  optional string session_id = 7 [json_name = "session_id"];
+  optional uint64 total_size = 8 [json_name = "total_size"];
+}
+
+message SessionArtifactCreateRequestInput {
+  optional string path = 1 [json_name = "path"];
+}
+
+message SessionArtifactInfoOutput {
+  optional uint64 entries = 1 [json_name = "entries"];
+  optional uint64 files = 2 [json_name = "files"];
+  optional string format = 3 [json_name = "format"];
+  optional string id = 4 [json_name = "id"];
+  optional string path = 5 [json_name = "path"];
+  optional uint64 payload_bytes = 6 [json_name = "payload_bytes"];
+  optional string session_id = 7 [json_name = "session_id"];
+  optional string sha256 = 8 [json_name = "sha256"];
+  optional uint64 size = 9 [json_name = "size"];
+  optional string source_kind = 10 [json_name = "source_kind"];
+}
+
+message SessionArtifactReadRequestInput {
+  optional uint64 length = 1 [json_name = "length"];
+  optional uint64 offset = 2 [json_name = "offset"];
+}
+
+message SessionCapabilitiesRequest {
+  optional string id = 1 [json_name = "id"];
+}
+
+message SessionCapabilityReportOutput {
+  SessionCapabilityReportOutputAllowedEntrypoints allowed_entrypoints = 1 [json_name = "allowed_entrypoints"];
+  optional bool artifact_authenticated = 2 [json_name = "artifact_authenticated"];
+  optional string artifact_manifest_protocol = 3 [json_name = "artifact_manifest_protocol"];
+  optional string artifact_manifest_sha256 = 4 [json_name = "artifact_manifest_sha256"];
+  optional string backend = 5 [json_name = "backend"];
+  SessionCapabilityReportOutputCodeLanguages code_languages = 6 [json_name = "code_languages"];
+  SignedCodeRuntimeOutput code_runtime = 7 [json_name = "code_runtime"];
+  CapabilityFeaturesOutput features = 8 [json_name = "features"];
+  optional string guest_result_protocol = 9 [json_name = "guest_result_protocol"];
+  CapabilityLimitsOutput limits = 10 [json_name = "limits"];
+  SessionCapabilityReportOutputMethods methods = 11 [json_name = "methods"];
+  EgressPolicyOutput network_fetch_policy = 12 [json_name = "network_fetch_policy"];
+  PortPolicyOutput port_forward_policy = 13 [json_name = "port_forward_policy"];
+  optional string protocol = 14 [json_name = "protocol"];
+  InferenceCapabilitiesOutput remote_inference_policy = 15 [json_name = "remote_inference_policy"];
+  optional string session_id = 16 [json_name = "session_id"];
+  optional string stage = 17 [json_name = "stage"];
+  optional string template_id = 18 [json_name = "template_id"];
+  optional string workload = 19 [json_name = "workload"];
+}
+
+message SessionCapabilityReportOutputAllowedEntrypoints {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message SessionCapabilityReportOutputCodeLanguages {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message SessionCapabilityReportOutputMethods {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message SessionCommandInfoOutput {
+  SessionCommandInfoOutputArgs args = 1 [json_name = "args"];
+  optional string completed_at = 2 [json_name = "completed_at"];
+  optional string cwd = 3 [json_name = "cwd"];
+  optional string entrypoint = 4 [json_name = "entrypoint"];
+  SessionCommandInfoOutputEnvironment environment = 5 [json_name = "environment"];
+  optional string error = 6 [json_name = "error"];
+  optional string id = 7 [json_name = "id"];
+  optional bool interactive_stdin = 8 [json_name = "interactive_stdin"];
+  optional int64 pid = 9 [json_name = "pid"];
+  optional string session_id = 10 [json_name = "session_id"];
+  optional string started_at = 11 [json_name = "started_at"];
+  optional string state = 12 [json_name = "state"];
+  optional bool stdin_closed = 13 [json_name = "stdin_closed"];
+}
+
+message SessionCommandInfoOutputArgs {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message SessionCommandInfoOutputEnvironment {
+  map<string, string> values = 1 [json_name = "values"];
+}
+
+message SessionCommandInputReceiptOutput {
+  optional bool closed = 1 [json_name = "closed"];
+  optional string command_id = 2 [json_name = "command_id"];
+  optional string error_code = 3 [json_name = "error_code"];
+  optional int64 sequence = 4 [json_name = "sequence"];
+  optional string session_id = 5 [json_name = "session_id"];
+  optional string state = 6 [json_name = "state"];
+  optional int64 written_bytes = 7 [json_name = "written_bytes"];
+}
+
+message SessionCommandInputRequestInput {
+  optional bool close = 1 [json_name = "close"];
+  optional bytes data_base64 = 2 [json_name = "data_base64"];
+}
+
+message SessionCommandPageOutput {
+  optional bool complete = 1 [json_name = "complete"];
+  SessionCommandPageOutputEvents events = 2 [json_name = "events"];
+  SessionCommandInfoOutput info = 3 [json_name = "info"];
+  optional int64 next_sequence = 4 [json_name = "next_sequence"];
+  SessionCommandResultOutput result = 5 [json_name = "result"];
+}
+
+message SessionCommandPageOutputEvents {
+  repeated SessionOutputEventOutput values = 1 [json_name = "values"];
+}
+
+message SessionCommandRequestInput {
+  SessionCommandRequestInputArgs args = 1 [json_name = "args"];
+  optional string cwd = 2 [json_name = "cwd"];
+  optional string entrypoint = 3 [json_name = "entrypoint"];
+  SessionCommandRequestInputEnvironment environment = 4 [json_name = "environment"];
+  optional bool interactive_stdin = 5 [json_name = "interactive_stdin"];
+  optional int64 timeout_ms = 6 [json_name = "timeout_ms"];
+}
+
+message SessionCommandRequestInputArgs {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message SessionCommandRequestInputEnvironment {
+  map<string, string> values = 1 [json_name = "values"];
+}
+
+message SessionCommandResultOutput {
+  RunResultOutput result = 1 [json_name = "result"];
+  optional string session_id = 2 [json_name = "session_id"];
+}
+
+message SessionCommandStreamEvent {
+  optional uint64 sequence = 3 [json_name = "sequence"];
+  oneof event {
+    SessionOutputFrameOutput output = 1 [json_name = "output"];
+    SessionCommandPageOutput result = 2 [json_name = "result"];
+    SessionCommandTimeoutFrameOutput timeout = 4 [json_name = "timeout"];
+  }
+}
+
+message SessionCommandTimeoutFrameOutput {
+  optional string command_id = 1 [json_name = "command_id"];
+  optional int64 next_sequence = 2 [json_name = "next_sequence"];
+  optional string session_id = 3 [json_name = "session_id"];
+}
+
+message SessionCommandsResponseOutput {
+  SessionCommandsResponseOutputCommands commands = 1 [json_name = "commands"];
+  optional string session_id = 2 [json_name = "session_id"];
+}
+
+message SessionCommandsResponseOutputCommands {
+  repeated SessionCommandInfoOutput values = 1 [json_name = "values"];
+}
+
+message SessionCreateRequestInput {
+  optional string artifact_manifest_sha256 = 1 [json_name = "artifact_manifest_sha256"];
+  optional string backend = 2 [json_name = "backend"];
+  SessionCreateRequestInputInputFiles input_files = 3 [json_name = "input_files"];
+  optional int64 memory_mib = 4 [json_name = "memory_mib"];
+  optional string network = 5 [json_name = "network"];
+  optional int64 ttl_ms = 6 [json_name = "ttl_ms"];
+  optional int64 vcpus = 7 [json_name = "vcpus"];
+}
+
+message SessionCreateRequestInputInputFiles {
+  repeated InputFileInput values = 1 [json_name = "values"];
+}
+
+message SessionFileInfoOutput {
+  optional string group = 1 [json_name = "group"];
+  SessionFileInfoOutputMetadata metadata = 2 [json_name = "metadata"];
+  optional uint64 mode = 3 [json_name = "mode"];
+  optional int64 modified_time_ms = 4 [json_name = "modified_time_ms"];
+  optional string name = 5 [json_name = "name"];
+  optional string owner = 6 [json_name = "owner"];
+  optional string path = 7 [json_name = "path"];
+  optional string permissions = 8 [json_name = "permissions"];
+  optional int64 size = 9 [json_name = "size"];
+  optional string symlink_target = 10 [json_name = "symlink_target"];
+  optional string type = 11 [json_name = "type"];
+}
+
+message SessionFileInfoOutputMetadata {
+  map<string, string> values = 1 [json_name = "values"];
+}
+
+message SessionFileRequest {
+  SessionFileRequestInput body = 1 [json_name = "body"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message SessionFileRequestInput {
+  optional string action = 1 [json_name = "action"];
+  optional bytes data_base64 = 2 [json_name = "data_base64"];
+  optional string destination = 3 [json_name = "destination"];
+  SessionFileRequestInputMetadata metadata = 4 [json_name = "metadata"];
+  optional string path = 5 [json_name = "path"];
+}
+
+message SessionFileRequestInputMetadata {
+  map<string, string> values = 1 [json_name = "values"];
+}
+
+message SessionFileResultOutput {
+  optional string action = 1 [json_name = "action"];
+  optional bool created = 2 [json_name = "created"];
+  optional string data_base64 = 3 [json_name = "data_base64"];
+  optional string destination = 4 [json_name = "destination"];
+  SessionFileResultOutputEntries entries = 5 [json_name = "entries"];
+  SessionFileResultOutputEntryInfos entry_infos = 6 [json_name = "entry_infos"];
+  SessionFileInfoOutput info = 7 [json_name = "info"];
+  optional string kind = 8 [json_name = "kind"];
+  optional string path = 9 [json_name = "path"];
+  optional string session_id = 10 [json_name = "session_id"];
+  optional int64 size = 11 [json_name = "size"];
+}
+
+message SessionFileResultOutputEntries {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message SessionFileResultOutputEntryInfos {
+  repeated SessionFileInfoOutput values = 1 [json_name = "values"];
+}
+
+message SessionInfoOutput {
+  optional string artifact_manifest_sha256 = 1 [json_name = "artifact_manifest_sha256"];
+  optional string backend = 2 [json_name = "backend"];
+  optional string created_at = 3 [json_name = "created_at"];
+  optional string expires_at = 4 [json_name = "expires_at"];
+  optional string guest_protocol = 5 [json_name = "guest_protocol"];
+  optional string id = 6 [json_name = "id"];
+  optional uint64 lease_revision = 7 [json_name = "lease_revision"];
+  optional string max_expires_at = 8 [json_name = "max_expires_at"];
+  optional int64 memory_mib = 9 [json_name = "memory_mib"];
+  optional string network = 10 [json_name = "network"];
+  optional int64 remaining_ttl_ms = 11 [json_name = "remaining_ttl_ms"];
+  optional int64 startup_duration_us = 12 [json_name = "startup_duration_us"];
+  optional string startup_mode = 13 [json_name = "startup_mode"];
+  StartupTimingOutput startup_timing = 14 [json_name = "startup_timing"];
+  optional string state = 15 [json_name = "state"];
+  optional int64 vcpus = 16 [json_name = "vcpus"];
+  optional int64 vm_boot_duration_us = 17 [json_name = "vm_boot_duration_us"];
+}
+
+message SessionListPageOutput {
+  optional string next_cursor = 1 [json_name = "next_cursor"];
+  SessionListPageOutputSessions sessions = 2 [json_name = "sessions"];
+}
+
+message SessionListPageOutputSessions {
+  repeated SessionInfoOutput values = 1 [json_name = "values"];
+}
+
+message SessionOutputEventOutput {
+  optional bytes data_base64 = 1 [json_name = "data_base64"];
+  optional int64 sequence = 2 [json_name = "sequence"];
+  optional string stream = 3 [json_name = "stream"];
+}
+
+message SessionOutputFrameOutput {
+  optional string command_id = 1 [json_name = "command_id"];
+  optional bytes data_base64 = 2 [json_name = "data_base64"];
+  optional int64 sequence = 3 [json_name = "sequence"];
+  optional string session_id = 4 [json_name = "session_id"];
+  optional string stream = 5 [json_name = "stream"];
+}
+
+message SessionPortInfoOutput {
+  optional string error = 1 [json_name = "error"];
+  optional string id = 2 [json_name = "id"];
+  optional uint64 port = 3 [json_name = "port"];
+  optional uint64 received_bytes = 4 [json_name = "received_bytes"];
+  optional uint64 sent_bytes = 5 [json_name = "sent_bytes"];
+  optional string status = 6 [json_name = "status"];
+}
+
+message SessionPortLimitsInput {
+  optional uint64 idle_timeout_ms = 1 [json_name = "idle_timeout_ms"];
+  optional uint64 max_bytes = 2 [json_name = "max_bytes"];
+  optional uint64 timeout_ms = 3 [json_name = "timeout_ms"];
+}
+
+message SessionTimeoutRequestInput {
+  optional uint64 ttl_ms = 1 [json_name = "ttl_ms"];
+}
+
+message SessionWatchEventOutput {
+  SessionFileInfoOutput entry = 1 [json_name = "entry"];
+  optional string name = 2 [json_name = "name"];
+  optional int64 sequence = 3 [json_name = "sequence"];
+  optional string type = 4 [json_name = "type"];
+}
+
+message SessionWatchInfoOutput {
+  optional string created_at = 1 [json_name = "created_at"];
+  optional string error_code = 2 [json_name = "error_code"];
+  optional string id = 3 [json_name = "id"];
+  optional bool include_entry = 4 [json_name = "include_entry"];
+  optional string path = 5 [json_name = "path"];
+  optional bool recursive = 6 [json_name = "recursive"];
+  optional string session_id = 7 [json_name = "session_id"];
+  optional string state = 8 [json_name = "state"];
+}
+
+message SessionWatchPageOutput {
+  optional bool complete = 1 [json_name = "complete"];
+  SessionWatchPageOutputEvents events = 2 [json_name = "events"];
+  SessionWatchInfoOutput info = 3 [json_name = "info"];
+  optional int64 next_sequence = 4 [json_name = "next_sequence"];
+}
+
+message SessionWatchPageOutputEvents {
+  repeated SessionWatchEventOutput values = 1 [json_name = "values"];
+}
+
+message SessionWatchRequestInput {
+  optional bool include_entry = 1 [json_name = "include_entry"];
+  optional string path = 2 [json_name = "path"];
+  optional bool recursive = 3 [json_name = "recursive"];
+  optional uint64 timeout_ms = 4 [json_name = "timeout_ms"];
+}
+
+message SessionWatchesResponseOutput {
+  optional string session_id = 1 [json_name = "session_id"];
+  SessionWatchesResponseOutputWatches watches = 2 [json_name = "watches"];
+}
+
+message SessionWatchesResponseOutputWatches {
+  repeated SessionWatchInfoOutput values = 1 [json_name = "values"];
+}
+
+message SetSessionTimeoutRequest {
+  SessionTimeoutRequestInput body = 1 [json_name = "body"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message SignedCodeRuntimeOutput {
+  optional string architecture = 1 [json_name = "architecture"];
+  optional string kernel_protocol = 2 [json_name = "kernel_protocol"];
+  SignedCodeRuntimeOutputKernelScriptsSha256 kernel_scripts_sha256 = 3 [json_name = "kernel_scripts_sha256"];
+  SignedCodeRuntimeOutputMinimumCpuFeatures minimum_cpu_features = 4 [json_name = "minimum_cpu_features"];
+  optional string node_version = 5 [json_name = "node_version"];
+  optional string prewarm_language = 6 [json_name = "prewarm_language"];
+  optional string python_version = 7 [json_name = "python_version"];
+  optional string runtime_inventory_sha256 = 8 [json_name = "runtime_inventory_sha256"];
+  optional string typescript_version = 9 [json_name = "typescript_version"];
+}
+
+message SignedCodeRuntimeOutputKernelScriptsSha256 {
+  map<string, string> values = 1 [json_name = "values"];
+}
+
+message SignedCodeRuntimeOutputMinimumCpuFeatures {
+  repeated string values = 1 [json_name = "values"];
+}
+
+message StartSessionCommandRequest {
+  SessionCommandRequestInput body = 1 [json_name = "body"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message StartSessionWatchRequest {
+  SessionWatchRequestInput body = 1 [json_name = "body"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message StartupTimingOutput {
+  optional int64 admission_us = 1 [json_name = "admission_us"];
+  optional int64 audit_us = 2 [json_name = "audit_us"];
+  optional int64 finalize_us = 3 [json_name = "finalize_us"];
+  optional int64 ownership_us = 4 [json_name = "ownership_us"];
+  optional int64 preparation_us = 5 [json_name = "preparation_us"];
+  optional int64 readiness_us = 6 [json_name = "readiness_us"];
+  optional string schema = 7 [json_name = "schema"];
+  optional int64 selection_us = 8 [json_name = "selection_us"];
+  optional int64 total_us = 9 [json_name = "total_us"];
+}
+
+message StatusResponseOutput {
+  optional string status = 1 [json_name = "status"];
+}
+
+message StopSessionWatchRequest {
+  optional string id = 1 [json_name = "id"];
+  optional string watch = 2 [json_name = "watch"];
+}
+
+message StreamSessionCommandRequest {
+  optional uint64 after = 1 [json_name = "after"];
+  optional string command = 2 [json_name = "command"];
+  optional string id = 3 [json_name = "id"];
+  optional uint64 timeout_ms = 4 [json_name = "timeout_ms"];
+}
+
+message SubmitCodeExecutionRequest {
+  CodeExecutionRequestInput body = 1 [json_name = "body"];
+  optional string id = 2 [json_name = "id"];
+}
+
+message SubmitCommandInputRequest {
+  SessionCommandInputRequestInput body = 1 [json_name = "body"];
+  optional string command = 2 [json_name = "command"];
+  optional string id = 3 [json_name = "id"];
+}
+
+message TemplateCatalogReportOutput {
+  optional string default_template_id = 1 [json_name = "default_template_id"];
+  optional string protocol = 2 [json_name = "protocol"];
+  TemplateCatalogReportOutputTemplates templates = 3 [json_name = "templates"];
+}
+
+message TemplateCatalogReportOutputTemplates {
+  repeated TemplateReportOutput values = 1 [json_name = "values"];
+}
+
+message TemplateCatalogRequest {
+}
+
+message TemplateReportOutput {
+  optional bool available = 1 [json_name = "available"];
+  CapabilityReportOutput capabilities = 2 [json_name = "capabilities"];
+  optional string id = 3 [json_name = "id"];
+  optional string unavailable_code = 4 [json_name = "unavailable_code"];
+}
+
+message TransportEmpty {
+}
+
+message VMCapacitySnapshotOutput {
+  optional int64 active = 1 [json_name = "active"];
+  optional int64 available_identities = 2 [json_name = "available_identities"];
+  optional bool blocked = 3 [json_name = "blocked"];
+  optional int64 instances = 4 [json_name = "instances"];
+  optional int64 reserved_memory_mib = 5 [json_name = "reserved_memory_mib"];
+  optional int64 reserved_pids = 6 [json_name = "reserved_pids"];
+  optional int64 reserved_vcpus = 7 [json_name = "reserved_vcpus"];
+}
+
+message VMInstanceSnapshotOutput {
+  VMInstanceSnapshotOutputStates states = 1 [json_name = "states"];
+  optional bool stopping = 2 [json_name = "stopping"];
+}
+
+message VMInstanceSnapshotOutputStates {
+  map<string, int64> values = 1 [json_name = "values"];
+}
+
+message WarmPoolSnapshotOutput {
+  optional int64 checking = 1 [json_name = "checking"];
+  optional bool degraded = 2 [json_name = "degraded"];
+  WarmPoolSnapshotOutputDiscarded discarded = 3 [json_name = "discarded"];
+  optional bool enabled = 4 [json_name = "enabled"];
+  optional int64 foreground = 5 [json_name = "foreground"];
+  optional bool healthy = 6 [json_name = "healthy"];
+  optional uint64 hits = 7 [json_name = "hits"];
+  optional bool memory_pressure = 8 [json_name = "memory_pressure"];
+  WarmPoolSnapshotOutputMisses misses = 9 [json_name = "misses"];
+  WarmPoolSnapshotOutputProfiles profiles = 10 [json_name = "profiles"];
+  optional uint64 refill_failures = 11 [json_name = "refill_failures"];
+  optional int64 retiring = 12 [json_name = "retiring"];
+  optional bool running = 13 [json_name = "running"];
+}
+
+message WarmPoolSnapshotOutputDiscarded {
+  map<string, uint64> values = 1 [json_name = "values"];
+}
+
+message WarmPoolSnapshotOutputMisses {
+  map<string, uint64> values = 1 [json_name = "values"];
+}
+
+message WarmPoolSnapshotOutputProfiles {
+  repeated WarmProfileSnapshotOutput values = 1 [json_name = "values"];
+}
+
+message WarmProfileSnapshotOutput {
+  optional string artifact_manifest_sha256 = 1 [json_name = "artifact_manifest_sha256"];
+  optional string backend = 2 [json_name = "backend"];
+  optional int64 booting = 3 [json_name = "booting"];
+  optional int64 desired = 4 [json_name = "desired"];
+  optional string key = 5 [json_name = "key"];
+  optional string name = 6 [json_name = "name"];
+  optional int64 ready = 7 [json_name = "ready"];
+  optional int64 retry_in_ms = 8 [json_name = "retry_in_ms"];
+  optional string template_id = 9 [json_name = "template_id"];
+}
+
+message WatchStopResponseOutput {
+  optional bool stopped = 1 [json_name = "stopped"];
+}
+
+service Control {
+  // DELETE /v2/sessions/{id}/code-executions/{execution}
+  rpc CancelCodeExecution (CancelCodeExecutionRequest) returns (CodeExecutionAcceptedResponseOutput);
+  // DELETE /v2/sessions/{id}/ports/{port}/connections/{connection}
+  rpc CancelPortConnection (CancelPortConnectionRequest) returns (PortConnectionResponseOutput);
+  // DELETE /v2/sessions/{id}/commands/{command}
+  rpc CancelSessionCommand (CancelSessionCommandRequest) returns (CommandCancelResponseOutput);
+  // GET /v1/capabilities
+  rpc Capabilities (CapabilitiesRequest) returns (CapabilityReportOutput);
+  // POST /v2/sessions/{id}/contexts
+  rpc CreateCodeContext (CreateCodeContextRequest) returns (CodeContextOutput);
+  // POST /v2/sessions/{id}/ports/{port}/previews/{preview}
+  rpc CreatePreview (CreatePreviewRequest) returns (PreviewGrantInfoOutput);
+  // POST /v2/sessions
+  rpc CreateSession (CreateSessionRequest) returns (SessionInfoOutput);
+  // POST /v2/sessions/{id}/artifacts
+  rpc CreateSessionArtifact (CreateSessionArtifactRequest) returns (SessionArtifactInfoOutput);
+  // POST /v2/sessions/{id}/contexts/default
+  rpc DefaultCodeContext (DefaultCodeContextRequest) returns (CodeContextOutput);
+  // DELETE /v2/sessions/{id}
+  rpc DeleteSession (DeleteSessionRequest) returns (DeleteSessionResponse);
+  // DELETE /v2/sessions/{id}/artifacts/{artifact}
+  rpc DeleteSessionArtifact (DeleteSessionArtifactRequest) returns (DeleteSessionArtifactResponse);
+  // GET /v2/sessions/{id}/contexts/{context}
+  rpc GetCodeContext (GetCodeContextRequest) returns (CodeContextOutput);
+  // GET /v2/sessions/{id}/code-executions/{execution}
+  rpc GetCodeExecution (GetCodeExecutionRequest) returns (CodeExecutionPageOutput);
+  // GET /v2/sessions/{id}/ports/{port}/connections/{connection}
+  rpc GetPortConnection (GetPortConnectionRequest) returns (PortConnectionResponseOutput);
+  // GET /v2/sessions/{id}/previews/{preview}
+  rpc GetPreview (GetPreviewRequest) returns (PreviewGrantInfoOutput);
+  // GET /v2/sessions/{id}
+  rpc GetSession (GetSessionRequest) returns (SessionInfoOutput);
+  // GET /healthz
+  rpc Health (HealthRequest) returns (StatusResponseOutput);
+  // GET /v1/doctor
+  rpc HostDoctor (HostDoctorRequest) returns (DoctorReportOutput);
+  // GET /v2/ml/bills/{task}
+  rpc InferenceBill (InferenceBillRequest) returns (InferenceBillOutput);
+  // POST /v2/sessions/{id}/ml/invocations
+  rpc InvokeInference (InvokeInferenceRequest) returns (InferenceInvokeResultOutput);
+  // GET /v2/sessions/{id}/contexts
+  rpc ListCodeContexts (ListCodeContextsRequest) returns (CodeContextsResponseOutput);
+  // GET /v2/sessions/{id}/commands
+  rpc ListSessionCommands (ListSessionCommandsRequest) returns (SessionCommandsResponseOutput);
+  // GET /v2/sessions/{id}/watches
+  rpc ListSessionWatches (ListSessionWatchesRequest) returns (SessionWatchesResponseOutput);
+  // GET /v2/sessions
+  rpc ListSessions (ListSessionsRequest) returns (SessionListPageOutput);
+  // POST /v2/net/fetch
+  rpc NetworkFetch (NetworkFetchRequest) returns (NetworkFetchResultOutput);
+  // POST /v2/sessions/{id}/ports/{port}/connections/{connection}
+  rpc OpenPortTunnel (stream PortClientFrame) returns (stream PortServerFrame);
+  // GET /v2/sessions/{id}/commands/{command}/stdin/{sequence}
+  rpc PollCommandInput (PollCommandInputRequest) returns (SessionCommandInputReceiptOutput);
+  // GET /v2/sessions/{id}/commands/{command}
+  rpc PollSessionCommand (PollSessionCommandRequest) returns (SessionCommandPageOutput);
+  // GET /v2/sessions/{id}/watches/{watch}
+  rpc PollSessionWatch (PollSessionWatchRequest) returns (SessionWatchPageOutput);
+  // GET /metrics
+  rpc PrometheusMetrics (PrometheusMetricsRequest) returns (MetricsText);
+  // POST /v2/sessions/{id}/artifacts/{artifact}/read
+  rpc ReadSessionArtifact (ReadSessionArtifactRequest) returns (SessionArtifactChunkOutput);
+  // GET /readyz
+  rpc Readiness (ReadinessRequest) returns (StatusResponseOutput);
+  // DELETE /v2/sessions/{id}/contexts/{context}
+  rpc RemoveCodeContext (RemoveCodeContextRequest) returns (CodeContextRemovedResponseOutput);
+  // POST /v2/sessions/{id}/contexts/{context}/restart
+  rpc RestartCodeContext (RestartCodeContextRequest) returns (CodeContextOutput);
+  // DELETE /v2/sessions/{id}/previews/{preview}
+  rpc RevokePreview (RevokePreviewRequest) returns (PreviewGrantInfoOutput);
+  // POST /v2/jobs
+  rpc RunJob (RunJobRequest) returns (RunResultOutput);
+  // POST /v1/jobs
+  rpc RunLegacyJob (RunLegacyJobRequest) returns (RunResultOutput);
+  // POST /v2/sessions/{id}/commands
+  rpc RunSessionCommand (RunSessionCommandRequest) returns (SessionCommandResultOutput);
+  // GET /v2/sessions/{id}/capabilities
+  rpc SessionCapabilities (SessionCapabilitiesRequest) returns (SessionCapabilityReportOutput);
+  // POST /v2/sessions/{id}/files
+  rpc SessionFile (SessionFileRequest) returns (SessionFileResultOutput);
+  // POST /v2/sessions/{id}/timeout
+  rpc SetSessionTimeout (SetSessionTimeoutRequest) returns (SessionInfoOutput);
+  // POST /v2/sessions/{id}/commands/start
+  rpc StartSessionCommand (StartSessionCommandRequest) returns (SessionCommandInfoOutput);
+  // POST /v2/sessions/{id}/watches
+  rpc StartSessionWatch (StartSessionWatchRequest) returns (SessionWatchInfoOutput);
+  // DELETE /v2/sessions/{id}/watches/{watch}
+  rpc StopSessionWatch (StopSessionWatchRequest) returns (WatchStopResponseOutput);
+  // GET /v2/sessions/{id}/commands/{command}/events
+  rpc StreamSessionCommand (StreamSessionCommandRequest) returns (stream SessionCommandStreamEvent);
+  // POST /v2/sessions/{id}/code-executions
+  rpc SubmitCodeExecution (SubmitCodeExecutionRequest) returns (CodeExecutionPageOutput);
+  // POST /v2/sessions/{id}/commands/{command}/stdin
+  rpc SubmitCommandInput (SubmitCommandInputRequest) returns (SessionCommandInputReceiptOutput);
+  // GET /v2/templates
+  rpc TemplateCatalog (TemplateCatalogRequest) returns (TemplateCatalogReportOutput);
+}

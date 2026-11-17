@@ -1,0 +1,46 @@
+name: Code CI
+on:
+  pull_request:
+    paths-ignore: ['docs/**', 'proposal/**', '**.md', 'LICENSE']
+  push:
+    branches: [main, master]
+    paths-ignore: ['docs/**', 'proposal/**', '**.md', 'LICENSE']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: code-ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version: '1.24.2'
+          cache: false
+      - name: Install Rust toolchain
+        run: rustup toolchain install 1.94.1 --profile minimal --component clippy --target x86_64-unknown-linux-musl
+      - name: Install syscall diagnostic test tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y strace python3.12-venv
+      - name: Install pinned offline Python validation tools
+        run: |
+          /usr/bin/python3.12 -m venv "$RUNNER_TEMP/osv-python-validation"
+          "$RUNNER_TEMP/osv-python-validation/bin/python3" -m pip install --no-index --require-hashes --find-links assets/build/python-validation -r deploy/requirements-validation.txt
+          echo "$RUNNER_TEMP/osv-python-validation/bin" >> "$GITHUB_PATH"
+      - name: Verify candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p results/ci
+          rustup run 1.94.1 rustc --version > results/ci/toolchains.txt
+          go version >> results/ci/toolchains.txt
+          RUSTUP_TOOLCHAIN=1.94.1 ./scripts/verify.sh ci 2>&1 | tee results/ci/verify.log
+          bash scripts/test-osv-vsock-protocol.sh 2>&1 | tee results/ci/osv-vsock-protocol.log
+      # Raw validation logs remain private; public release assets use an allowlist.

@@ -1,0 +1,148 @@
+{
+  "protocol": "osv-public-release-qualification/v1",
+  "version": "2026.11.17",
+  "passed": true,
+  "offline_install_and_run_architectures": [
+    "linux-amd64",
+    "linux-arm64"
+  ],
+  "offline_source_rebuild_required": false,
+  "warm_start_limits_ms": {
+    "p50": 5,
+    "p95": 9,
+    "p99": 15
+  },
+  "cold_start_limits_ms": {
+    "p50": 400,
+    "p95": 600,
+    "p99": 1000
+  },
+  "real_KVM_functional_fixtures": 21,
+  "ARM_no_network_QEMU_test_groups": 65,
+  "startup_formal_samples": 4000,
+  "startup_warmup_samples": 20,
+  "unique_startup_jobs_and_VMs": 4020,
+  "refill_availability_observations": 128,
+  "pool_case_scenarios_each_backend": 18,
+  "pool_management_programs_and_SDKs_equal_previous_qualified_build": true,
+  "Linux_guest_metadata_rebuilt_and_fresh_functional_acceptance": true,
+  "security_profile": "baseline",
+  "ARM_KVM_deferred": true,
+  "Kubernetes_deferred": true,
+  "custom_domain_TLS_deferred": true,
+  "artifact_valid_until": "2026-12-07T00:00:00Z",
+  "raw_evidence_and_business_data_excluded": true,
+  "mimalloc_overall_workload_speedup_attributed": false,
+  "candidate_sha256": {
+    "amd64": "464c22ac63eaaf4bb4c55547426521786c9361d80122aee95964a94ef43ddda2",
+    "arm64": "663f0008772ee2abe980c211fd90210370c9a0b8cc108ef5aa58572d7e81a045"
+  },
+  "signing_public_key_sha256": {
+    "release": "48ee193c24dbc39333c882dfb1e56bf748d52e7463108f1b16ec26a6619bcf2f",
+    "artifact": "544537a19d97209da8e86a9e02a73647f97857e82aec7973ccc1b67c20d3bef4"
+  },
+  "routes": {
+    "linuxwarm": {
+      "backend": "firecracker-linux",
+      "mode": "warm",
+      "formal_samples": 1000,
+      "warmup_samples": 5,
+      "startup_metric": "warm_start_ms",
+      "startup_percentiles_ms": {
+        "p50": 3.057,
+        "p95": 6.377,
+        "p99": 12.531,
+        "max": 19.626
+      },
+      "limits_ms": [
+        5,
+        9,
+        15
+      ],
+      "refill_availability_upper_bound_percentiles_ms": {
+        "p50": 482.984657,
+        "p95": 552.165347,
+        "p99": 569.945712,
+        "max": 569.945712
+      },
+      "refill_worker_entry_timed": false
+    },
+    "linuxcold": {
+      "backend": "firecracker-linux",
+      "mode": "cold",
+      "formal_samples": 1000,
+      "warmup_samples": 5,
+      "startup_metric": "cold_boot_ms",
+      "startup_percentiles_ms": {
+        "p50": 270.853,
+        "p95": 340.421,
+        "p99": 372.063,
+        "max": 437.429
+      },
+      "limits_ms": [
+        400,
+        600,
+        1000
+      ],
+      "refill_availability_upper_bound_percentiles_ms": {
+        "p50": 663.984586,
+        "p95": 796.950055,
+        "p99": 808.772671,
+        "max": 808.772671
+      },
+      "refill_worker_entry_timed": false
+    },
+    "osvwarm": {
+      "backend": "firecracker-osv",
+      "mode": "warm",
+      "formal_samples": 1000,
+      "warmup_samples": 5,
+      "startup_metric": "warm_start_ms",
+      "startup_percentiles_ms": {
+        "p50": 2.396,
+        "p95": 3.419,
+        "p99": 3.928,
+        "max": 5.251
+      },
+      "limits_ms": [
+        5,
+        9,
+        15
+      ],
+      "refill_availability_upper_bound_percentiles_ms": {
+        "p50": 504.325664,
+        "p95": 542.891364,
+        "p99": 567.491616,
+        "max": 567.491616
+      },
+      "refill_worker_entry_timed": false
+    },
+    "osvcold": {
+      "backend": "firecracker-osv",
+      "mode": "cold",
+      "formal_samples": 1000,
+      "warmup_samples": 5,
+      "startup_metric": "cold_boot_ms",
+      "startup_percentiles_ms": {
+        "p50": 61.153,
+        "p95": 78.905,
+        "p99": 89.152,
+        "max": 105.079
+      },
+      "limits_ms": [
+        400,
+        600,
+        1000
+      ],
+      "refill_availability_upper_bound_percentiles_ms": {
+        "p50": 515.775076,
+        "p95": 571.991791,
+        "p99": 615.128458,
+        "max": 615.128458
+      },
+      "refill_worker_entry_timed": false
+    }
+  },
+  "product_source_identity_sha256": "e3a05ce025f0f64748e3ca8a148d42a5d7da902169b6b9fa29129fe368c80fe0",
+  "product_source_files": 1358
+}

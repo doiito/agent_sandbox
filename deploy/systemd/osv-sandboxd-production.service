@@ -1,0 +1,47 @@
+[Unit]
+Description=Unprivileged AI Agent Sandbox API
+Documentation=file:/usr/share/doc/osv-sandbox/PRODUCTION.zh-CN.md
+After=network-online.target osv-sandbox-launcher.service
+Requires=osv-sandbox-launcher.service
+
+[Service]
+Type=simple
+User=osv-sandbox
+Group=osv-sandbox
+ExecStart=/usr/local/bin/osv-sandboxd -require-production -config /etc/osv-sandbox/config.production.json
+UMask=0077
+NoNewPrivileges=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectHostname=yes
+ProtectClock=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectProc=invisible
+ProcSubset=pid
+RestrictNamespaces=yes
+RestrictSUIDSGID=yes
+RestrictRealtime=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+RemoveIPC=yes
+ReadOnlyPaths=/etc/osv-sandbox
+ReadWritePaths=/run/osv-sandbox
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+TasksMax=256
+LimitNOFILE=4096
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

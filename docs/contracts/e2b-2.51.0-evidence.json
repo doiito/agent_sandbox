@@ -1,0 +1,370 @@
+{
+  "schema": "osv-e2b-compat-evidence/v1",
+  "upstream_commit": "ccaf9fc0ffe6ac39c7ec786af7608ab1de19467b",
+  "records": [
+    {
+      "operation": "command_handle.wait",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-command_handle.wait.json",
+        "sha256": "61686e3cf5ed13d3b305b0d41debe69e108ee8b068b613c328d4dc91e590177d"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-command_handle.wait.json",
+        "sha256": "e3dce86b16247cb80040c6f557e60ac01479f90d7e24113f607b2fb2cb7fb621"
+      }
+    },
+    {
+      "operation": "commands.close_stdin",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-commands.close_stdin.json",
+        "sha256": "2186963997504d4ae45cbf45e6bb00f9098126d1655382379d028456a799d47a"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-commands.close_stdin.json",
+        "sha256": "8d6b51973969ab79a9298ef0fe2c82d97046e2cafd77a86290b3e98c5f1704fe"
+      }
+    },
+    {
+      "operation": "commands.connect",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-commands.connect.json",
+        "sha256": "a5a3e5092344370f06f245e67a675531dff18ceab8b4f6808178e516911ca7bb"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-commands.connect.json",
+        "sha256": "5c90c05aa00f8bef0f76bbcdee3da89fe829fc1bf054d455fd5efb814a32be2e"
+      }
+    },
+    {
+      "operation": "commands.kill",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-commands.kill.json",
+        "sha256": "c5810d2d0926f6ac29f44b10929acacfe0885b6cb19a88904d31cf05fbab71cb"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-commands.kill.json",
+        "sha256": "05b86b89abdf26c82f895d5b66f277ba48e1587c89be12d870213f71360bef88"
+      }
+    },
+    {
+      "operation": "commands.list",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-commands.list.json",
+        "sha256": "2701f7d0b954e8a880164e0ca9e96fe073808db456976298ffffa3743ceae3df"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-commands.list.json",
+        "sha256": "e6d51104827b5a9ea10f80622414d49ee44646bb5caf6a167a01337509b59cb7"
+      }
+    },
+    {
+      "operation": "commands.run",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-commands.run.json",
+        "sha256": "f3429f2b978fa40661e6c8f00da9096517bb5bcf43ac11025415e761fd0ff98a"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-commands.run.json",
+        "sha256": "8ad5543a0fd5f44473e338aff5c3e1703d786bf414d5406647d3a2bd258d7af0"
+      }
+    },
+    {
+      "operation": "commands.send_stdin",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-commands.send_stdin.json",
+        "sha256": "d93e4e9bdaeca9d903ae4cff03e7921dc1c3cc9c62a53c264cdffbc06c29ed16"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-commands.send_stdin.json",
+        "sha256": "d5517a084d63ba60dfb9aa94a201a8946791014a6a7ccdca54dfa11d2370094f"
+      }
+    },
+    {
+      "operation": "files.exists",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-files.exists.json",
+        "sha256": "1bd4d73dfaa85061824ad9e4637cfb6d4356f258f98d5b050737f3194e3985b6"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-files.exists.json",
+        "sha256": "a1058fb8c418c94e2cb95a72a60b9cd70a87a0120313745a336a95dc170c817c"
+      }
+    },
+    {
+      "operation": "files.get_info",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-files.get_info.json",
+        "sha256": "3eca72589474af2c6d5259d5b8184bbc5006a445c4e14b5b8fa5111b67106a28"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-files.get_info.json",
+        "sha256": "47df73d2498a722f90c4ef4e504c640aafb7d2950a3bde9a2b65cf47ba589d29"
+      }
+    },
+    {
+      "operation": "files.list",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-files.list.json",
+        "sha256": "24ae6c0c3667a545b5ddddfb89614f0d0308496c3e33d2bd384355b2d5e0ddfb"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-files.list.json",
+        "sha256": "ef6a7bd238bd7a4a4b3a9a7f1b2e2d55be7b878e385658877d7b173efe9f5ed8"
+      }
+    },
+    {
+      "operation": "files.make_dir",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-files.make_dir.json",
+        "sha256": "7c93cf8aac17af66d3c4c4bf82a839fff493c15c54309557b73a7b178641c676"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-files.make_dir.json",
+        "sha256": "a4fd9e556beff38a331c30b6b4b7d33b8fcfcfca66901ace3ebb31a9381a8a5a"
+      }
+    },
+    {
+      "operation": "files.read",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-files.read.json",
+        "sha256": "d5046046833590bc92f49aac3e01007b49b1755217c38023161f4ecb536c929c"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-files.read.json",
+        "sha256": "f7ef13c4ed32610bc2ba3188d85716956fb2545f6f97f0f5542b360bdf3d3047"
+      }
+    },
+    {
+      "operation": "files.remove",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-files.remove.json",
+        "sha256": "09ef3e1c69b793a0f4b3e1dd10cb5a5171853954194bb07d9b89f22a85cd2ad0"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-files.remove.json",
+        "sha256": "991867c7e4ee165575671823096bac1e5523531bbce8a629316f1dddc015c041"
+      }
+    },
+    {
+      "operation": "files.rename",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-files.rename.json",
+        "sha256": "477be46acff6b82cc5391960a71df399c3c362e5dae14b735bc56d9d8dd551c7"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-files.rename.json",
+        "sha256": "bcc1e8788b7d333abbecd9c00636e3a71adecbf58a65a19aceb6bd507ba5bf10"
+      }
+    },
+    {
+      "operation": "files.write",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-files.write.json",
+        "sha256": "576754f1529472cbb4cf5d5724e9cf904fbf7eec033287e3a3abc97d6363c777"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-files.write.json",
+        "sha256": "28289b702d86d6505692c36d29fa15e79222fdbb3da3f7b8e097036f024762fd"
+      }
+    },
+    {
+      "operation": "files.write_files",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-files.write_files.json",
+        "sha256": "673ed5edc935625e21c67e9af19ab04f7070c4c8d60f6e930612878b5206bb05"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-files.write_files.json",
+        "sha256": "8e85721c4564421f983d7add38368ecd2630767878f8db95dfcecf2cc66a8402"
+      }
+    },
+    {
+      "operation": "sandbox.create",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-sandbox.create.json",
+        "sha256": "f197f62b7d889f183be39ca4c567925a3f4ec44d171f4b5a8a8c4320a830647a"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-sandbox.create.json",
+        "sha256": "3b9cf77e64f2ed1ecfca038534f9ad55c49b39825a511a2f3357aa267cc9f176"
+      }
+    },
+    {
+      "operation": "sandbox.get_info",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-sandbox.get_info.json",
+        "sha256": "2d0124b999285855067254c52946215bb9e62941eda91c647b6077b5fdf37942"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-sandbox.get_info.json",
+        "sha256": "3579b18c90d25c09123f7830a259c4997e23930731bcf16bb1d917b18b7a6c48"
+      }
+    },
+    {
+      "operation": "sandbox.is_running",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-sandbox.is_running.json",
+        "sha256": "55adfaa0037cefb7c2b4b5905f40cf248446ffab115e602cb6c363f945e24c43"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-sandbox.is_running.json",
+        "sha256": "eedd058ea8e5ccf5ef009ccd613193a808137781ff0c607c039ce061411976ff"
+      }
+    },
+    {
+      "operation": "sandbox.kill",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-sandbox.kill.json",
+        "sha256": "ed6b650f4acc40b19e5a6fab4d807dc1c25b7956cd737965d019d49506e740cb"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-sandbox.kill.json",
+        "sha256": "bbea9178f4db8108e88c924858301919926d4ebca4d067030962aebc2e6b83fe"
+      }
+    },
+    {
+      "operation": "sandbox.list",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-sandbox.list.json",
+        "sha256": "300c1a30067ef38b564dfd188c91b4cb75aa0f1ecd29b506e73c87445b3fd253"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-sandbox.list.json",
+        "sha256": "c9bda823811039851fe742cee9e5a59ad0f59536a1dc8dd241b8cf135da053b5"
+      }
+    },
+    {
+      "operation": "sandbox.set_timeout",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-sandbox.set_timeout.json",
+        "sha256": "21e02f46774afaff9bfaaf1e5d3b07fc4cc9dc04e92a0d534ded756259d224bd"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-sandbox.set_timeout.json",
+        "sha256": "d73d6289d3382898db44b8566854e0b43491b6d31ac47edbea6da5924cedf023"
+      }
+    },
+    {
+      "operation": "files.watch_dir",
+      "candidate_archive": "dist/osv-sandbox-2026.11.04-rc70-linux-amd64.test-signed.tar",
+      "candidate_sha256": "b25b7e2ac981367f3b01009e636b6297dae67566ed0b8b95256b17a1fe117f8a",
+      "python": {
+        "path": "results/e2b-2.51.0/rc70/python-files.watch_dir.json",
+        "sha256": "f7f0c24cee1de3a78e1f0d996672ca4be26f9fbee43fba08bcdab3613ab541f1"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc70/typescript-files.watch_dir.json",
+        "sha256": "2975f0cb3e9daa157e93e05888d00fc2e06187b01b1bf84b1fe62e872a0aed22"
+      }
+    },
+    {
+      "operation": "code.run_code",
+      "candidate_archive": "dist/osv-sandbox-2026.11.06-rc74-linux-amd64.test-signed.tar",
+      "candidate_sha256": "777f14b73feea0e61a835c4e6366f7cd7bfcb0f1dd6cc7ed400b649f38ebb4c5",
+      "python": {
+        "path": "results/e2b-2.51.0/rc74/python-code.run_code.json",
+        "sha256": "bf84755a4753d062d86cd0be61a0de0609733f127b9ad3911384488a1824a012"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc74/typescript-code.run_code.json",
+        "sha256": "af10ca3fe30f9dd91790a908c735503862269ce6dae6cb5df5c7e26760c7296a"
+      }
+    },
+    {
+      "operation": "code.create_context",
+      "candidate_archive": "dist/osv-sandbox-2026.11.06-rc74-linux-amd64.test-signed.tar",
+      "candidate_sha256": "777f14b73feea0e61a835c4e6366f7cd7bfcb0f1dd6cc7ed400b649f38ebb4c5",
+      "python": {
+        "path": "results/e2b-2.51.0/rc74/python-code.create_context.json",
+        "sha256": "0f978d0d556ead5a2ca8081d07af533b3e6c4a53b7706eb0469e1bc98a1eb9c4"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc74/typescript-code.create_context.json",
+        "sha256": "a9eb4ea0b4ec284f399178e911c4a63f3f75c9dde27d61a5e5f44847e335c1ba"
+      }
+    },
+    {
+      "operation": "code.list_contexts",
+      "candidate_archive": "dist/osv-sandbox-2026.11.06-rc74-linux-amd64.test-signed.tar",
+      "candidate_sha256": "777f14b73feea0e61a835c4e6366f7cd7bfcb0f1dd6cc7ed400b649f38ebb4c5",
+      "python": {
+        "path": "results/e2b-2.51.0/rc74/python-code.list_contexts.json",
+        "sha256": "3a7b1e369015b0d702737fcdad025f47a5ab376eb7c612ee97f74e3200bea920"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc74/typescript-code.list_contexts.json",
+        "sha256": "a971590cb0856475b091ea37cda8362c306d727da9a89092f892fdf4dd51e035"
+      }
+    },
+    {
+      "operation": "code.restart_context",
+      "candidate_archive": "dist/osv-sandbox-2026.11.06-rc74-linux-amd64.test-signed.tar",
+      "candidate_sha256": "777f14b73feea0e61a835c4e6366f7cd7bfcb0f1dd6cc7ed400b649f38ebb4c5",
+      "python": {
+        "path": "results/e2b-2.51.0/rc74/python-code.restart_context.json",
+        "sha256": "42fa90b75b6d317ff7f970e2ee2d74d68f006de0d9c3c72488f2ec024940c42a"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc74/typescript-code.restart_context.json",
+        "sha256": "eb421616ad55bf8d23c0c74b7de61c569db405e2a552843e296645f5839c2330"
+      }
+    },
+    {
+      "operation": "code.remove_context",
+      "candidate_archive": "dist/osv-sandbox-2026.11.06-rc74-linux-amd64.test-signed.tar",
+      "candidate_sha256": "777f14b73feea0e61a835c4e6366f7cd7bfcb0f1dd6cc7ed400b649f38ebb4c5",
+      "python": {
+        "path": "results/e2b-2.51.0/rc74/python-code.remove_context.json",
+        "sha256": "6dd09045307f8e7b5c063d4d6380c910670f4e536feca00f77c961553256fc22"
+      },
+      "typescript": {
+        "path": "results/e2b-2.51.0/rc74/typescript-code.remove_context.json",
+        "sha256": "5a28d36e3581fc3ab9fd20491c6dcc9d18de90069a675acf4d33169ba94bbf62"
+      }
+    }
+  ]
+}

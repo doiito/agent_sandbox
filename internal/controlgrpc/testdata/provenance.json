@@ -1,0 +1,8 @@
+{
+  "source": "results/2026-11-10-rest-wire-contract/native-targeted-r1/actual-encoder-samples.json",
+  "sha256": "4b9bd99940b1c792897ac40e8171f9e9abbea0dd9652dbd4ec2ca10682258e64",
+  "source_receipt": "results/2026-11-10-rest-wire-contract/native-targeted-r1/receipt.json",
+  "actual_Go_encoder_samples": 43,
+  "first_generator_suite_passed_in_prior_receipt": true,
+  "other_prior_sandbox_compile_failure_does_not_change_these_samples": true
+}

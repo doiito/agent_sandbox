@@ -1,0 +1,19 @@
+{
+  "protocol": "osv-vulnerability-query-policy/v1",
+  "endpoint": "https://api.osv.dev/v1/query",
+  "ubuntu_distribution": "ubuntu-22.04",
+  "ubuntu_ecosystem": "Ubuntu:22.04:LTS",
+  "maximum_age_hours": 24,
+  "maximum_pages_per_query": 32,
+  "maximum_response_bytes": 33554432,
+  "timeout_seconds": 20,
+  "own_code_refs": [
+    "runtime:project-entry", "runtime:project-agent",
+    "urn:osv:artifact:osv-job-agent", "urn:osv:artifact:osv-module/python3.12.so"
+  ],
+  "metadata_refs": ["runtime:build-metadata", "runtime:license-texts"],
+  "sources": [
+    "https://google.github.io/osv.dev/post-v1-query/",
+    "https://ossf.github.io/osv-schema/#affectedpackage-field"
+  ]
+}

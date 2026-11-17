@@ -1,0 +1,114 @@
+{
+  "capabilities": {
+    "protocol": "osv-sandbox-capabilities/v1",
+    "session_id": "aaaaaaaaaaaaaaaaaaaaaaaa",
+    "backend": "firecracker-linux",
+    "artifact_authenticated": true,
+    "artifact_manifest_protocol": "osv-sandbox-artifacts/v7",
+    "artifact_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "allowed_entrypoints": [
+      "/bin/sh"
+    ],
+    "methods": [
+      "POST /v2/sessions/{id}/ml/invocations",
+      "GET /v2/ml/bills/{task}"
+    ],
+    "features": {
+      "sessions": true,
+      "remote_inference": true,
+      "network_egress": true,
+      "inference_billing": true
+    },
+    "remote_inference_policy": {
+      "protocol": "osv-sandbox-inference-capabilities/v1",
+      "endpoints": [
+        {
+          "name": "model",
+          "price": {
+            "request_units": "9007199254740993",
+            "input_byte_units": "2",
+            "output_byte_units": "3"
+          }
+        }
+      ],
+      "max_request_bytes": 128,
+      "max_response_bytes": 128,
+      "timeout_ms": 1000,
+      "max_invocations": 16,
+      "budget_units": "18446744073709551615"
+    }
+  },
+  "session": {
+    "id": "aaaaaaaaaaaaaaaaaaaaaaaa",
+    "state": "running",
+    "backend": "firecracker-linux",
+    "artifact_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "created_at": "2026-11-07T00:00:00Z",
+    "expires_at": "2026-11-07T00:05:00Z",
+    "network": "proxy"
+  },
+  "result": {
+    "protocol": "osv-sandbox-inference-invoke/v1",
+    "task_id": "aaaaaaaaaaaaaaaaaaaaaaaa",
+    "invocation": {
+      "id": "dddddddddddddddddddddddd",
+      "endpoint": "model",
+      "state": "succeeded",
+      "epoch": "cccccccccccccccccccccccc",
+      "price": {
+        "request_units": "9007199254740993",
+        "input_byte_units": "2",
+        "output_byte_units": "3"
+      },
+      "input_bytes": 14,
+      "max_output_bytes": 128,
+      "output_bytes": 15,
+      "dispatched": true,
+      "http_status": 200,
+      "reserved_units": "9007199254741405",
+      "settled_units": "9007199254741066",
+      "started_at": "2026-11-07T00:00:00Z",
+      "finished_at": "2026-11-07T00:00:00.002Z",
+      "duration_ms": 2
+    },
+    "data": {
+      "answer": "ok"
+    }
+  },
+  "bill": {
+    "protocol": "osv-sandbox-inference-bill/v1",
+    "tenant": "tenant-a",
+    "task_id": "aaaaaaaaaaaaaaaaaaaaaaaa",
+    "vm_id": "bbbbbbbbbbbbbbbbbbbbbbbb",
+    "lease_id": "aaaaaaaaaaaaaaaaaaaaaaaa",
+    "closed": true,
+    "unit": "microcredits",
+    "max_invocations": 16,
+    "budget_units": "18446744073709551615",
+    "settled_units": "9007199254741066",
+    "held_units": "0",
+    "invocations": [
+      {
+        "id": "dddddddddddddddddddddddd",
+        "endpoint": "model",
+        "state": "succeeded",
+        "epoch": "cccccccccccccccccccccccc",
+        "price": {
+          "request_units": "9007199254740993",
+          "input_byte_units": "2",
+          "output_byte_units": "3"
+        },
+        "input_bytes": 14,
+        "max_output_bytes": 128,
+        "output_bytes": 15,
+        "dispatched": true,
+        "http_status": 200,
+        "reserved_units": "9007199254741405",
+        "settled_units": "9007199254741066",
+        "started_at": "2026-11-07T00:00:00Z",
+        "finished_at": "2026-11-07T00:00:00.002Z",
+        "duration_ms": 2
+      }
+    ]
+  }
+}

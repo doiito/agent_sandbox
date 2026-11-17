@@ -1,0 +1,10 @@
+{
+  "schema": "osv-publication-privacy/v1",
+  "required_for_github": true,
+  "private_policy_published": false,
+  "source_allowlist_required": true,
+  "clean_public_history_required": true,
+  "raw_host_and_business_evidence_published": false,
+  "all_final_assets_hash_bound": true,
+  "checks": ["operator-identities", "credentials", "private-keys", "local-paths", "business-data-exclusion", "nested-archives", "binary-and-disk-images"]
+}

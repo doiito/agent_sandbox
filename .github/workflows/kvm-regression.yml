@@ -1,0 +1,24 @@
+name: Published qualification summary
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-summary:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Check published aggregate qualification
+        # Actual KVM jobs run privately; server inputs and raw records never enter Actions.
+        run: |
+          python3 - <<'PYCODE'
+          import json
+          from pathlib import Path
+          value=json.loads(Path('RELEASE-QUALIFICATION.json').read_text())
+          assert value['protocol']=='osv-public-release-qualification/v1' and value['passed']
+          assert value['real_KVM_functional_fixtures']==21
+          assert value['startup_formal_samples']==4000
+          print('Published aggregate qualification is valid; this workflow does not execute KVM tests.')
+          PYCODE

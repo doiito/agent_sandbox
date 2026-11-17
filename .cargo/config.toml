@@ -1,0 +1,15 @@
+[source.crates-io]
+replace-with = "osv-project-vendor"
+
+[source.osv-project-vendor]
+directory = "assets/build/cargo-vendor"
+
+[env]
+SOURCE_DATE_EPOCH = { value = "0", force = true }
+CC_x86_64_unknown_linux_musl = { value = "scripts/musl-cc-x86_64.sh", relative = true }
+CC_aarch64_unknown_linux_musl = { value = "scripts/musl-cc-aarch64.sh", relative = true }
+AR_x86_64_unknown_linux_musl = "llvm-ar"
+AR_aarch64_unknown_linux_musl = "llvm-ar"
+
+[target.aarch64-unknown-linux-musl]
+linker = "rust-lld"

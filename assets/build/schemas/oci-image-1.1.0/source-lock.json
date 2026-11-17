@@ -1,0 +1,17 @@
+{
+  "protocol": "osv-oci-image-schemas/v1",
+  "version": "1.1.0",
+  "repository": "https://github.com/opencontainers/image-spec",
+  "commit": "e7f7c0ca69b21688c3cea7c87a04e4503e6099e2",
+  "tag_object": "c57b841ead3a158c9a6532735929c55e8648a4ec",
+  "files_sha256": {
+    "LICENSE": "b0a3f39513927db306adabea11d14c23f079d4febcea241d123a68d1a0d45418",
+    "config-schema.json": "089fcf3cf65a378873ffd5bdf450098de95a0a52def0ef41a57ae33275654ba8",
+    "content-descriptor.json": "d7838a1fd129ff35f2d6461bfd8424e783c1e0185473d2547c09f2d5e8bb4ad4",
+    "defs-descriptor.json": "ce145641bd65adcf46f9ef1fe17c4cda2dd84fc49c25f2c3141334f35e7e4983",
+    "defs.json": "23b4abe55230e4bc7f521dc08e5261e9f1aece585059d6581300e9c56eb1420e",
+    "image-index-schema.json": "1a4641a610933fac77db9af7a83664d54883efac180f8867efd0497048e1a82e",
+    "image-layout-schema.json": "272dbf81baeb72c105298b6d56553de68b4aee676efff5a44d171f0761395545",
+    "image-manifest-schema.json": "040ba9c116f1013175f5be6eb2620d87ca98cd90edc74548ee98ee89394aa4a2"
+  }
+}

@@ -1,0 +1,2 @@
+/vsock-test.so: ${MODULE_DIR}/vsock-test.so
+/task-probe.so: ${MODULE_DIR}/task-probe.so

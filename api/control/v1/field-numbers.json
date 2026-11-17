@@ -1,0 +1,5502 @@
+{
+  "messages": {
+    "APIErrorResponseOutput": {
+      "fields": {
+        "code": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "error": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CancelCodeExecutionRequest": {
+      "fields": {
+        "context_id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "execution": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "generation": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "CancelPortConnectionRequest": {
+      "fields": {
+        "connection": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "request"
+    },
+    "CancelSessionCommandRequest": {
+      "fields": {
+        "command": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "CapabilitiesRequest": {
+      "fields": {
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "CapabilityFeaturesOutput": {
+      "fields": {
+        "argv": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bool"
+        },
+        "background_commands": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bool"
+        },
+        "cancellation": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "bool"
+        },
+        "code_contexts": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "bool"
+        },
+        "environment": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "bool"
+        },
+        "exit_code": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "bool"
+        },
+        "file_watch": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "bool"
+        },
+        "file_watch_entry": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "bool"
+        },
+        "inference_billing": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "bool"
+        },
+        "input_files": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "bool"
+        },
+        "interactive_stdin": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "bool"
+        },
+        "network_egress": {
+          "cardinality": "singular",
+          "number": 12,
+          "oneof": null,
+          "type": "bool"
+        },
+        "network_fetch": {
+          "cardinality": "singular",
+          "number": 13,
+          "oneof": null,
+          "type": "bool"
+        },
+        "one_shot_job": {
+          "cardinality": "singular",
+          "number": 14,
+          "oneof": null,
+          "type": "bool"
+        },
+        "pause_resume": {
+          "cardinality": "singular",
+          "number": 15,
+          "oneof": null,
+          "type": "bool"
+        },
+        "persistent_workspace": {
+          "cardinality": "singular",
+          "number": 16,
+          "oneof": null,
+          "type": "bool"
+        },
+        "port_forward": {
+          "cardinality": "singular",
+          "number": 17,
+          "oneof": null,
+          "type": "bool"
+        },
+        "port_preview": {
+          "cardinality": "singular",
+          "number": 18,
+          "oneof": null,
+          "type": "bool"
+        },
+        "recursive_file_watch": {
+          "cardinality": "singular",
+          "number": 19,
+          "oneof": null,
+          "type": "bool"
+        },
+        "remote_inference": {
+          "cardinality": "singular",
+          "number": 20,
+          "oneof": null,
+          "type": "bool"
+        },
+        "session_artifacts": {
+          "cardinality": "singular",
+          "number": 35,
+          "oneof": null,
+          "type": "bool"
+        },
+        "session_environment": {
+          "cardinality": "singular",
+          "number": 21,
+          "oneof": null,
+          "type": "bool"
+        },
+        "session_files": {
+          "cardinality": "singular",
+          "number": 22,
+          "oneof": null,
+          "type": "bool"
+        },
+        "session_listing": {
+          "cardinality": "singular",
+          "number": 23,
+          "oneof": null,
+          "type": "bool"
+        },
+        "session_timeout_update": {
+          "cardinality": "singular",
+          "number": 24,
+          "oneof": null,
+          "type": "bool"
+        },
+        "session_working_directory": {
+          "cardinality": "singular",
+          "number": 25,
+          "oneof": null,
+          "type": "bool"
+        },
+        "sessions": {
+          "cardinality": "singular",
+          "number": 26,
+          "oneof": null,
+          "type": "bool"
+        },
+        "snapshots": {
+          "cardinality": "singular",
+          "number": 27,
+          "oneof": null,
+          "type": "bool"
+        },
+        "stderr": {
+          "cardinality": "singular",
+          "number": 28,
+          "oneof": null,
+          "type": "bool"
+        },
+        "stdin": {
+          "cardinality": "singular",
+          "number": 29,
+          "oneof": null,
+          "type": "bool"
+        },
+        "stdout": {
+          "cardinality": "singular",
+          "number": 30,
+          "oneof": null,
+          "type": "bool"
+        },
+        "streaming_output": {
+          "cardinality": "singular",
+          "number": 31,
+          "oneof": null,
+          "type": "bool"
+        },
+        "timeout": {
+          "cardinality": "singular",
+          "number": 32,
+          "oneof": null,
+          "type": "bool"
+        },
+        "warm_pool": {
+          "cardinality": "singular",
+          "number": 33,
+          "oneof": null,
+          "type": "bool"
+        },
+        "working_directory": {
+          "cardinality": "singular",
+          "number": 34,
+          "oneof": null,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "CapabilityLimitsOutput": {
+      "fields": {
+        "code_contexts": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "int64"
+        },
+        "code_event_page": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "int64"
+        },
+        "code_execution_ids": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "int64"
+        },
+        "code_output_bytes": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "int64"
+        },
+        "code_source_bytes": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "int64"
+        },
+        "command_history": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "int64"
+        },
+        "command_input_chunk_bytes": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "int64"
+        },
+        "command_input_requests": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "int64"
+        },
+        "command_input_total_bytes": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "int64"
+        },
+        "command_output_bytes": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "int64"
+        },
+        "command_output_events": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "int64"
+        },
+        "file_watch_active": {
+          "cardinality": "singular",
+          "number": 12,
+          "oneof": null,
+          "type": "int64"
+        },
+        "file_watch_bytes": {
+          "cardinality": "singular",
+          "number": 13,
+          "oneof": null,
+          "type": "int64"
+        },
+        "file_watch_directories": {
+          "cardinality": "singular",
+          "number": 14,
+          "oneof": null,
+          "type": "int64"
+        },
+        "file_watch_events": {
+          "cardinality": "singular",
+          "number": 15,
+          "oneof": null,
+          "type": "int64"
+        },
+        "file_watch_history": {
+          "cardinality": "singular",
+          "number": 16,
+          "oneof": null,
+          "type": "int64"
+        },
+        "file_watch_page": {
+          "cardinality": "singular",
+          "number": 17,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_argument_bytes": {
+          "cardinality": "singular",
+          "number": 18,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_arguments": {
+          "cardinality": "singular",
+          "number": 19,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_concurrent": {
+          "cardinality": "singular",
+          "number": 20,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_env_bytes": {
+          "cardinality": "singular",
+          "number": 21,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_env_entries": {
+          "cardinality": "singular",
+          "number": 22,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_input_bytes": {
+          "cardinality": "singular",
+          "number": 23,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_input_files": {
+          "cardinality": "singular",
+          "number": 24,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_memory_mib": {
+          "cardinality": "singular",
+          "number": 25,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_output_bytes": {
+          "cardinality": "singular",
+          "number": 26,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_stdin_bytes": {
+          "cardinality": "singular",
+          "number": 27,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_timeout_ms": {
+          "cardinality": "singular",
+          "number": 28,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_vcpus": {
+          "cardinality": "singular",
+          "number": 29,
+          "oneof": null,
+          "type": "int64"
+        },
+        "min_memory_mib": {
+          "cardinality": "singular",
+          "number": 30,
+          "oneof": null,
+          "type": "int64"
+        },
+        "port_connection_ids": {
+          "cardinality": "singular",
+          "number": 31,
+          "oneof": null,
+          "type": "int64"
+        },
+        "port_connections": {
+          "cardinality": "singular",
+          "number": 32,
+          "oneof": null,
+          "type": "int64"
+        },
+        "port_frame_bytes": {
+          "cardinality": "singular",
+          "number": 33,
+          "oneof": null,
+          "type": "int64"
+        },
+        "port_max_bytes": {
+          "cardinality": "singular",
+          "number": 34,
+          "oneof": null,
+          "type": "int64"
+        },
+        "port_tenant_connections": {
+          "cardinality": "singular",
+          "number": 35,
+          "oneof": null,
+          "type": "int64"
+        },
+        "port_timeout_ms": {
+          "cardinality": "singular",
+          "number": 36,
+          "oneof": null,
+          "type": "int64"
+        },
+        "preview_grant_ids": {
+          "cardinality": "singular",
+          "number": 37,
+          "oneof": null,
+          "type": "int64"
+        },
+        "preview_grants": {
+          "cardinality": "singular",
+          "number": 38,
+          "oneof": null,
+          "type": "int64"
+        },
+        "preview_request_bytes": {
+          "cardinality": "singular",
+          "number": 39,
+          "oneof": null,
+          "type": "int64"
+        },
+        "preview_requests": {
+          "cardinality": "singular",
+          "number": 40,
+          "oneof": null,
+          "type": "int64"
+        },
+        "preview_ttl_ms": {
+          "cardinality": "singular",
+          "number": 41,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_artifact_count": {
+          "cardinality": "singular",
+          "number": 46,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_artifact_depth": {
+          "cardinality": "singular",
+          "number": 47,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_artifact_entries": {
+          "cardinality": "singular",
+          "number": 48,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_artifact_max_bytes": {
+          "cardinality": "singular",
+          "number": 49,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_artifact_path_bytes": {
+          "cardinality": "singular",
+          "number": 50,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_artifact_read_bytes": {
+          "cardinality": "singular",
+          "number": 51,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_file_max_bytes": {
+          "cardinality": "singular",
+          "number": 42,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_list_page_max": {
+          "cardinality": "singular",
+          "number": 43,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_max_lifetime_ms": {
+          "cardinality": "singular",
+          "number": 44,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_max_ttl_ms": {
+          "cardinality": "singular",
+          "number": 45,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "CapabilityReportOutput": {
+      "fields": {
+        "allowed_entrypoints": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "CapabilityReportOutputAllowedEntrypoints"
+        },
+        "artifact_authenticated": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bool"
+        },
+        "artifact_manifest_protocol": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "code_languages": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "CapabilityReportOutputCodeLanguages"
+        },
+        "code_runtime": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "SignedCodeRuntimeOutput"
+        },
+        "features": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "CapabilityFeaturesOutput"
+        },
+        "guest_result_protocol": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "string"
+        },
+        "limits": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "CapabilityLimitsOutput"
+        },
+        "methods": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "CapabilityReportOutputMethods"
+        },
+        "network_fetch_policy": {
+          "cardinality": "singular",
+          "number": 12,
+          "oneof": null,
+          "type": "EgressPolicyOutput"
+        },
+        "port_forward_policy": {
+          "cardinality": "singular",
+          "number": 13,
+          "oneof": null,
+          "type": "PortPolicyOutput"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "number": 14,
+          "oneof": null,
+          "type": "string"
+        },
+        "remote_inference_policy": {
+          "cardinality": "singular",
+          "number": 15,
+          "oneof": null,
+          "type": "InferenceCapabilitiesOutput"
+        },
+        "stage": {
+          "cardinality": "singular",
+          "number": 16,
+          "oneof": null,
+          "type": "string"
+        },
+        "template_id": {
+          "cardinality": "singular",
+          "number": 17,
+          "oneof": null,
+          "type": "string"
+        },
+        "workload": {
+          "cardinality": "singular",
+          "number": 18,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CapabilityReportOutputAllowedEntrypoints": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "CapabilityReportOutputCodeLanguages": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "CapabilityReportOutputMethods": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "CodeContextCreateRequestInput": {
+      "fields": {
+        "context_id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "cwd": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "language": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeContextDefaultRequestInput": {
+      "fields": {
+        "language": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeContextOutput": {
+      "fields": {
+        "cwd": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "discarded_late_bytes": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "discarded_late_events": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "failure": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "generation": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        },
+        "language": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "string"
+        },
+        "pid": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "string"
+        },
+        "state": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeContextRemovedResponseOutput": {
+      "fields": {
+        "context_id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "removed": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bool"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeContextRestartRequestInput": {
+      "fields": {
+        "generation": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeContextsResponseOutput": {
+      "fields": {
+        "contexts": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "CodeContextsResponseOutputContexts"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeContextsResponseOutputContexts": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "CodeContextOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "CodeEventOutput": {
+      "fields": {
+        "error": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": "event",
+          "type": "CodeEventOutputError"
+        },
+        "finished": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": "event",
+          "type": "CodeEventOutputFinished"
+        },
+        "result": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": "event",
+          "type": "CodeEventOutputResult"
+        },
+        "started": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": "event",
+          "type": "CodeEventOutputStarted"
+        },
+        "stderr": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": "event",
+          "type": "CodeEventOutputStderr"
+        },
+        "stdout": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": "event",
+          "type": "CodeEventOutputStdout"
+        }
+      },
+      "kind": "union"
+    },
+    "CodeEventOutputError": {
+      "fields": {
+        "name": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "traceback": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "value": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeEventOutputFinished": {
+      "fields": {
+        "context_usable": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bool"
+        },
+        "status": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeEventOutputResult": {
+      "fields": {
+        "data": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "CodeEventOutputResultData"
+        },
+        "is_main_result": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeEventOutputResultData": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "JsonValue"
+        }
+      },
+      "kind": "map"
+    },
+    "CodeEventOutputStarted": {
+      "fields": {},
+      "kind": "object"
+    },
+    "CodeEventOutputStderr": {
+      "fields": {
+        "data": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bytes"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeEventOutputStdout": {
+      "fields": {
+        "data": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bytes"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeExecutionAcceptedResponseOutput": {
+      "fields": {
+        "accepted": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bool"
+        },
+        "execution_id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeExecutionPageOutput": {
+      "fields": {
+        "context_id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "events": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "CodeExecutionPageOutputEvents"
+        },
+        "events_evicted": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "bool"
+        },
+        "failure": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "generation": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        },
+        "language": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "string"
+        },
+        "last_sequence": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "next_sequence": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "string"
+        },
+        "status": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeExecutionPageOutputEvents": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "CodeSequencedEventOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "CodeExecutionRequestInput": {
+      "fields": {
+        "code": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "context_id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "environment": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "CodeExecutionRequestInputEnvironment"
+        },
+        "execution_id": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "generation": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeExecutionRequestInputEnvironment": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "CodeSequencedEventOutput": {
+      "fields": {
+        "event": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "CodeEventOutput"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "CommandCancelResponseOutput": {
+      "fields": {
+        "killed": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "CreateCodeContextRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "CodeContextCreateRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "CreatePreviewRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "PreviewCreateRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "preview": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "CreateSessionArtifactRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionArtifactCreateRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "CreateSessionRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionCreateRequestInput"
+        }
+      },
+      "kind": "request"
+    },
+    "DefaultCodeContextRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "CodeContextDefaultRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "DeleteSessionArtifactRequest": {
+      "fields": {
+        "artifact": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "DeleteSessionArtifactResponse": {
+      "fields": {},
+      "kind": "object"
+    },
+    "DeleteSessionRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "DeleteSessionResponse": {
+      "fields": {},
+      "kind": "object"
+    },
+    "DoctorCheckOutput": {
+      "fields": {
+        "detail": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "name": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "ok": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "bool"
+        },
+        "warning": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "DoctorReportOutput": {
+      "fields": {
+        "checks": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "DoctorReportOutputChecks"
+        },
+        "ready": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bool"
+        },
+        "vm_capacity": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "VMCapacitySnapshotOutput"
+        },
+        "vm_instances": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "VMInstanceSnapshotOutput"
+        },
+        "warm_pool": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "WarmPoolSnapshotOutput"
+        }
+      },
+      "kind": "object"
+    },
+    "DoctorReportOutputChecks": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "DoctorCheckOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "EgressPolicyOutput": {
+      "fields": {
+        "allowed_cidrs": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "EgressPolicyOutputAllowedCidrs"
+        },
+        "allowed_origins": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "EgressPolicyOutputAllowedOrigins"
+        },
+        "max_concurrent": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_redirects": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_request_bytes": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_response_bytes": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "int64"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "EgressPolicyOutputAllowedCidrs": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "EgressPolicyOutputAllowedOrigins": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "ErrorDetail": {
+      "fields": {
+        "code": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "http_status": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "invocation_id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "message": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "GetCodeContextRequest": {
+      "fields": {
+        "context": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "GetCodeExecutionRequest": {
+      "fields": {
+        "after": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "execution": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "GetPortConnectionRequest": {
+      "fields": {
+        "connection": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "request"
+    },
+    "GetPreviewRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "preview": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "GetSessionRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "HealthRequest": {
+      "fields": {},
+      "kind": "request"
+    },
+    "HostDoctorRequest": {
+      "fields": {},
+      "kind": "request"
+    },
+    "InferenceAPIErrorResponseOutput": {
+      "fields": {
+        "code": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "error": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "invocation_id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "InferenceBillOutput": {
+      "fields": {
+        "budget_units": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "closed": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bool"
+        },
+        "held_units": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "invocations": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "InferenceBillOutputInvocations"
+        },
+        "lease_id": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "max_invocations": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "int64"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "string"
+        },
+        "settled_units": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "task_id": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "string"
+        },
+        "tenant": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "string"
+        },
+        "unit": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "string"
+        },
+        "vm_id": {
+          "cardinality": "singular",
+          "number": 12,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "InferenceBillOutputInvocations": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "InferenceInvocationReceiptOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "InferenceBillRequest": {
+      "fields": {
+        "task": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "InferenceCapabilitiesOutput": {
+      "fields": {
+        "budget_units": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "endpoints": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "InferenceCapabilitiesOutputEndpoints"
+        },
+        "max_invocations": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_request_bytes": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "int64"
+        },
+        "max_response_bytes": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "int64"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "InferenceCapabilitiesOutputEndpoints": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "InferenceEndpointCapabilityOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "InferenceEndpointCapabilityOutput": {
+      "fields": {
+        "name": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "price": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "InferencePriceOutput"
+        }
+      },
+      "kind": "object"
+    },
+    "InferenceInvocationReceiptOutput": {
+      "fields": {
+        "code": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "dispatched": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bool"
+        },
+        "duration_ms": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "endpoint": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "epoch": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "finished_at": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        },
+        "http_status": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "int64"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "string"
+        },
+        "input_bytes": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "max_output_bytes": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "output_bytes": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "price": {
+          "cardinality": "singular",
+          "number": 12,
+          "oneof": null,
+          "type": "InferencePriceOutput"
+        },
+        "reserved_units": {
+          "cardinality": "singular",
+          "number": 13,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "settled_units": {
+          "cardinality": "singular",
+          "number": 14,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "started_at": {
+          "cardinality": "singular",
+          "number": 15,
+          "oneof": null,
+          "type": "string"
+        },
+        "state": {
+          "cardinality": "singular",
+          "number": 16,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "InferenceInvokeRequestInput": {
+      "fields": {
+        "endpoint": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "payload": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "JsonValue"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "InferenceInvokeResultOutput": {
+      "fields": {
+        "data": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "JsonValue"
+        },
+        "invocation": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "InferenceInvocationReceiptOutput"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "task_id": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "InferencePriceOutput": {
+      "fields": {
+        "input_byte_units": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "output_byte_units": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "request_units": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "InputFileInput": {
+      "fields": {
+        "data": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bytes"
+        },
+        "mode": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "path": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "InvokeInferenceRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "InferenceInvokeRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "JsonArray": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "JsonValue"
+        }
+      },
+      "kind": "json_array"
+    },
+    "JsonObject": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "JsonValue"
+        }
+      },
+      "kind": "json_object"
+    },
+    "JsonValue": {
+      "fields": {
+        "array": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": "kind",
+          "type": "JsonArray"
+        },
+        "boolean": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": "kind",
+          "type": "bool"
+        },
+        "null_value": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": "kind",
+          "type": "JsonNull"
+        },
+        "number": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": "kind",
+          "type": "string"
+        },
+        "object": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": "kind",
+          "type": "JsonObject"
+        },
+        "text": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": "kind",
+          "type": "string"
+        }
+      },
+      "kind": "json"
+    },
+    "LegacyAPIErrorResponseOutput": {
+      "fields": {
+        "error": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "ListCodeContextsRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "ListSessionCommandsRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "ListSessionWatchesRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "ListSessionsRequest": {
+      "fields": {
+        "cursor": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "limit": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "order": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "MetricsText": {
+      "fields": {
+        "text": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "text"
+    },
+    "NetworkFetchRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "NetworkFetchRequestInput"
+        }
+      },
+      "kind": "request"
+    },
+    "NetworkFetchRequestInput": {
+      "fields": {
+        "body_base64": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bytes"
+        },
+        "follow_redirects": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bool"
+        },
+        "headers": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "NetworkFetchRequestInputHeaders"
+        },
+        "method": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "int64"
+        },
+        "url": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "NetworkFetchRequestInputHeaders": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "NetworkFetchResultOutput": {
+      "fields": {
+        "body_base64": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "body_bytes": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "int64"
+        },
+        "duration_ms": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "int64"
+        },
+        "headers": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "NetworkFetchResultOutputHeaders"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "redirects": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "int64"
+        },
+        "request_bytes": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "int64"
+        },
+        "request_id": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "string"
+        },
+        "response_bytes": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "int64"
+        },
+        "status": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "int64"
+        },
+        "url": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "NetworkFetchResultOutputHeaders": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "NetworkFetchResultOutputHeadersEntry"
+        }
+      },
+      "kind": "map"
+    },
+    "NetworkFetchResultOutputHeadersEntry": {
+      "fields": {
+        "null_value": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": "nullable",
+          "type": "JsonNull"
+        },
+        "value": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": "nullable",
+          "type": "NetworkFetchResultOutputHeadersEntryValue"
+        }
+      },
+      "kind": "nullable"
+    },
+    "NetworkFetchResultOutputHeadersEntryValue": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "OpenPortTunnelRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionPortLimitsInput"
+        },
+        "connection": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "request"
+    },
+    "PollCommandInputRequest": {
+      "fields": {
+        "command": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "request"
+    },
+    "PollSessionCommandRequest": {
+      "fields": {
+        "after": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "command": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "PollSessionWatchRequest": {
+      "fields": {
+        "after": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "watch": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "PortClientFrame": {
+      "fields": {
+        "cancel": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": "frame",
+          "type": "TransportEmpty"
+        },
+        "data": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": "frame",
+          "type": "bytes"
+        },
+        "eof": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": "frame",
+          "type": "TransportEmpty"
+        },
+        "open": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": "frame",
+          "type": "OpenPortTunnelRequest"
+        }
+      },
+      "kind": "port_client"
+    },
+    "PortConnectionResponseOutput": {
+      "fields": {
+        "connection": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionPortInfoOutput"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "PortOpened": {
+      "fields": {
+        "connection": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "PortPolicyOutput": {
+      "fields": {
+        "allowed_ports": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "PortPolicyOutputAllowedPorts"
+        },
+        "max_concurrent": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "int64"
+        },
+        "preview": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "PortPolicyOutputAllowedPorts": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "PortRangeOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "PortRangeOutput": {
+      "fields": {
+        "from": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "to": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "PortServerFrame": {
+      "fields": {
+        "data": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": "frame",
+          "type": "bytes"
+        },
+        "eof": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": "frame",
+          "type": "TransportEmpty"
+        },
+        "finished": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": "frame",
+          "type": "SessionPortInfoOutput"
+        },
+        "opened": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": "frame",
+          "type": "PortOpened"
+        }
+      },
+      "kind": "port_server"
+    },
+    "PreviewCreateRequestInput": {
+      "fields": {
+        "ttl_ms": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "PreviewGrantInfoOutput": {
+      "fields": {
+        "bootstrap_url": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "created_at": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "expires_at": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "origin": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "string"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "string"
+        },
+        "status": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "PrometheusMetricsRequest": {
+      "fields": {},
+      "kind": "request"
+    },
+    "ReadSessionArtifactRequest": {
+      "fields": {
+        "artifact": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "body": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "SessionArtifactReadRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "ReadinessRequest": {
+      "fields": {},
+      "kind": "request"
+    },
+    "RemoveCodeContextRequest": {
+      "fields": {
+        "context": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "generation": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "RestartCodeContextRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "CodeContextRestartRequestInput"
+        },
+        "context": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "RevokePreviewRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "preview": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "RunJobRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "RunRequestV2Input"
+        }
+      },
+      "kind": "request"
+    },
+    "RunLegacyJobRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "RunRequestInput"
+        }
+      },
+      "kind": "request"
+    },
+    "RunRequestInput": {
+      "fields": {
+        "args": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "RunRequestInputArgs"
+        },
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "cwd": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "entrypoint": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "environment": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "RunRequestInputEnvironment"
+        },
+        "input_files": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "RunRequestInputInputFiles"
+        },
+        "memory_mib": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "network": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "string"
+        },
+        "stdin": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "bytes"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "vcpus": {
+          "cardinality": "singular",
+          "number": 12,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "RunRequestInputArgs": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "RunRequestInputEnvironment": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "RunRequestInputInputFiles": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "InputFileInput"
+        }
+      },
+      "kind": "list"
+    },
+    "RunRequestV2Input": {
+      "fields": {
+        "args": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "RunRequestV2InputArgs"
+        },
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "cwd": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "entrypoint": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "environment": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "RunRequestV2InputEnvironment"
+        },
+        "input_files": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "RunRequestV2InputInputFiles"
+        },
+        "memory_mib": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "network": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "string"
+        },
+        "stdin": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "bytes"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "vcpus": {
+          "cardinality": "singular",
+          "number": 12,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "RunRequestV2InputArgs": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "RunRequestV2InputEnvironment": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "RunRequestV2InputInputFiles": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "InputFileInput"
+        }
+      },
+      "kind": "list"
+    },
+    "RunResultOutput": {
+      "fields": {
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "duration_ms": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "int64"
+        },
+        "exit_code": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "int64"
+        },
+        "guest_result": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "JsonValue"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        },
+        "output": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "string"
+        },
+        "output_truncated": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "bool"
+        },
+        "protocol_ok": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "bool"
+        },
+        "startup_duration_us": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "int64"
+        },
+        "startup_mode": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "string"
+        },
+        "startup_timing": {
+          "cardinality": "singular",
+          "number": 12,
+          "oneof": null,
+          "type": "StartupTimingOutput"
+        },
+        "state": {
+          "cardinality": "singular",
+          "number": 13,
+          "oneof": null,
+          "type": "string"
+        },
+        "template_id": {
+          "cardinality": "singular",
+          "number": 14,
+          "oneof": null,
+          "type": "string"
+        },
+        "timed_out": {
+          "cardinality": "singular",
+          "number": 15,
+          "oneof": null,
+          "type": "bool"
+        },
+        "vm_boot_duration_us": {
+          "cardinality": "singular",
+          "number": 16,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "RunSessionCommandRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionCommandRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "SessionArtifactChunkOutput": {
+      "fields": {
+        "archive_sha256": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "data_base64": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bytes"
+        },
+        "data_sha256": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "eof": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "bool"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "offset": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "string"
+        },
+        "total_size": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionArtifactCreateRequestInput": {
+      "fields": {
+        "path": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionArtifactInfoOutput": {
+      "fields": {
+        "entries": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "files": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "format": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "path": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "payload_bytes": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "string"
+        },
+        "sha256": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "string"
+        },
+        "size": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "source_kind": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionArtifactReadRequestInput": {
+      "fields": {
+        "length": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "offset": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCapabilitiesRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "SessionCapabilityReportOutput": {
+      "fields": {
+        "allowed_entrypoints": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionCapabilityReportOutputAllowedEntrypoints"
+        },
+        "artifact_authenticated": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bool"
+        },
+        "artifact_manifest_protocol": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "code_languages": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "SessionCapabilityReportOutputCodeLanguages"
+        },
+        "code_runtime": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "SignedCodeRuntimeOutput"
+        },
+        "features": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "CapabilityFeaturesOutput"
+        },
+        "guest_result_protocol": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "string"
+        },
+        "limits": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "CapabilityLimitsOutput"
+        },
+        "methods": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "SessionCapabilityReportOutputMethods"
+        },
+        "network_fetch_policy": {
+          "cardinality": "singular",
+          "number": 12,
+          "oneof": null,
+          "type": "EgressPolicyOutput"
+        },
+        "port_forward_policy": {
+          "cardinality": "singular",
+          "number": 13,
+          "oneof": null,
+          "type": "PortPolicyOutput"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "number": 14,
+          "oneof": null,
+          "type": "string"
+        },
+        "remote_inference_policy": {
+          "cardinality": "singular",
+          "number": 15,
+          "oneof": null,
+          "type": "InferenceCapabilitiesOutput"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 16,
+          "oneof": null,
+          "type": "string"
+        },
+        "stage": {
+          "cardinality": "singular",
+          "number": 17,
+          "oneof": null,
+          "type": "string"
+        },
+        "template_id": {
+          "cardinality": "singular",
+          "number": 18,
+          "oneof": null,
+          "type": "string"
+        },
+        "workload": {
+          "cardinality": "singular",
+          "number": 19,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCapabilityReportOutputAllowedEntrypoints": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCapabilityReportOutputCodeLanguages": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCapabilityReportOutputMethods": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCommandInfoOutput": {
+      "fields": {
+        "args": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionCommandInfoOutputArgs"
+        },
+        "completed_at": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "cwd": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "entrypoint": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "environment": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "SessionCommandInfoOutputEnvironment"
+        },
+        "error": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "string"
+        },
+        "interactive_stdin": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "bool"
+        },
+        "pid": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "string"
+        },
+        "started_at": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "string"
+        },
+        "state": {
+          "cardinality": "singular",
+          "number": 12,
+          "oneof": null,
+          "type": "string"
+        },
+        "stdin_closed": {
+          "cardinality": "singular",
+          "number": 13,
+          "oneof": null,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandInfoOutputArgs": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCommandInfoOutputEnvironment": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "SessionCommandInputReceiptOutput": {
+      "fields": {
+        "closed": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bool"
+        },
+        "command_id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "error_code": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "state": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        },
+        "written_bytes": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandInputRequestInput": {
+      "fields": {
+        "close": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bool"
+        },
+        "data_base64": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bytes"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandPageOutput": {
+      "fields": {
+        "complete": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bool"
+        },
+        "events": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "SessionCommandPageOutputEvents"
+        },
+        "info": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "SessionCommandInfoOutput"
+        },
+        "next_sequence": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "int64"
+        },
+        "result": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "SessionCommandResultOutput"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandPageOutputEvents": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionOutputEventOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCommandRequestInput": {
+      "fields": {
+        "args": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionCommandRequestInputArgs"
+        },
+        "cwd": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "entrypoint": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "environment": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "SessionCommandRequestInputEnvironment"
+        },
+        "interactive_stdin": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "bool"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandRequestInputArgs": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCommandRequestInputEnvironment": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "SessionCommandResultOutput": {
+      "fields": {
+        "result": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "RunResultOutput"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandStreamEvent": {
+      "fields": {
+        "output": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": "event",
+          "type": "SessionOutputFrameOutput"
+        },
+        "result": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": "event",
+          "type": "SessionCommandPageOutput"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "timeout": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": "event",
+          "type": "SessionCommandTimeoutFrameOutput"
+        }
+      },
+      "kind": "stream_event"
+    },
+    "SessionCommandTimeoutFrameOutput": {
+      "fields": {
+        "command_id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "next_sequence": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandsResponseOutput": {
+      "fields": {
+        "commands": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionCommandsResponseOutputCommands"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandsResponseOutputCommands": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionCommandInfoOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCreateRequestInput": {
+      "fields": {
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "input_files": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "SessionCreateRequestInputInputFiles"
+        },
+        "memory_mib": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "int64"
+        },
+        "network": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "ttl_ms": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "int64"
+        },
+        "vcpus": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCreateRequestInputInputFiles": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "InputFileInput"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionFileInfoOutput": {
+      "fields": {
+        "group": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "metadata": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "SessionFileInfoOutputMetadata"
+        },
+        "mode": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "modified_time_ms": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "int64"
+        },
+        "name": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "owner": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        },
+        "path": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "string"
+        },
+        "permissions": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "string"
+        },
+        "size": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "int64"
+        },
+        "symlink_target": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "string"
+        },
+        "type": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionFileInfoOutputMetadata": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "SessionFileRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionFileRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "SessionFileRequestInput": {
+      "fields": {
+        "action": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "data_base64": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bytes"
+        },
+        "destination": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "metadata": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "SessionFileRequestInputMetadata"
+        },
+        "path": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionFileRequestInputMetadata": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "SessionFileResultOutput": {
+      "fields": {
+        "action": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "created": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bool"
+        },
+        "data_base64": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "destination": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "entries": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "SessionFileResultOutputEntries"
+        },
+        "entry_infos": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "SessionFileResultOutputEntryInfos"
+        },
+        "info": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "SessionFileInfoOutput"
+        },
+        "kind": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "string"
+        },
+        "path": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "string"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "string"
+        },
+        "size": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionFileResultOutputEntries": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionFileResultOutputEntryInfos": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionFileInfoOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionInfoOutput": {
+      "fields": {
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "created_at": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "expires_at": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "guest_protocol": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        },
+        "lease_revision": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "max_expires_at": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "string"
+        },
+        "memory_mib": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "int64"
+        },
+        "network": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "string"
+        },
+        "remaining_ttl_ms": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "int64"
+        },
+        "startup_duration_us": {
+          "cardinality": "singular",
+          "number": 12,
+          "oneof": null,
+          "type": "int64"
+        },
+        "startup_mode": {
+          "cardinality": "singular",
+          "number": 13,
+          "oneof": null,
+          "type": "string"
+        },
+        "startup_timing": {
+          "cardinality": "singular",
+          "number": 14,
+          "oneof": null,
+          "type": "StartupTimingOutput"
+        },
+        "state": {
+          "cardinality": "singular",
+          "number": 15,
+          "oneof": null,
+          "type": "string"
+        },
+        "vcpus": {
+          "cardinality": "singular",
+          "number": 16,
+          "oneof": null,
+          "type": "int64"
+        },
+        "vm_boot_duration_us": {
+          "cardinality": "singular",
+          "number": 17,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionListPageOutput": {
+      "fields": {
+        "next_cursor": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "sessions": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "SessionListPageOutputSessions"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionListPageOutputSessions": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionInfoOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionOutputEventOutput": {
+      "fields": {
+        "data_base64": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bytes"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "int64"
+        },
+        "stream": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionOutputFrameOutput": {
+      "fields": {
+        "command_id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "data_base64": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bytes"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "int64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        },
+        "stream": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionPortInfoOutput": {
+      "fields": {
+        "error": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "received_bytes": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "sent_bytes": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "status": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionPortLimitsInput": {
+      "fields": {
+        "idle_timeout_ms": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "max_bytes": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionTimeoutRequestInput": {
+      "fields": {
+        "ttl_ms": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionWatchEventOutput": {
+      "fields": {
+        "entry": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionFileInfoOutput"
+        },
+        "name": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "int64"
+        },
+        "type": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionWatchInfoOutput": {
+      "fields": {
+        "created_at": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "error_code": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "include_entry": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "bool"
+        },
+        "path": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "recursive": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "bool"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "string"
+        },
+        "state": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionWatchPageOutput": {
+      "fields": {
+        "complete": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bool"
+        },
+        "events": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "SessionWatchPageOutputEvents"
+        },
+        "info": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "SessionWatchInfoOutput"
+        },
+        "next_sequence": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionWatchPageOutputEvents": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionWatchEventOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionWatchRequestInput": {
+      "fields": {
+        "include_entry": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bool"
+        },
+        "path": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "recursive": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "bool"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionWatchesResponseOutput": {
+      "fields": {
+        "session_id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "watches": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "SessionWatchesResponseOutputWatches"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionWatchesResponseOutputWatches": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionWatchInfoOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "SetSessionTimeoutRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionTimeoutRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "SignedCodeRuntimeOutput": {
+      "fields": {
+        "architecture": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "kernel_protocol": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "kernel_scripts_sha256": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "SignedCodeRuntimeOutputKernelScriptsSha256"
+        },
+        "minimum_cpu_features": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "SignedCodeRuntimeOutputMinimumCpuFeatures"
+        },
+        "node_version": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "prewarm_language": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        },
+        "python_version": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "string"
+        },
+        "runtime_inventory_sha256": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "string"
+        },
+        "typescript_version": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SignedCodeRuntimeOutputKernelScriptsSha256": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "SignedCodeRuntimeOutputMinimumCpuFeatures": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "StartSessionCommandRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionCommandRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "StartSessionWatchRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionWatchRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "StartupTimingOutput": {
+      "fields": {
+        "admission_us": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "int64"
+        },
+        "audit_us": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "int64"
+        },
+        "finalize_us": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "int64"
+        },
+        "ownership_us": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "int64"
+        },
+        "preparation_us": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "int64"
+        },
+        "readiness_us": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "int64"
+        },
+        "schema": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "string"
+        },
+        "selection_us": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "int64"
+        },
+        "total_us": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "StatusResponseOutput": {
+      "fields": {
+        "status": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "StopSessionWatchRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "watch": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "StreamSessionCommandRequest": {
+      "fields": {
+        "after": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "command": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "request"
+    },
+    "SubmitCodeExecutionRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "CodeExecutionRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "SubmitCommandInputRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "SessionCommandInputRequestInput"
+        },
+        "command": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "TemplateCatalogReportOutput": {
+      "fields": {
+        "default_template_id": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "templates": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "TemplateCatalogReportOutputTemplates"
+        }
+      },
+      "kind": "object"
+    },
+    "TemplateCatalogReportOutputTemplates": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "TemplateReportOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "TemplateCatalogRequest": {
+      "fields": {},
+      "kind": "request"
+    },
+    "TemplateReportOutput": {
+      "fields": {
+        "available": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bool"
+        },
+        "capabilities": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "CapabilityReportOutput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "string"
+        },
+        "unavailable_code": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "TransportEmpty": {
+      "fields": {},
+      "kind": "object"
+    },
+    "VMCapacitySnapshotOutput": {
+      "fields": {
+        "active": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "int64"
+        },
+        "available_identities": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "int64"
+        },
+        "blocked": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "bool"
+        },
+        "instances": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "int64"
+        },
+        "reserved_memory_mib": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "int64"
+        },
+        "reserved_pids": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "int64"
+        },
+        "reserved_vcpus": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "VMInstanceSnapshotOutput": {
+      "fields": {
+        "states": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "VMInstanceSnapshotOutputStates"
+        },
+        "stopping": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "VMInstanceSnapshotOutputStates": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "int64"
+        }
+      },
+      "kind": "map"
+    },
+    "WarmPoolSnapshotOutput": {
+      "fields": {
+        "checking": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "int64"
+        },
+        "degraded": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "bool"
+        },
+        "discarded": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "WarmPoolSnapshotOutputDiscarded"
+        },
+        "enabled": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "bool"
+        },
+        "foreground": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "int64"
+        },
+        "healthy": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "bool"
+        },
+        "hits": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "memory_pressure": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "bool"
+        },
+        "misses": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "WarmPoolSnapshotOutputMisses"
+        },
+        "profiles": {
+          "cardinality": "singular",
+          "number": 10,
+          "oneof": null,
+          "type": "WarmPoolSnapshotOutputProfiles"
+        },
+        "refill_failures": {
+          "cardinality": "singular",
+          "number": 11,
+          "oneof": null,
+          "type": "uint64"
+        },
+        "retiring": {
+          "cardinality": "singular",
+          "number": 12,
+          "oneof": null,
+          "type": "int64"
+        },
+        "running": {
+          "cardinality": "singular",
+          "number": 13,
+          "oneof": null,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "WarmPoolSnapshotOutputDiscarded": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "map"
+    },
+    "WarmPoolSnapshotOutputMisses": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "oneof": null,
+          "type": "uint64"
+        }
+      },
+      "kind": "map"
+    },
+    "WarmPoolSnapshotOutputProfiles": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "oneof": null,
+          "type": "WarmProfileSnapshotOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "WarmProfileSnapshotOutput": {
+      "fields": {
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": null,
+          "type": "string"
+        },
+        "booting": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": null,
+          "type": "int64"
+        },
+        "desired": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": null,
+          "type": "int64"
+        },
+        "key": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": null,
+          "type": "string"
+        },
+        "name": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": null,
+          "type": "string"
+        },
+        "ready": {
+          "cardinality": "singular",
+          "number": 7,
+          "oneof": null,
+          "type": "int64"
+        },
+        "retry_in_ms": {
+          "cardinality": "singular",
+          "number": 8,
+          "oneof": null,
+          "type": "int64"
+        },
+        "template_id": {
+          "cardinality": "singular",
+          "number": 9,
+          "oneof": null,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "WatchStopResponseOutput": {
+      "fields": {
+        "stopped": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": null,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    }
+  },
+  "methods": {
+    "CancelCodeExecution": {
+      "client_streaming": false,
+      "request": "CancelCodeExecutionRequest",
+      "response": "CodeExecutionAcceptedResponseOutput",
+      "server_streaming": false
+    },
+    "CancelPortConnection": {
+      "client_streaming": false,
+      "request": "CancelPortConnectionRequest",
+      "response": "PortConnectionResponseOutput",
+      "server_streaming": false
+    },
+    "CancelSessionCommand": {
+      "client_streaming": false,
+      "request": "CancelSessionCommandRequest",
+      "response": "CommandCancelResponseOutput",
+      "server_streaming": false
+    },
+    "Capabilities": {
+      "client_streaming": false,
+      "request": "CapabilitiesRequest",
+      "response": "CapabilityReportOutput",
+      "server_streaming": false
+    },
+    "CreateCodeContext": {
+      "client_streaming": false,
+      "request": "CreateCodeContextRequest",
+      "response": "CodeContextOutput",
+      "server_streaming": false
+    },
+    "CreatePreview": {
+      "client_streaming": false,
+      "request": "CreatePreviewRequest",
+      "response": "PreviewGrantInfoOutput",
+      "server_streaming": false
+    },
+    "CreateSession": {
+      "client_streaming": false,
+      "request": "CreateSessionRequest",
+      "response": "SessionInfoOutput",
+      "server_streaming": false
+    },
+    "CreateSessionArtifact": {
+      "client_streaming": false,
+      "request": "CreateSessionArtifactRequest",
+      "response": "SessionArtifactInfoOutput",
+      "server_streaming": false
+    },
+    "DefaultCodeContext": {
+      "client_streaming": false,
+      "request": "DefaultCodeContextRequest",
+      "response": "CodeContextOutput",
+      "server_streaming": false
+    },
+    "DeleteSession": {
+      "client_streaming": false,
+      "request": "DeleteSessionRequest",
+      "response": "DeleteSessionResponse",
+      "server_streaming": false
+    },
+    "DeleteSessionArtifact": {
+      "client_streaming": false,
+      "request": "DeleteSessionArtifactRequest",
+      "response": "DeleteSessionArtifactResponse",
+      "server_streaming": false
+    },
+    "GetCodeContext": {
+      "client_streaming": false,
+      "request": "GetCodeContextRequest",
+      "response": "CodeContextOutput",
+      "server_streaming": false
+    },
+    "GetCodeExecution": {
+      "client_streaming": false,
+      "request": "GetCodeExecutionRequest",
+      "response": "CodeExecutionPageOutput",
+      "server_streaming": false
+    },
+    "GetPortConnection": {
+      "client_streaming": false,
+      "request": "GetPortConnectionRequest",
+      "response": "PortConnectionResponseOutput",
+      "server_streaming": false
+    },
+    "GetPreview": {
+      "client_streaming": false,
+      "request": "GetPreviewRequest",
+      "response": "PreviewGrantInfoOutput",
+      "server_streaming": false
+    },
+    "GetSession": {
+      "client_streaming": false,
+      "request": "GetSessionRequest",
+      "response": "SessionInfoOutput",
+      "server_streaming": false
+    },
+    "Health": {
+      "client_streaming": false,
+      "request": "HealthRequest",
+      "response": "StatusResponseOutput",
+      "server_streaming": false
+    },
+    "HostDoctor": {
+      "client_streaming": false,
+      "request": "HostDoctorRequest",
+      "response": "DoctorReportOutput",
+      "server_streaming": false
+    },
+    "InferenceBill": {
+      "client_streaming": false,
+      "request": "InferenceBillRequest",
+      "response": "InferenceBillOutput",
+      "server_streaming": false
+    },
+    "InvokeInference": {
+      "client_streaming": false,
+      "request": "InvokeInferenceRequest",
+      "response": "InferenceInvokeResultOutput",
+      "server_streaming": false
+    },
+    "ListCodeContexts": {
+      "client_streaming": false,
+      "request": "ListCodeContextsRequest",
+      "response": "CodeContextsResponseOutput",
+      "server_streaming": false
+    },
+    "ListSessionCommands": {
+      "client_streaming": false,
+      "request": "ListSessionCommandsRequest",
+      "response": "SessionCommandsResponseOutput",
+      "server_streaming": false
+    },
+    "ListSessionWatches": {
+      "client_streaming": false,
+      "request": "ListSessionWatchesRequest",
+      "response": "SessionWatchesResponseOutput",
+      "server_streaming": false
+    },
+    "ListSessions": {
+      "client_streaming": false,
+      "request": "ListSessionsRequest",
+      "response": "SessionListPageOutput",
+      "server_streaming": false
+    },
+    "NetworkFetch": {
+      "client_streaming": false,
+      "request": "NetworkFetchRequest",
+      "response": "NetworkFetchResultOutput",
+      "server_streaming": false
+    },
+    "OpenPortTunnel": {
+      "client_streaming": true,
+      "request": "PortClientFrame",
+      "response": "PortServerFrame",
+      "server_streaming": true
+    },
+    "PollCommandInput": {
+      "client_streaming": false,
+      "request": "PollCommandInputRequest",
+      "response": "SessionCommandInputReceiptOutput",
+      "server_streaming": false
+    },
+    "PollSessionCommand": {
+      "client_streaming": false,
+      "request": "PollSessionCommandRequest",
+      "response": "SessionCommandPageOutput",
+      "server_streaming": false
+    },
+    "PollSessionWatch": {
+      "client_streaming": false,
+      "request": "PollSessionWatchRequest",
+      "response": "SessionWatchPageOutput",
+      "server_streaming": false
+    },
+    "PrometheusMetrics": {
+      "client_streaming": false,
+      "request": "PrometheusMetricsRequest",
+      "response": "MetricsText",
+      "server_streaming": false
+    },
+    "ReadSessionArtifact": {
+      "client_streaming": false,
+      "request": "ReadSessionArtifactRequest",
+      "response": "SessionArtifactChunkOutput",
+      "server_streaming": false
+    },
+    "Readiness": {
+      "client_streaming": false,
+      "request": "ReadinessRequest",
+      "response": "StatusResponseOutput",
+      "server_streaming": false
+    },
+    "RemoveCodeContext": {
+      "client_streaming": false,
+      "request": "RemoveCodeContextRequest",
+      "response": "CodeContextRemovedResponseOutput",
+      "server_streaming": false
+    },
+    "RestartCodeContext": {
+      "client_streaming": false,
+      "request": "RestartCodeContextRequest",
+      "response": "CodeContextOutput",
+      "server_streaming": false
+    },
+    "RevokePreview": {
+      "client_streaming": false,
+      "request": "RevokePreviewRequest",
+      "response": "PreviewGrantInfoOutput",
+      "server_streaming": false
+    },
+    "RunJob": {
+      "client_streaming": false,
+      "request": "RunJobRequest",
+      "response": "RunResultOutput",
+      "server_streaming": false
+    },
+    "RunLegacyJob": {
+      "client_streaming": false,
+      "request": "RunLegacyJobRequest",
+      "response": "RunResultOutput",
+      "server_streaming": false
+    },
+    "RunSessionCommand": {
+      "client_streaming": false,
+      "request": "RunSessionCommandRequest",
+      "response": "SessionCommandResultOutput",
+      "server_streaming": false
+    },
+    "SessionCapabilities": {
+      "client_streaming": false,
+      "request": "SessionCapabilitiesRequest",
+      "response": "SessionCapabilityReportOutput",
+      "server_streaming": false
+    },
+    "SessionFile": {
+      "client_streaming": false,
+      "request": "SessionFileRequest",
+      "response": "SessionFileResultOutput",
+      "server_streaming": false
+    },
+    "SetSessionTimeout": {
+      "client_streaming": false,
+      "request": "SetSessionTimeoutRequest",
+      "response": "SessionInfoOutput",
+      "server_streaming": false
+    },
+    "StartSessionCommand": {
+      "client_streaming": false,
+      "request": "StartSessionCommandRequest",
+      "response": "SessionCommandInfoOutput",
+      "server_streaming": false
+    },
+    "StartSessionWatch": {
+      "client_streaming": false,
+      "request": "StartSessionWatchRequest",
+      "response": "SessionWatchInfoOutput",
+      "server_streaming": false
+    },
+    "StopSessionWatch": {
+      "client_streaming": false,
+      "request": "StopSessionWatchRequest",
+      "response": "WatchStopResponseOutput",
+      "server_streaming": false
+    },
+    "StreamSessionCommand": {
+      "client_streaming": false,
+      "request": "StreamSessionCommandRequest",
+      "response": "SessionCommandStreamEvent",
+      "server_streaming": true
+    },
+    "SubmitCodeExecution": {
+      "client_streaming": false,
+      "request": "SubmitCodeExecutionRequest",
+      "response": "CodeExecutionPageOutput",
+      "server_streaming": false
+    },
+    "SubmitCommandInput": {
+      "client_streaming": false,
+      "request": "SubmitCommandInputRequest",
+      "response": "SessionCommandInputReceiptOutput",
+      "server_streaming": false
+    },
+    "TemplateCatalog": {
+      "client_streaming": false,
+      "request": "TemplateCatalogRequest",
+      "response": "TemplateCatalogReportOutput",
+      "server_streaming": false
+    }
+  },
+  "package": "sandbox.control.v1",
+  "protocol": "osv-grpc-field-registry/v1"
+}

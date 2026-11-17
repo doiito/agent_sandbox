@@ -1,0 +1,45 @@
+# ADR-0067：持久代码worker、状态机与有界执行记录
+
+状态：Accepted（设计、自评审及worker核心双架构功能验证通过，完整语言语义/服务接入继续推进）；日期：2026-11-05；需求OSV-02、EXEC-01/02、API-02、QA-02/03。
+
+后续[ADR-0069](0069-continuous-interpreter-async.md)已以双架构70组验证持续空闲async、按调用任务选择display及有界迟到富结果；其中的别名语义取代本文R12阶段的旧display拒绝策略，原R12历史证据保留。
+
+## 决策与契约
+
+在[独立解释器管道](0066-interpreter-control-channel.md)之上增加正式Rust代码上下文管理库。每guest一个常驻actor线程，在该线程内创建并持有最多4个解释器Process，公平轮询各控制管道和stdio；调用线程仅传递有界命令和响应。Process不跨线程迁移，actor关闭时完整停止所有工作负载并join。监督异常仍使VM不可用；用户代码异常只成为执行事件。
+
+上下文包含ID、语言、cwd、generation及starting/idle/running/interrupting/stopping/failed状态。create/default/restart先返回可观察的过渡状态，库调用本身不阻塞等待解释器；公开API以后负责等待ready并对接SDK契约。未支持的语言明确拒绝。默认上下文按语言持久保存，删除后重新领取使用新ID；重启保留ID，旧进程回收后generation递增。所有执行、中断、重启和删除核对generation，已删ID不复用。单VM上下文创建、执行总数均最多256，达到上限明确拒绝，不复用旧ID冒充新的执行。
+
+请求入口最多16个待处理命令，单次调用2秒；请求具有截止时间，队列内过期请求不会执行。创建与执行使用调用方提前生成的24位hex ID，执行ID在VM生命周期内不得复用；响应丢失后可查询同一ID，不能以重试自动重复执行用户代码。这里的ID不是授权凭证；session/nonce/pristine绑定由后续独立guest服务及root控制面核验。本库不提前开放任何vsock能力。
+
+每次执行记录started、二进制stdout/stderr的base64片段、富结果、语言错误和唯一finished事件，序号由actor生成。代码64KiB、环境64项/累计16KiB、帧96KiB、富结果16项/32KiB、总输出64KiB、事件256项（保留终态位置）；JSON递归和集合长度有界。最近16个完成记录保留事件，其他记录保留元数据及最后序号并明确报告事件已淘汰，活跃记录不淘汰。执行总数256限制元数据内存。分页最多64事件，响应有界。
+
+语言脚本为result/error/done均附带该cell的execution_count，actor核对当前序数，旧display闭包不能把旧cell富结果直接混入后续执行。done须是本轮已读取语言帧中的最后一项，重复done或随后附加帧判为协议错误后回收，不先发布成功终态。原始stdio仍是进程流，用户后台线程/回调可能与后续cell输出交错，不能宣称线程级输出归属隔离。
+
+读取done后必须再次排空非阻塞stdout/stderr，再提交finished：第一次stdio读取与随后control读取之间可能正好发生解释器flush及done。漏掉第二次排空会把旧cell的RUNNING输出计入新执行，导致取消时错误判断新cell已开始，尤其会在TypeScript仍编译时发出SIGINT。增加连续带唯一输出的真实执行用例覆盖该时序。
+
+## 取消与恢复
+
+上层执行默认60秒，worker显式接收timeout_ms；0仅取消执行计时器，guest硬寿命仍生效。超时或显式取消先通过真实pidfd SIGINT，宽限500ms内正常返回则保留解释器状态；无响应时stop该工作负载，等待完整cgroup/ECHILD ACK后才报告终态，上下文明示failed，必须显式restart。尚未完整发送的请求不能通过中断恢复为干净上下文，直接停止并失败。协议异常、进程退出、输出超限也停止上下文；不能静默重建。
+
+实施中真实回归发现固定Node22 REPL在同步watchdog退出与await监听切换间会丢失SIGINT；增加emit拦截的候选仍不能稳定恢复，因此弃用该候选。Node取消改为先在独立输入管道发送带execution_count的interrupt控制帧，由并行帧读取任务在事件循环内取消当前REPL等待；100ms后若仍未完成才发pidfd SIGINT打断CPU循环，原500ms停止上限保持。初始25ms在ARM单vCPU下可能早于事件循环调度，未作为最终参数。Node不再动态安装进程级SIGINT监听，避免与V8 watchdog的恢复竞争。普通返回Promise也使用同一取消路径。Python继续使用已验证的SIGINT与selector唤醒。该调整已自评审，需真实双架构CPU/await连续循环验证后验收。
+
+Node接收取消后先发interrupt_ack，再解除REPL等待；worker收到当前cell的ACK即撤销待发SIGINT，仍以原500ms绝对期限等待done或强制停止。这样不会在已取消的await完成/flush间隙再次发信号导致默认信号动作退出。ACK不能延长期限或证明进程回收；没有ACK的CPU执行仍经过信号路径。
+
+ARM连续TypeScript测试仍出现取消帧无ACK的情况，改由在首次REPL求值之前注册的Socket data回调直接解帧，取消不经过独立async iterator读链；读链被V8中断/domain影响是待验证推断，不能写成已证实原因。验证器为每次执行使用唯一RUNNING标记，防止旧输出使进入执行的条件误通过。
+
+进一步自评审：仅以100ms未收到ACK判断应该发SIGINT仍不充分，可能正处于编译或事件循环等待。Node新增当前execution_count的execution_state帧：TypeScript编译后、调用REPL前报告evaluating，REPL同步返回后报告event_loop。worker只在当前cell明确仍处于evaluating时使用SIGINT；event_loop或未报告状态时仅等管道取消及原500ms停止期限，不向无watchdog的阶段盲发信号。状态帧不得更改身份、延长期限或代替清理ACK；乱序/跨cell状态帧拒绝。该决策先于实现，并要求两架构连续CPU/await/Promise取消及无响应回收验证。
+
+restart/remove执行繁忙上下文时立即进入stopping并停止其执行，完整回收后再重新启动/删除，不影响其他上下文。lease到期和Manager关闭停止全部上下文；不延长租期。actor每次仅有界读取，洪泛不能阻塞列举、取消或其他上下文。空闲期输出丢弃并累计限额，防止把已缓冲的旧输出直接归入下一执行。
+
+## 实施前自评审
+
+单线程actor避免跨线程PDEATHSIG和多索引锁；所有进程创建、状态推进和清理都在actor内，网络和SDK不持有Process。启动、停止和重启是可观察状态，没有在全局锁内等待解释器ready。语言done及私有监督ACK分离，语言数据不能证明进程清理；forced stop的finished必须等真实清理。执行ID/代次防止重试和旧句柄误操作，保留元数据防止淘汰后重放。两秒响应超时可能与已准入操作并发，调用者必须用已知ID查询/取消，不能假定回滚；公开API的断线与取消责任仍需独立实现验证。
+
+初始1ms轮询四个上下文会持续产生大量空读和线程唤醒，不适合预启动池；ARM TCG下也会挤占实际科学任务。改为poll等待全部解释器/监督控制fd和stdio，输入仅在待写时监听POLLOUT；命令队列及关闭由CLOEXEC eventfd唤醒，最近的启动/执行/中断/停止/硬寿命期限限定poll超时。EOF的stdio不反复监听，收到事件后仍逐上下文有界处理。该改动保持同一常驻线程和所有状态约束，需重新运行双架构功能矩阵；不据此声称生产启动分位数已达标。
+
+## 验证与出口
+
+先运行帧/预算/顺序与ID状态的定向native测试，再在真实guest PID1下调用该库及默认生产helper，双架构验证三种语言的状态、默认上下文、generation、重启/删除、并行独立执行、富结果/stdio、CPU/await取消、超时、拒绝SIGINT后的failed/显式恢复、输出洪泛、非法语言数据、配额、硬寿命和Manager join后的零cgroup。夹具必须通过常驻线程启动进程，不能沿用单线程验证器直接调用spawn来冒充worker验证。未修改的语言/普通命令基线按影响复用，公开API/SDK/MCP、pristine warm ready及最终同包KVM/完整CI仍按ADR-0064推进，不增加E2B兼容分子。
+
+核心验收见[双架构worker验证](../../PUBLIC-QUALIFICATION.md#private-evidence)：同源码32组实际QEMU、58项native Rust及不可跨线程迁移doctest通过，含验证器clippy通过。该结果不等于代码API、SDK、MCP、pristine交接、新离线包或最终KVM/完整CI已验收；接口方案见[ADR-0068](0068-session-code-control.md)。

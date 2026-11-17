@@ -1,0 +1,6587 @@
+{
+  "canonical_HTTP_contract_sha256": "a1377641de3524ffa828925da26ab827b7d5d1ec8c91c291e543d1929c519426",
+  "messages": {
+    "APIErrorResponseOutput": {
+      "constants": {},
+      "fields": {
+        "code": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "error": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CancelCodeExecutionRequest": {
+      "fields": {
+        "context_id": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "execution": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "generation": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "uint64"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "CancelPortConnectionRequest": {
+      "fields": {
+        "connection": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "request"
+    },
+    "CancelSessionCommandRequest": {
+      "fields": {
+        "command": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "CapabilitiesRequest": {
+      "fields": {
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 2,
+          "required": false,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "CapabilityFeaturesOutput": {
+      "constants": {},
+      "fields": {
+        "argv": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "bool"
+        },
+        "background_commands": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "bool"
+        },
+        "cancellation": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "bool"
+        },
+        "code_contexts": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "bool"
+        },
+        "environment": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "bool"
+        },
+        "exit_code": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "bool"
+        },
+        "file_watch": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "bool"
+        },
+        "file_watch_entry": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "bool"
+        },
+        "inference_billing": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": false,
+          "type": "bool"
+        },
+        "input_files": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": true,
+          "type": "bool"
+        },
+        "interactive_stdin": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 11,
+          "required": true,
+          "type": "bool"
+        },
+        "network_egress": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 12,
+          "required": true,
+          "type": "bool"
+        },
+        "network_fetch": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 13,
+          "required": true,
+          "type": "bool"
+        },
+        "one_shot_job": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 14,
+          "required": true,
+          "type": "bool"
+        },
+        "pause_resume": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 15,
+          "required": true,
+          "type": "bool"
+        },
+        "persistent_workspace": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 16,
+          "required": true,
+          "type": "bool"
+        },
+        "port_forward": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 17,
+          "required": true,
+          "type": "bool"
+        },
+        "port_preview": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 18,
+          "required": false,
+          "type": "bool"
+        },
+        "recursive_file_watch": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 19,
+          "required": true,
+          "type": "bool"
+        },
+        "remote_inference": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 20,
+          "required": false,
+          "type": "bool"
+        },
+        "session_artifacts": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 35,
+          "required": true,
+          "type": "bool"
+        },
+        "session_environment": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 21,
+          "required": true,
+          "type": "bool"
+        },
+        "session_files": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 22,
+          "required": true,
+          "type": "bool"
+        },
+        "session_listing": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 23,
+          "required": true,
+          "type": "bool"
+        },
+        "session_timeout_update": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 24,
+          "required": true,
+          "type": "bool"
+        },
+        "session_working_directory": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 25,
+          "required": true,
+          "type": "bool"
+        },
+        "sessions": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 26,
+          "required": true,
+          "type": "bool"
+        },
+        "snapshots": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 27,
+          "required": true,
+          "type": "bool"
+        },
+        "stderr": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 28,
+          "required": true,
+          "type": "bool"
+        },
+        "stdin": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 29,
+          "required": true,
+          "type": "bool"
+        },
+        "stdout": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 30,
+          "required": true,
+          "type": "bool"
+        },
+        "streaming_output": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 31,
+          "required": true,
+          "type": "bool"
+        },
+        "timeout": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 32,
+          "required": true,
+          "type": "bool"
+        },
+        "warm_pool": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 33,
+          "required": true,
+          "type": "bool"
+        },
+        "working_directory": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 34,
+          "required": true,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "CapabilityLimitsOutput": {
+      "constants": {},
+      "fields": {
+        "code_contexts": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "int64"
+        },
+        "code_event_page": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": false,
+          "type": "int64"
+        },
+        "code_execution_ids": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": false,
+          "type": "int64"
+        },
+        "code_output_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": false,
+          "type": "int64"
+        },
+        "code_source_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": false,
+          "type": "int64"
+        },
+        "command_history": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "int64"
+        },
+        "command_input_chunk_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": false,
+          "type": "int64"
+        },
+        "command_input_requests": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": false,
+          "type": "int64"
+        },
+        "command_input_total_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": false,
+          "type": "int64"
+        },
+        "command_output_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": true,
+          "type": "int64"
+        },
+        "command_output_events": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 11,
+          "required": true,
+          "type": "int64"
+        },
+        "file_watch_active": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 12,
+          "required": false,
+          "type": "int64"
+        },
+        "file_watch_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 13,
+          "required": false,
+          "type": "int64"
+        },
+        "file_watch_directories": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 14,
+          "required": false,
+          "type": "int64"
+        },
+        "file_watch_events": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 15,
+          "required": false,
+          "type": "int64"
+        },
+        "file_watch_history": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 16,
+          "required": false,
+          "type": "int64"
+        },
+        "file_watch_page": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 17,
+          "required": false,
+          "type": "int64"
+        },
+        "max_argument_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 18,
+          "required": true,
+          "type": "int64"
+        },
+        "max_arguments": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 19,
+          "required": true,
+          "type": "int64"
+        },
+        "max_concurrent": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 20,
+          "required": true,
+          "type": "int64"
+        },
+        "max_env_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 21,
+          "required": false,
+          "type": "int64"
+        },
+        "max_env_entries": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 22,
+          "required": false,
+          "type": "int64"
+        },
+        "max_input_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 23,
+          "required": true,
+          "type": "int64"
+        },
+        "max_input_files": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 24,
+          "required": true,
+          "type": "int64"
+        },
+        "max_memory_mib": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 25,
+          "required": true,
+          "type": "int64"
+        },
+        "max_output_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 26,
+          "required": true,
+          "type": "int64"
+        },
+        "max_stdin_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 27,
+          "required": false,
+          "type": "int64"
+        },
+        "max_timeout_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 28,
+          "required": true,
+          "type": "int64"
+        },
+        "max_vcpus": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 29,
+          "required": true,
+          "type": "int64"
+        },
+        "min_memory_mib": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 30,
+          "required": true,
+          "type": "int64"
+        },
+        "port_connection_ids": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 31,
+          "required": false,
+          "type": "int64"
+        },
+        "port_connections": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 32,
+          "required": false,
+          "type": "int64"
+        },
+        "port_frame_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 33,
+          "required": false,
+          "type": "int64"
+        },
+        "port_max_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 34,
+          "required": false,
+          "type": "int64"
+        },
+        "port_tenant_connections": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 35,
+          "required": false,
+          "type": "int64"
+        },
+        "port_timeout_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 36,
+          "required": false,
+          "type": "int64"
+        },
+        "preview_grant_ids": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 37,
+          "required": false,
+          "type": "int64"
+        },
+        "preview_grants": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 38,
+          "required": false,
+          "type": "int64"
+        },
+        "preview_request_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 39,
+          "required": false,
+          "type": "int64"
+        },
+        "preview_requests": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 40,
+          "required": false,
+          "type": "int64"
+        },
+        "preview_ttl_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 41,
+          "required": false,
+          "type": "int64"
+        },
+        "session_artifact_count": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 46,
+          "required": false,
+          "type": "int64"
+        },
+        "session_artifact_depth": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 47,
+          "required": false,
+          "type": "int64"
+        },
+        "session_artifact_entries": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 48,
+          "required": false,
+          "type": "int64"
+        },
+        "session_artifact_max_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 49,
+          "required": false,
+          "type": "int64"
+        },
+        "session_artifact_path_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 50,
+          "required": false,
+          "type": "int64"
+        },
+        "session_artifact_read_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 51,
+          "required": false,
+          "type": "int64"
+        },
+        "session_file_max_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 42,
+          "required": true,
+          "type": "int64"
+        },
+        "session_list_page_max": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 43,
+          "required": false,
+          "type": "int64"
+        },
+        "session_max_lifetime_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 44,
+          "required": false,
+          "type": "int64"
+        },
+        "session_max_ttl_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 45,
+          "required": true,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "CapabilityReportOutput": {
+      "constants": {},
+      "fields": {
+        "allowed_entrypoints": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": true,
+          "type": "CapabilityReportOutputAllowedEntrypoints"
+        },
+        "artifact_authenticated": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "bool"
+        },
+        "artifact_manifest_protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": false,
+          "type": "string"
+        },
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": false,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "code_languages": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 6,
+          "required": false,
+          "type": "CapabilityReportOutputCodeLanguages"
+        },
+        "code_runtime": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 7,
+          "required": false,
+          "type": "SignedCodeRuntimeOutput"
+        },
+        "features": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "CapabilityFeaturesOutput"
+        },
+        "guest_result_protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "string"
+        },
+        "limits": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": true,
+          "type": "CapabilityLimitsOutput"
+        },
+        "methods": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 11,
+          "required": true,
+          "type": "CapabilityReportOutputMethods"
+        },
+        "network_fetch_policy": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 12,
+          "required": false,
+          "type": "EgressPolicyOutput"
+        },
+        "port_forward_policy": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 13,
+          "required": false,
+          "type": "PortPolicyOutput"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 14,
+          "required": true,
+          "type": "string"
+        },
+        "remote_inference_policy": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 15,
+          "required": false,
+          "type": "InferenceCapabilitiesOutput"
+        },
+        "stage": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 16,
+          "required": true,
+          "type": "string"
+        },
+        "template_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 17,
+          "required": false,
+          "type": "string"
+        },
+        "workload": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 18,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CapabilityReportOutputAllowedEntrypoints": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "CapabilityReportOutputCodeLanguages": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "CapabilityReportOutputMethods": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "CodeContextCreateRequestInput": {
+      "constants": {},
+      "fields": {
+        "context_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "cwd": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": false,
+          "type": "string"
+        },
+        "language": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeContextDefaultRequestInput": {
+      "constants": {},
+      "fields": {
+        "language": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeContextOutput": {
+      "constants": {},
+      "fields": {
+        "cwd": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "discarded_late_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "uint64"
+        },
+        "discarded_late_events": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "uint64"
+        },
+        "failure": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        },
+        "generation": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "uint64"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "string"
+        },
+        "language": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "string"
+        },
+        "pid": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 8,
+          "required": true,
+          "type": "uint64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": false,
+          "type": "string"
+        },
+        "state": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeContextRemovedResponseOutput": {
+      "constants": {},
+      "fields": {
+        "context_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "removed": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "bool"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeContextRestartRequestInput": {
+      "constants": {},
+      "fields": {
+        "generation": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeContextsResponseOutput": {
+      "constants": {},
+      "fields": {
+        "contexts": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": true,
+          "type": "CodeContextsResponseOutputContexts"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeContextsResponseOutputContexts": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "CodeContextOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "CodeEventOutput": {
+      "fields": {
+        "error": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": "event",
+          "type": "CodeEventOutputError"
+        },
+        "finished": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": "event",
+          "type": "CodeEventOutputFinished"
+        },
+        "result": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": "event",
+          "type": "CodeEventOutputResult"
+        },
+        "started": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": "event",
+          "type": "CodeEventOutputStarted"
+        },
+        "stderr": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": "event",
+          "type": "CodeEventOutputStderr"
+        },
+        "stdout": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": "event",
+          "type": "CodeEventOutputStdout"
+        }
+      },
+      "kind": "union",
+      "variants": {
+        "error": "CodeEventOutputError",
+        "finished": "CodeEventOutputFinished",
+        "result": "CodeEventOutputResult",
+        "started": "CodeEventOutputStarted",
+        "stderr": "CodeEventOutputStderr",
+        "stdout": "CodeEventOutputStdout"
+      }
+    },
+    "CodeEventOutputError": {
+      "constants": {
+        "type": "error"
+      },
+      "fields": {
+        "name": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "traceback": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "value": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeEventOutputFinished": {
+      "constants": {
+        "type": "finished"
+      },
+      "fields": {
+        "context_usable": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "bool"
+        },
+        "status": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeEventOutputResult": {
+      "constants": {
+        "type": "result"
+      },
+      "fields": {
+        "data": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "CodeEventOutputResultData"
+        },
+        "is_main_result": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeEventOutputResultData": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "JsonValue"
+        }
+      },
+      "kind": "map"
+    },
+    "CodeEventOutputStarted": {
+      "constants": {
+        "type": "started"
+      },
+      "fields": {},
+      "kind": "object"
+    },
+    "CodeEventOutputStderr": {
+      "constants": {
+        "type": "stderr"
+      },
+      "fields": {
+        "data": {
+          "cardinality": "singular",
+          "json_encoding": "base64",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "bytes"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeEventOutputStdout": {
+      "constants": {
+        "type": "stdout"
+      },
+      "fields": {
+        "data": {
+          "cardinality": "singular",
+          "json_encoding": "base64",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "bytes"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeExecutionAcceptedResponseOutput": {
+      "constants": {},
+      "fields": {
+        "accepted": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "bool"
+        },
+        "execution_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeExecutionPageOutput": {
+      "constants": {},
+      "fields": {
+        "context_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "events": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": true,
+          "type": "CodeExecutionPageOutputEvents"
+        },
+        "events_evicted": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "bool"
+        },
+        "failure": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        },
+        "generation": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "uint64"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "string"
+        },
+        "language": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": false,
+          "type": "string"
+        },
+        "last_sequence": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "uint64"
+        },
+        "next_sequence": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "uint64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": false,
+          "type": "string"
+        },
+        "status": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 11,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeExecutionPageOutputEvents": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "CodeSequencedEventOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "CodeExecutionRequestInput": {
+      "constants": {},
+      "fields": {
+        "code": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "string"
+        },
+        "context_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "environment": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 3,
+          "required": false,
+          "type": "CodeExecutionRequestInputEnvironment"
+        },
+        "execution_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        },
+        "generation": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "uint64"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 6,
+          "required": false,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "CodeExecutionRequestInputEnvironment": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "CodeSequencedEventOutput": {
+      "constants": {},
+      "fields": {
+        "event": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "CodeEventOutput"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "CommandCancelResponseOutput": {
+      "constants": {},
+      "fields": {
+        "killed": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "CreateCodeContextRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "CodeContextCreateRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "CreatePreviewRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "PreviewCreateRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "uint64"
+        },
+        "preview": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "CreateSessionArtifactRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "SessionArtifactCreateRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "CreateSessionRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "SessionCreateRequestInput"
+        }
+      },
+      "kind": "request"
+    },
+    "DefaultCodeContextRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "CodeContextDefaultRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "DeleteSessionArtifactRequest": {
+      "fields": {
+        "artifact": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "DeleteSessionArtifactResponse": {
+      "fields": {},
+      "kind": "object"
+    },
+    "DeleteSessionRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "DeleteSessionResponse": {
+      "fields": {},
+      "kind": "object"
+    },
+    "DoctorCheckOutput": {
+      "constants": {},
+      "fields": {
+        "detail": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "name": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "ok": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "bool"
+        },
+        "warning": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": false,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "DoctorReportOutput": {
+      "constants": {},
+      "fields": {
+        "checks": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": true,
+          "type": "DoctorReportOutputChecks"
+        },
+        "ready": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "bool"
+        },
+        "vm_capacity": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 3,
+          "required": false,
+          "type": "VMCapacitySnapshotOutput"
+        },
+        "vm_instances": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": false,
+          "type": "VMInstanceSnapshotOutput"
+        },
+        "warm_pool": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 5,
+          "required": false,
+          "type": "WarmPoolSnapshotOutput"
+        }
+      },
+      "kind": "object"
+    },
+    "DoctorReportOutputChecks": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "DoctorCheckOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "EgressPolicyOutput": {
+      "constants": {},
+      "fields": {
+        "allowed_cidrs": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "EgressPolicyOutputAllowedCidrs"
+        },
+        "allowed_origins": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": true,
+          "type": "EgressPolicyOutputAllowedOrigins"
+        },
+        "max_concurrent": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": false,
+          "type": "int64"
+        },
+        "max_redirects": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": false,
+          "type": "int64"
+        },
+        "max_request_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": false,
+          "type": "int64"
+        },
+        "max_response_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": false,
+          "type": "int64"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": false,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "EgressPolicyOutputAllowedCidrs": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "EgressPolicyOutputAllowedOrigins": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "ErrorDetail": {
+      "constants": {},
+      "fields": {
+        "code": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "string"
+        },
+        "http_status": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": false,
+          "type": "uint64"
+        },
+        "invocation_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": false,
+          "type": "string"
+        },
+        "message": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": false,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "GetCodeContextRequest": {
+      "fields": {
+        "context": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "GetCodeExecutionRequest": {
+      "fields": {
+        "after": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "uint64"
+        },
+        "execution": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "GetPortConnectionRequest": {
+      "fields": {
+        "connection": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "request"
+    },
+    "GetPreviewRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "preview": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "GetSessionRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "HealthRequest": {
+      "fields": {},
+      "kind": "request"
+    },
+    "HostDoctorRequest": {
+      "fields": {},
+      "kind": "request"
+    },
+    "InferenceAPIErrorResponseOutput": {
+      "constants": {},
+      "fields": {
+        "code": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "error": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "invocation_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": false,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "InferenceBillOutput": {
+      "constants": {},
+      "fields": {
+        "budget_units": {
+          "cardinality": "singular",
+          "json_encoding": "decimal_string",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "uint64"
+        },
+        "closed": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "bool"
+        },
+        "held_units": {
+          "cardinality": "singular",
+          "json_encoding": "decimal_string",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "uint64"
+        },
+        "invocations": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": true,
+          "type": "InferenceBillOutputInvocations"
+        },
+        "lease_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "max_invocations": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "int64"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "string"
+        },
+        "settled_units": {
+          "cardinality": "singular",
+          "json_encoding": "decimal_string",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "uint64"
+        },
+        "task_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "string"
+        },
+        "tenant": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": true,
+          "type": "string"
+        },
+        "unit": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 11,
+          "required": true,
+          "type": "string"
+        },
+        "vm_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 12,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "InferenceBillOutputInvocations": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "InferenceInvocationReceiptOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "InferenceBillRequest": {
+      "fields": {
+        "task": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "InferenceCapabilitiesOutput": {
+      "constants": {},
+      "fields": {
+        "budget_units": {
+          "cardinality": "singular",
+          "json_encoding": "decimal_string",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "uint64"
+        },
+        "endpoints": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": true,
+          "type": "InferenceCapabilitiesOutputEndpoints"
+        },
+        "max_invocations": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "int64"
+        },
+        "max_request_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "int64"
+        },
+        "max_response_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "int64"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "string"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "InferenceCapabilitiesOutputEndpoints": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "InferenceEndpointCapabilityOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "InferenceEndpointCapabilityOutput": {
+      "constants": {},
+      "fields": {
+        "name": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "price": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "InferencePriceOutput"
+        }
+      },
+      "kind": "object"
+    },
+    "InferenceInvocationReceiptOutput": {
+      "constants": {},
+      "fields": {
+        "code": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "string"
+        },
+        "dispatched": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "bool"
+        },
+        "duration_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "uint64"
+        },
+        "endpoint": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        },
+        "epoch": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "finished_at": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 6,
+          "required": false,
+          "type": "string"
+        },
+        "http_status": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "int64"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "string"
+        },
+        "input_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "uint64"
+        },
+        "max_output_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": true,
+          "type": "uint64"
+        },
+        "output_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 11,
+          "required": true,
+          "type": "uint64"
+        },
+        "price": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 12,
+          "required": true,
+          "type": "InferencePriceOutput"
+        },
+        "reserved_units": {
+          "cardinality": "singular",
+          "json_encoding": "decimal_string",
+          "nullable": false,
+          "number": 13,
+          "required": true,
+          "type": "uint64"
+        },
+        "settled_units": {
+          "cardinality": "singular",
+          "json_encoding": "decimal_string",
+          "nullable": false,
+          "number": 14,
+          "required": true,
+          "type": "uint64"
+        },
+        "started_at": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 15,
+          "required": true,
+          "type": "string"
+        },
+        "state": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 16,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "InferenceInvokeRequestInput": {
+      "constants": {},
+      "fields": {
+        "endpoint": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "payload": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "JsonValue"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": false,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "InferenceInvokeResultOutput": {
+      "constants": {},
+      "fields": {
+        "data": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "JsonValue"
+        },
+        "invocation": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "InferenceInvocationReceiptOutput"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        },
+        "task_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "InferencePriceOutput": {
+      "constants": {},
+      "fields": {
+        "input_byte_units": {
+          "cardinality": "singular",
+          "json_encoding": "decimal_string",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "uint64"
+        },
+        "output_byte_units": {
+          "cardinality": "singular",
+          "json_encoding": "decimal_string",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "uint64"
+        },
+        "request_units": {
+          "cardinality": "singular",
+          "json_encoding": "decimal_string",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "InputFileInput": {
+      "constants": {},
+      "fields": {
+        "data": {
+          "cardinality": "singular",
+          "json_encoding": "base64",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "bytes"
+        },
+        "mode": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": false,
+          "type": "uint64"
+        },
+        "path": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "InvokeInferenceRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "InferenceInvokeRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "JsonArray": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "number": 1,
+          "type": "JsonValue"
+        }
+      },
+      "kind": "json_array"
+    },
+    "JsonObject": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "number": 1,
+          "type": "JsonValue"
+        }
+      },
+      "kind": "json_object"
+    },
+    "JsonValue": {
+      "fields": {
+        "array": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": "kind",
+          "type": "JsonArray"
+        },
+        "boolean": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": "kind",
+          "type": "bool"
+        },
+        "null_value": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": "kind",
+          "type": "JsonNull"
+        },
+        "number": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": "kind",
+          "type": "string"
+        },
+        "object": {
+          "cardinality": "singular",
+          "number": 5,
+          "oneof": "kind",
+          "type": "JsonObject"
+        },
+        "text": {
+          "cardinality": "singular",
+          "number": 6,
+          "oneof": "kind",
+          "type": "string"
+        }
+      },
+      "kind": "json"
+    },
+    "LegacyAPIErrorResponseOutput": {
+      "constants": {},
+      "fields": {
+        "error": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "ListCodeContextsRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "ListSessionCommandsRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "ListSessionWatchesRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "ListSessionsRequest": {
+      "fields": {
+        "cursor": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "string"
+        },
+        "limit": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 2,
+          "required": false,
+          "type": "uint64"
+        },
+        "order": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 3,
+          "required": false,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "MetricsText": {
+      "fields": {
+        "text": {
+          "cardinality": "singular",
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "text"
+    },
+    "NetworkFetchRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "NetworkFetchRequestInput"
+        }
+      },
+      "kind": "request"
+    },
+    "NetworkFetchRequestInput": {
+      "constants": {},
+      "fields": {
+        "body_base64": {
+          "cardinality": "singular",
+          "json_encoding": "base64",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "bytes"
+        },
+        "follow_redirects": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": false,
+          "type": "bool"
+        },
+        "headers": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 3,
+          "required": false,
+          "type": "NetworkFetchRequestInputHeaders"
+        },
+        "method": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": false,
+          "type": "string"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 5,
+          "required": false,
+          "type": "int64"
+        },
+        "url": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "NetworkFetchRequestInputHeaders": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "NetworkFetchResultOutput": {
+      "constants": {},
+      "fields": {
+        "body_base64": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "body_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "int64"
+        },
+        "duration_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "int64"
+        },
+        "headers": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": true,
+          "type": "NetworkFetchResultOutputHeaders"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "redirects": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "int64"
+        },
+        "request_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "int64"
+        },
+        "request_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "string"
+        },
+        "response_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "int64"
+        },
+        "status": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": true,
+          "type": "int64"
+        },
+        "url": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 11,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "NetworkFetchResultOutputHeaders": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": true,
+          "number": 1,
+          "type": "NetworkFetchResultOutputHeadersEntry"
+        }
+      },
+      "kind": "map"
+    },
+    "NetworkFetchResultOutputHeadersEntry": {
+      "fields": {
+        "null_value": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": "nullable",
+          "type": "JsonNull"
+        },
+        "value": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "oneof": "nullable",
+          "type": "NetworkFetchResultOutputHeadersEntryValue"
+        }
+      },
+      "kind": "nullable"
+    },
+    "NetworkFetchResultOutputHeadersEntryValue": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "OpenPortTunnelRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "SessionPortLimitsInput"
+        },
+        "connection": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "request"
+    },
+    "PollCommandInputRequest": {
+      "fields": {
+        "command": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "request"
+    },
+    "PollSessionCommandRequest": {
+      "fields": {
+        "after": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "uint64"
+        },
+        "command": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "PollSessionWatchRequest": {
+      "fields": {
+        "after": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "uint64"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "watch": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "PortClientFrame": {
+      "fields": {
+        "cancel": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": "frame",
+          "type": "TransportEmpty"
+        },
+        "data": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": "frame",
+          "type": "bytes"
+        },
+        "eof": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": "frame",
+          "type": "TransportEmpty"
+        },
+        "open": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": "frame",
+          "type": "OpenPortTunnelRequest"
+        }
+      },
+      "kind": "port_client"
+    },
+    "PortConnectionResponseOutput": {
+      "constants": {},
+      "fields": {
+        "connection": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "SessionPortInfoOutput"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "PortOpened": {
+      "fields": {
+        "connection": {
+          "cardinality": "singular",
+          "number": 1,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "number": 2,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "number": 3,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "PortPolicyOutput": {
+      "constants": {},
+      "fields": {
+        "allowed_ports": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": true,
+          "type": "PortPolicyOutputAllowedPorts"
+        },
+        "max_concurrent": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "int64"
+        },
+        "preview": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "PortPolicyOutputAllowedPorts": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "PortRangeOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "PortRangeOutput": {
+      "constants": {},
+      "fields": {
+        "from": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "uint64"
+        },
+        "to": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "PortServerFrame": {
+      "fields": {
+        "data": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": "frame",
+          "type": "bytes"
+        },
+        "eof": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": "frame",
+          "type": "TransportEmpty"
+        },
+        "finished": {
+          "cardinality": "singular",
+          "number": 3,
+          "oneof": "frame",
+          "type": "SessionPortInfoOutput"
+        },
+        "opened": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": "frame",
+          "type": "PortOpened"
+        }
+      },
+      "kind": "port_server"
+    },
+    "PreviewCreateRequestInput": {
+      "constants": {},
+      "fields": {
+        "ttl_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "PreviewGrantInfoOutput": {
+      "constants": {},
+      "fields": {
+        "bootstrap_url": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "string"
+        },
+        "created_at": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "expires_at": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        },
+        "origin": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "uint64"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "string"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "string"
+        },
+        "status": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "PrometheusMetricsRequest": {
+      "fields": {},
+      "kind": "request"
+    },
+    "ReadSessionArtifactRequest": {
+      "fields": {
+        "artifact": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "SessionArtifactReadRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "ReadinessRequest": {
+      "fields": {},
+      "kind": "request"
+    },
+    "RemoveCodeContextRequest": {
+      "fields": {
+        "context": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "generation": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "uint64"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "RestartCodeContextRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "CodeContextRestartRequestInput"
+        },
+        "context": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "RevokePreviewRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "preview": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "RunJobRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "RunRequestV2Input"
+        }
+      },
+      "kind": "request"
+    },
+    "RunLegacyJobRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "RunRequestInput"
+        }
+      },
+      "kind": "request"
+    },
+    "RunRequestInput": {
+      "constants": {},
+      "fields": {
+        "args": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "RunRequestInputArgs"
+        },
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": false,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 3,
+          "required": false,
+          "type": "string"
+        },
+        "cwd": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": false,
+          "type": "string"
+        },
+        "entrypoint": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 5,
+          "required": false,
+          "type": "string"
+        },
+        "environment": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 6,
+          "required": false,
+          "type": "RunRequestInputEnvironment"
+        },
+        "input_files": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 7,
+          "required": false,
+          "type": "RunRequestInputInputFiles"
+        },
+        "memory_mib": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 8,
+          "required": false,
+          "type": "uint64"
+        },
+        "network": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 9,
+          "required": false,
+          "type": "string"
+        },
+        "stdin": {
+          "cardinality": "singular",
+          "json_encoding": "base64",
+          "nullable": true,
+          "number": 10,
+          "required": false,
+          "type": "bytes"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 11,
+          "required": false,
+          "type": "uint64"
+        },
+        "vcpus": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 12,
+          "required": false,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "RunRequestInputArgs": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "RunRequestInputEnvironment": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "RunRequestInputInputFiles": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "InputFileInput"
+        }
+      },
+      "kind": "list"
+    },
+    "RunRequestV2Input": {
+      "constants": {},
+      "fields": {
+        "args": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "RunRequestV2InputArgs"
+        },
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        },
+        "cwd": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": false,
+          "type": "string"
+        },
+        "entrypoint": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "environment": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 6,
+          "required": false,
+          "type": "RunRequestV2InputEnvironment"
+        },
+        "input_files": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 7,
+          "required": false,
+          "type": "RunRequestV2InputInputFiles"
+        },
+        "memory_mib": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 8,
+          "required": false,
+          "type": "uint64"
+        },
+        "network": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 9,
+          "required": false,
+          "type": "string"
+        },
+        "stdin": {
+          "cardinality": "singular",
+          "json_encoding": "base64",
+          "nullable": true,
+          "number": 10,
+          "required": false,
+          "type": "bytes"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 11,
+          "required": false,
+          "type": "uint64"
+        },
+        "vcpus": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 12,
+          "required": false,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "RunRequestV2InputArgs": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "RunRequestV2InputEnvironment": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "RunRequestV2InputInputFiles": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "InputFileInput"
+        }
+      },
+      "kind": "list"
+    },
+    "RunResultOutput": {
+      "constants": {},
+      "fields": {
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "duration_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "int64"
+        },
+        "exit_code": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "int64"
+        },
+        "guest_result": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": false,
+          "type": "JsonValue"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "string"
+        },
+        "output": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "string"
+        },
+        "output_truncated": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "bool"
+        },
+        "protocol_ok": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "bool"
+        },
+        "startup_duration_us": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": false,
+          "type": "int64"
+        },
+        "startup_mode": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 11,
+          "required": false,
+          "type": "string"
+        },
+        "startup_timing": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 12,
+          "required": false,
+          "type": "StartupTimingOutput"
+        },
+        "state": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 13,
+          "required": true,
+          "type": "string"
+        },
+        "template_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 14,
+          "required": false,
+          "type": "string"
+        },
+        "timed_out": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 15,
+          "required": true,
+          "type": "bool"
+        },
+        "vm_boot_duration_us": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 16,
+          "required": false,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "RunSessionCommandRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "SessionCommandRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "SessionArtifactChunkOutput": {
+      "constants": {},
+      "fields": {
+        "archive_sha256": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "data_base64": {
+          "cardinality": "singular",
+          "json_encoding": "base64",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "bytes"
+        },
+        "data_sha256": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        },
+        "eof": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "bool"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "offset": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "uint64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "string"
+        },
+        "total_size": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionArtifactCreateRequestInput": {
+      "constants": {},
+      "fields": {
+        "path": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionArtifactInfoOutput": {
+      "constants": {},
+      "fields": {
+        "entries": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "uint64"
+        },
+        "files": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "uint64"
+        },
+        "format": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        },
+        "path": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "payload_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "uint64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "string"
+        },
+        "sha256": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "string"
+        },
+        "size": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "uint64"
+        },
+        "source_kind": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionArtifactReadRequestInput": {
+      "constants": {},
+      "fields": {
+        "length": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "uint64"
+        },
+        "offset": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCapabilitiesRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "SessionCapabilityReportOutput": {
+      "constants": {},
+      "fields": {
+        "allowed_entrypoints": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": true,
+          "type": "SessionCapabilityReportOutputAllowedEntrypoints"
+        },
+        "artifact_authenticated": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "bool"
+        },
+        "artifact_manifest_protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": false,
+          "type": "string"
+        },
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": false,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "code_languages": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 6,
+          "required": false,
+          "type": "SessionCapabilityReportOutputCodeLanguages"
+        },
+        "code_runtime": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 7,
+          "required": false,
+          "type": "SignedCodeRuntimeOutput"
+        },
+        "features": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "CapabilityFeaturesOutput"
+        },
+        "guest_result_protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "string"
+        },
+        "limits": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": true,
+          "type": "CapabilityLimitsOutput"
+        },
+        "methods": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 11,
+          "required": true,
+          "type": "SessionCapabilityReportOutputMethods"
+        },
+        "network_fetch_policy": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 12,
+          "required": false,
+          "type": "EgressPolicyOutput"
+        },
+        "port_forward_policy": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 13,
+          "required": false,
+          "type": "PortPolicyOutput"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 14,
+          "required": true,
+          "type": "string"
+        },
+        "remote_inference_policy": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 15,
+          "required": false,
+          "type": "InferenceCapabilitiesOutput"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 16,
+          "required": true,
+          "type": "string"
+        },
+        "stage": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 17,
+          "required": true,
+          "type": "string"
+        },
+        "template_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 18,
+          "required": false,
+          "type": "string"
+        },
+        "workload": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 19,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCapabilityReportOutputAllowedEntrypoints": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCapabilityReportOutputCodeLanguages": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCapabilityReportOutputMethods": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCommandInfoOutput": {
+      "constants": {},
+      "fields": {
+        "args": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": true,
+          "type": "SessionCommandInfoOutputArgs"
+        },
+        "completed_at": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": false,
+          "type": "string"
+        },
+        "cwd": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": false,
+          "type": "string"
+        },
+        "entrypoint": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        },
+        "environment": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 5,
+          "required": false,
+          "type": "SessionCommandInfoOutputEnvironment"
+        },
+        "error": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": false,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "string"
+        },
+        "interactive_stdin": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "bool"
+        },
+        "pid": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": false,
+          "type": "int64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": true,
+          "type": "string"
+        },
+        "started_at": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 11,
+          "required": true,
+          "type": "string"
+        },
+        "state": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 12,
+          "required": true,
+          "type": "string"
+        },
+        "stdin_closed": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 13,
+          "required": true,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandInfoOutputArgs": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCommandInfoOutputEnvironment": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "SessionCommandInputReceiptOutput": {
+      "constants": {},
+      "fields": {
+        "closed": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "bool"
+        },
+        "command_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "error_code": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": false,
+          "type": "string"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "int64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "state": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "string"
+        },
+        "written_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandInputRequestInput": {
+      "constants": {},
+      "fields": {
+        "close": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "bool"
+        },
+        "data_base64": {
+          "cardinality": "singular",
+          "json_encoding": "base64",
+          "nullable": true,
+          "number": 2,
+          "required": false,
+          "type": "bytes"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandPageOutput": {
+      "constants": {},
+      "fields": {
+        "complete": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "bool"
+        },
+        "events": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": true,
+          "type": "SessionCommandPageOutputEvents"
+        },
+        "info": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "SessionCommandInfoOutput"
+        },
+        "next_sequence": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "int64"
+        },
+        "result": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 5,
+          "required": false,
+          "type": "SessionCommandResultOutput"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandPageOutputEvents": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "SessionOutputEventOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCommandRequestInput": {
+      "constants": {},
+      "fields": {
+        "args": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "SessionCommandRequestInputArgs"
+        },
+        "cwd": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": false,
+          "type": "string"
+        },
+        "entrypoint": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        },
+        "environment": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": false,
+          "type": "SessionCommandRequestInputEnvironment"
+        },
+        "interactive_stdin": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 5,
+          "required": false,
+          "type": "bool"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 6,
+          "required": false,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandRequestInputArgs": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCommandRequestInputEnvironment": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "SessionCommandResultOutput": {
+      "constants": {},
+      "fields": {
+        "result": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "RunResultOutput"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandStreamEvent": {
+      "fields": {
+        "output": {
+          "cardinality": "singular",
+          "number": 1,
+          "oneof": "event",
+          "type": "SessionOutputFrameOutput"
+        },
+        "result": {
+          "cardinality": "singular",
+          "number": 2,
+          "oneof": "event",
+          "type": "SessionCommandPageOutput"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "number": 3,
+          "type": "uint64"
+        },
+        "timeout": {
+          "cardinality": "singular",
+          "number": 4,
+          "oneof": "event",
+          "type": "SessionCommandTimeoutFrameOutput"
+        }
+      },
+      "kind": "stream_event"
+    },
+    "SessionCommandTimeoutFrameOutput": {
+      "constants": {},
+      "fields": {
+        "command_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "next_sequence": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "int64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandsResponseOutput": {
+      "constants": {},
+      "fields": {
+        "commands": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": true,
+          "type": "SessionCommandsResponseOutputCommands"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCommandsResponseOutputCommands": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "SessionCommandInfoOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionCreateRequestInput": {
+      "constants": {},
+      "fields": {
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "input_files": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 3,
+          "required": false,
+          "type": "SessionCreateRequestInputInputFiles"
+        },
+        "memory_mib": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": false,
+          "type": "int64"
+        },
+        "network": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 5,
+          "required": false,
+          "type": "string"
+        },
+        "ttl_ms": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 6,
+          "required": false,
+          "type": "int64"
+        },
+        "vcpus": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 7,
+          "required": false,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionCreateRequestInputInputFiles": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "InputFileInput"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionFileInfoOutput": {
+      "constants": {},
+      "fields": {
+        "group": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "metadata": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": false,
+          "type": "SessionFileInfoOutputMetadata"
+        },
+        "mode": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "uint64"
+        },
+        "modified_time_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "int64"
+        },
+        "name": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "owner": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "string"
+        },
+        "path": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "string"
+        },
+        "permissions": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "string"
+        },
+        "size": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "int64"
+        },
+        "symlink_target": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 10,
+          "required": false,
+          "type": "string"
+        },
+        "type": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 11,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionFileInfoOutputMetadata": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "SessionFileRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "SessionFileRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "SessionFileRequestInput": {
+      "constants": {},
+      "fields": {
+        "action": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "data_base64": {
+          "cardinality": "singular",
+          "json_encoding": "base64",
+          "nullable": true,
+          "number": 2,
+          "required": false,
+          "type": "bytes"
+        },
+        "destination": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 3,
+          "required": false,
+          "type": "string"
+        },
+        "metadata": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": false,
+          "type": "SessionFileRequestInputMetadata"
+        },
+        "path": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionFileRequestInputMetadata": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "SessionFileResultOutput": {
+      "constants": {},
+      "fields": {
+        "action": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "created": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": false,
+          "type": "bool"
+        },
+        "data_base64": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 3,
+          "required": false,
+          "type": "string"
+        },
+        "destination": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": false,
+          "type": "string"
+        },
+        "entries": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 5,
+          "required": false,
+          "type": "SessionFileResultOutputEntries"
+        },
+        "entry_infos": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 6,
+          "required": false,
+          "type": "SessionFileResultOutputEntryInfos"
+        },
+        "info": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 7,
+          "required": false,
+          "type": "SessionFileInfoOutput"
+        },
+        "kind": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": false,
+          "type": "string"
+        },
+        "path": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "string"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": true,
+          "type": "string"
+        },
+        "size": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 11,
+          "required": true,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionFileResultOutputEntries": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionFileResultOutputEntryInfos": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "SessionFileInfoOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionInfoOutput": {
+      "constants": {},
+      "fields": {
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "created_at": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        },
+        "expires_at": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        },
+        "guest_protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": false,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "string"
+        },
+        "lease_revision": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": false,
+          "type": "uint64"
+        },
+        "max_expires_at": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": false,
+          "type": "string"
+        },
+        "memory_mib": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": false,
+          "type": "int64"
+        },
+        "network": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 10,
+          "required": false,
+          "type": "string"
+        },
+        "remaining_ttl_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 11,
+          "required": false,
+          "type": "int64"
+        },
+        "startup_duration_us": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 12,
+          "required": false,
+          "type": "int64"
+        },
+        "startup_mode": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 13,
+          "required": false,
+          "type": "string"
+        },
+        "startup_timing": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 14,
+          "required": false,
+          "type": "StartupTimingOutput"
+        },
+        "state": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 15,
+          "required": true,
+          "type": "string"
+        },
+        "vcpus": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 16,
+          "required": false,
+          "type": "int64"
+        },
+        "vm_boot_duration_us": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 17,
+          "required": false,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionListPageOutput": {
+      "constants": {},
+      "fields": {
+        "next_cursor": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "string"
+        },
+        "sessions": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": true,
+          "type": "SessionListPageOutputSessions"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionListPageOutputSessions": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "SessionInfoOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionOutputEventOutput": {
+      "constants": {},
+      "fields": {
+        "data_base64": {
+          "cardinality": "singular",
+          "json_encoding": "base64",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "bytes"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "int64"
+        },
+        "stream": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionOutputFrameOutput": {
+      "constants": {},
+      "fields": {
+        "command_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "data_base64": {
+          "cardinality": "singular",
+          "json_encoding": "base64",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "bytes"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "int64"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        },
+        "stream": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionPortInfoOutput": {
+      "constants": {},
+      "fields": {
+        "error": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "port": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "uint64"
+        },
+        "received_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "uint64"
+        },
+        "sent_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "uint64"
+        },
+        "status": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionPortLimitsInput": {
+      "constants": {},
+      "fields": {
+        "idle_timeout_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "uint64"
+        },
+        "max_bytes": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "uint64"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionTimeoutRequestInput": {
+      "constants": {},
+      "fields": {
+        "ttl_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionWatchEventOutput": {
+      "constants": {},
+      "fields": {
+        "entry": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "SessionFileInfoOutput"
+        },
+        "name": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "sequence": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "int64"
+        },
+        "type": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionWatchInfoOutput": {
+      "constants": {},
+      "fields": {
+        "created_at": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "error_code": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": false,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        },
+        "include_entry": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "bool"
+        },
+        "path": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "recursive": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "bool"
+        },
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "string"
+        },
+        "state": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionWatchPageOutput": {
+      "constants": {},
+      "fields": {
+        "complete": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "bool"
+        },
+        "events": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": true,
+          "type": "SessionWatchPageOutputEvents"
+        },
+        "info": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "SessionWatchInfoOutput"
+        },
+        "next_sequence": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionWatchPageOutputEvents": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "SessionWatchEventOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "SessionWatchRequestInput": {
+      "constants": {},
+      "fields": {
+        "include_entry": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": false,
+          "type": "bool"
+        },
+        "path": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "recursive": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 3,
+          "required": false,
+          "type": "bool"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": false,
+          "type": "uint64"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionWatchesResponseOutput": {
+      "constants": {},
+      "fields": {
+        "session_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "watches": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 2,
+          "required": true,
+          "type": "SessionWatchesResponseOutputWatches"
+        }
+      },
+      "kind": "object"
+    },
+    "SessionWatchesResponseOutputWatches": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "SessionWatchInfoOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "SetSessionTimeoutRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "SessionTimeoutRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "SignedCodeRuntimeOutput": {
+      "constants": {},
+      "fields": {
+        "architecture": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "kernel_protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "kernel_scripts_sha256": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 3,
+          "required": true,
+          "type": "SignedCodeRuntimeOutputKernelScriptsSha256"
+        },
+        "minimum_cpu_features": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 4,
+          "required": true,
+          "type": "SignedCodeRuntimeOutputMinimumCpuFeatures"
+        },
+        "node_version": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "prewarm_language": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "string"
+        },
+        "python_version": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "string"
+        },
+        "runtime_inventory_sha256": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "string"
+        },
+        "typescript_version": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "SignedCodeRuntimeOutputKernelScriptsSha256": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "map"
+    },
+    "SignedCodeRuntimeOutputMinimumCpuFeatures": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "string"
+        }
+      },
+      "kind": "list"
+    },
+    "StartSessionCommandRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "SessionCommandRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "StartSessionWatchRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "SessionWatchRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "StartupTimingOutput": {
+      "constants": {},
+      "fields": {
+        "admission_us": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "int64"
+        },
+        "audit_us": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "int64"
+        },
+        "finalize_us": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "int64"
+        },
+        "ownership_us": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "int64"
+        },
+        "preparation_us": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "int64"
+        },
+        "readiness_us": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "int64"
+        },
+        "schema": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "string"
+        },
+        "selection_us": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "int64"
+        },
+        "total_us": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": true,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "StatusResponseOutput": {
+      "constants": {},
+      "fields": {
+        "status": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "StopSessionWatchRequest": {
+      "fields": {
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "watch": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "StreamSessionCommandRequest": {
+      "fields": {
+        "after": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "uint64"
+        },
+        "command": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        },
+        "timeout_ms": {
+          "cardinality": "singular",
+          "location": "query",
+          "nullable": false,
+          "number": 4,
+          "required": false,
+          "type": "uint64"
+        }
+      },
+      "kind": "request"
+    },
+    "SubmitCodeExecutionRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "CodeExecutionRequestInput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "SubmitCommandInputRequest": {
+      "fields": {
+        "body": {
+          "cardinality": "singular",
+          "location": "body",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "SessionCommandInputRequestInput"
+        },
+        "command": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "id": {
+          "cardinality": "singular",
+          "location": "path",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        }
+      },
+      "kind": "request"
+    },
+    "TemplateCatalogReportOutput": {
+      "constants": {},
+      "fields": {
+        "default_template_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "string"
+        },
+        "protocol": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "string"
+        },
+        "templates": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 3,
+          "required": true,
+          "type": "TemplateCatalogReportOutputTemplates"
+        }
+      },
+      "kind": "object"
+    },
+    "TemplateCatalogReportOutputTemplates": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "TemplateReportOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "TemplateCatalogRequest": {
+      "fields": {},
+      "kind": "request"
+    },
+    "TemplateReportOutput": {
+      "constants": {},
+      "fields": {
+        "available": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "bool"
+        },
+        "capabilities": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "CapabilityReportOutput"
+        },
+        "id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "string"
+        },
+        "unavailable_code": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": false,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "TransportEmpty": {
+      "fields": {},
+      "kind": "object"
+    },
+    "VMCapacitySnapshotOutput": {
+      "constants": {},
+      "fields": {
+        "active": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "int64"
+        },
+        "available_identities": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "int64"
+        },
+        "blocked": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "bool"
+        },
+        "instances": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "int64"
+        },
+        "reserved_memory_mib": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "int64"
+        },
+        "reserved_pids": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "int64"
+        },
+        "reserved_vcpus": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "int64"
+        }
+      },
+      "kind": "object"
+    },
+    "VMInstanceSnapshotOutput": {
+      "constants": {},
+      "fields": {
+        "states": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 1,
+          "required": true,
+          "type": "VMInstanceSnapshotOutputStates"
+        },
+        "stopping": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "VMInstanceSnapshotOutputStates": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "int64"
+        }
+      },
+      "kind": "map"
+    },
+    "WarmPoolSnapshotOutput": {
+      "constants": {},
+      "fields": {
+        "checking": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "int64"
+        },
+        "degraded": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": true,
+          "type": "bool"
+        },
+        "discarded": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 3,
+          "required": true,
+          "type": "WarmPoolSnapshotOutputDiscarded"
+        },
+        "enabled": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "bool"
+        },
+        "foreground": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "int64"
+        },
+        "healthy": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "bool"
+        },
+        "hits": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "uint64"
+        },
+        "memory_pressure": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "bool"
+        },
+        "misses": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 9,
+          "required": true,
+          "type": "WarmPoolSnapshotOutputMisses"
+        },
+        "profiles": {
+          "cardinality": "singular",
+          "nullable": true,
+          "number": 10,
+          "required": true,
+          "type": "WarmPoolSnapshotOutputProfiles"
+        },
+        "refill_failures": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 11,
+          "required": true,
+          "type": "uint64"
+        },
+        "retiring": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 12,
+          "required": true,
+          "type": "int64"
+        },
+        "running": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 13,
+          "required": true,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    },
+    "WarmPoolSnapshotOutputDiscarded": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "uint64"
+        }
+      },
+      "kind": "map"
+    },
+    "WarmPoolSnapshotOutputMisses": {
+      "fields": {
+        "values": {
+          "cardinality": "map",
+          "nullable": false,
+          "number": 1,
+          "type": "uint64"
+        }
+      },
+      "kind": "map"
+    },
+    "WarmPoolSnapshotOutputProfiles": {
+      "fields": {
+        "values": {
+          "cardinality": "repeated",
+          "nullable": false,
+          "number": 1,
+          "type": "WarmProfileSnapshotOutput"
+        }
+      },
+      "kind": "list"
+    },
+    "WarmProfileSnapshotOutput": {
+      "constants": {},
+      "fields": {
+        "artifact_manifest_sha256": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": false,
+          "type": "string"
+        },
+        "backend": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 2,
+          "required": false,
+          "type": "string"
+        },
+        "booting": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 3,
+          "required": true,
+          "type": "int64"
+        },
+        "desired": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 4,
+          "required": true,
+          "type": "int64"
+        },
+        "key": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 5,
+          "required": true,
+          "type": "string"
+        },
+        "name": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 6,
+          "required": true,
+          "type": "string"
+        },
+        "ready": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 7,
+          "required": true,
+          "type": "int64"
+        },
+        "retry_in_ms": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 8,
+          "required": true,
+          "type": "int64"
+        },
+        "template_id": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 9,
+          "required": false,
+          "type": "string"
+        }
+      },
+      "kind": "object"
+    },
+    "WatchStopResponseOutput": {
+      "constants": {},
+      "fields": {
+        "stopped": {
+          "cardinality": "singular",
+          "nullable": false,
+          "number": 1,
+          "required": true,
+          "type": "bool"
+        }
+      },
+      "kind": "object"
+    }
+  },
+  "operations": {
+    "CancelCodeExecution": {
+      "client_streaming": false,
+      "http_status": 202,
+      "method": "DELETE",
+      "open_request": "CancelCodeExecutionRequest",
+      "operation_id": "cancelCodeExecution",
+      "path": "/v2/sessions/{id}/code-executions/{execution}",
+      "request": "CancelCodeExecutionRequest",
+      "response": "CodeExecutionAcceptedResponseOutput",
+      "server_streaming": false
+    },
+    "CancelPortConnection": {
+      "client_streaming": false,
+      "http_status": 202,
+      "method": "DELETE",
+      "open_request": "CancelPortConnectionRequest",
+      "operation_id": "cancelPortConnection",
+      "path": "/v2/sessions/{id}/ports/{port}/connections/{connection}",
+      "request": "CancelPortConnectionRequest",
+      "response": "PortConnectionResponseOutput",
+      "server_streaming": false
+    },
+    "CancelSessionCommand": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "DELETE",
+      "open_request": "CancelSessionCommandRequest",
+      "operation_id": "cancelSessionCommand",
+      "path": "/v2/sessions/{id}/commands/{command}",
+      "request": "CancelSessionCommandRequest",
+      "response": "CommandCancelResponseOutput",
+      "server_streaming": false
+    },
+    "Capabilities": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "CapabilitiesRequest",
+      "operation_id": "capabilities",
+      "path": "/v1/capabilities",
+      "request": "CapabilitiesRequest",
+      "response": "CapabilityReportOutput",
+      "server_streaming": false
+    },
+    "CreateCodeContext": {
+      "client_streaming": false,
+      "http_status": 201,
+      "method": "POST",
+      "open_request": "CreateCodeContextRequest",
+      "operation_id": "createCodeContext",
+      "path": "/v2/sessions/{id}/contexts",
+      "request": "CreateCodeContextRequest",
+      "response": "CodeContextOutput",
+      "server_streaming": false
+    },
+    "CreatePreview": {
+      "client_streaming": false,
+      "http_status": 201,
+      "method": "POST",
+      "open_request": "CreatePreviewRequest",
+      "operation_id": "createPreview",
+      "path": "/v2/sessions/{id}/ports/{port}/previews/{preview}",
+      "request": "CreatePreviewRequest",
+      "response": "PreviewGrantInfoOutput",
+      "server_streaming": false
+    },
+    "CreateSession": {
+      "client_streaming": false,
+      "http_status": 201,
+      "method": "POST",
+      "open_request": "CreateSessionRequest",
+      "operation_id": "createSession",
+      "path": "/v2/sessions",
+      "request": "CreateSessionRequest",
+      "response": "SessionInfoOutput",
+      "server_streaming": false
+    },
+    "CreateSessionArtifact": {
+      "client_streaming": false,
+      "http_status": 201,
+      "method": "POST",
+      "open_request": "CreateSessionArtifactRequest",
+      "operation_id": "createSessionArtifact",
+      "path": "/v2/sessions/{id}/artifacts",
+      "request": "CreateSessionArtifactRequest",
+      "response": "SessionArtifactInfoOutput",
+      "server_streaming": false
+    },
+    "DefaultCodeContext": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "POST",
+      "open_request": "DefaultCodeContextRequest",
+      "operation_id": "defaultCodeContext",
+      "path": "/v2/sessions/{id}/contexts/default",
+      "request": "DefaultCodeContextRequest",
+      "response": "CodeContextOutput",
+      "server_streaming": false
+    },
+    "DeleteSession": {
+      "client_streaming": false,
+      "http_status": 204,
+      "method": "DELETE",
+      "open_request": "DeleteSessionRequest",
+      "operation_id": "deleteSession",
+      "path": "/v2/sessions/{id}",
+      "request": "DeleteSessionRequest",
+      "response": "DeleteSessionResponse",
+      "server_streaming": false
+    },
+    "DeleteSessionArtifact": {
+      "client_streaming": false,
+      "http_status": 204,
+      "method": "DELETE",
+      "open_request": "DeleteSessionArtifactRequest",
+      "operation_id": "deleteSessionArtifact",
+      "path": "/v2/sessions/{id}/artifacts/{artifact}",
+      "request": "DeleteSessionArtifactRequest",
+      "response": "DeleteSessionArtifactResponse",
+      "server_streaming": false
+    },
+    "GetCodeContext": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "GetCodeContextRequest",
+      "operation_id": "getCodeContext",
+      "path": "/v2/sessions/{id}/contexts/{context}",
+      "request": "GetCodeContextRequest",
+      "response": "CodeContextOutput",
+      "server_streaming": false
+    },
+    "GetCodeExecution": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "GetCodeExecutionRequest",
+      "operation_id": "getCodeExecution",
+      "path": "/v2/sessions/{id}/code-executions/{execution}",
+      "request": "GetCodeExecutionRequest",
+      "response": "CodeExecutionPageOutput",
+      "server_streaming": false
+    },
+    "GetPortConnection": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "GetPortConnectionRequest",
+      "operation_id": "getPortConnection",
+      "path": "/v2/sessions/{id}/ports/{port}/connections/{connection}",
+      "request": "GetPortConnectionRequest",
+      "response": "PortConnectionResponseOutput",
+      "server_streaming": false
+    },
+    "GetPreview": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "GetPreviewRequest",
+      "operation_id": "getPreview",
+      "path": "/v2/sessions/{id}/previews/{preview}",
+      "request": "GetPreviewRequest",
+      "response": "PreviewGrantInfoOutput",
+      "server_streaming": false
+    },
+    "GetSession": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "GetSessionRequest",
+      "operation_id": "getSession",
+      "path": "/v2/sessions/{id}",
+      "request": "GetSessionRequest",
+      "response": "SessionInfoOutput",
+      "server_streaming": false
+    },
+    "Health": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "HealthRequest",
+      "operation_id": "health",
+      "path": "/healthz",
+      "request": "HealthRequest",
+      "response": "StatusResponseOutput",
+      "server_streaming": false
+    },
+    "HostDoctor": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "HostDoctorRequest",
+      "operation_id": "hostDoctor",
+      "path": "/v1/doctor",
+      "request": "HostDoctorRequest",
+      "response": "DoctorReportOutput",
+      "server_streaming": false
+    },
+    "InferenceBill": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "InferenceBillRequest",
+      "operation_id": "inferenceBill",
+      "path": "/v2/ml/bills/{task}",
+      "request": "InferenceBillRequest",
+      "response": "InferenceBillOutput",
+      "server_streaming": false
+    },
+    "InvokeInference": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "POST",
+      "open_request": "InvokeInferenceRequest",
+      "operation_id": "invokeInference",
+      "path": "/v2/sessions/{id}/ml/invocations",
+      "request": "InvokeInferenceRequest",
+      "response": "InferenceInvokeResultOutput",
+      "server_streaming": false
+    },
+    "ListCodeContexts": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "ListCodeContextsRequest",
+      "operation_id": "listCodeContexts",
+      "path": "/v2/sessions/{id}/contexts",
+      "request": "ListCodeContextsRequest",
+      "response": "CodeContextsResponseOutput",
+      "server_streaming": false
+    },
+    "ListSessionCommands": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "ListSessionCommandsRequest",
+      "operation_id": "listSessionCommands",
+      "path": "/v2/sessions/{id}/commands",
+      "request": "ListSessionCommandsRequest",
+      "response": "SessionCommandsResponseOutput",
+      "server_streaming": false
+    },
+    "ListSessionWatches": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "ListSessionWatchesRequest",
+      "operation_id": "listSessionWatches",
+      "path": "/v2/sessions/{id}/watches",
+      "request": "ListSessionWatchesRequest",
+      "response": "SessionWatchesResponseOutput",
+      "server_streaming": false
+    },
+    "ListSessions": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "ListSessionsRequest",
+      "operation_id": "listSessions",
+      "path": "/v2/sessions",
+      "request": "ListSessionsRequest",
+      "response": "SessionListPageOutput",
+      "server_streaming": false
+    },
+    "NetworkFetch": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "POST",
+      "open_request": "NetworkFetchRequest",
+      "operation_id": "networkFetch",
+      "path": "/v2/net/fetch",
+      "request": "NetworkFetchRequest",
+      "response": "NetworkFetchResultOutput",
+      "server_streaming": false
+    },
+    "OpenPortTunnel": {
+      "client_streaming": true,
+      "http_status": 101,
+      "method": "POST",
+      "open_request": "OpenPortTunnelRequest",
+      "operation_id": "openPortTunnel",
+      "path": "/v2/sessions/{id}/ports/{port}/connections/{connection}",
+      "request": "PortClientFrame",
+      "response": "PortServerFrame",
+      "server_streaming": true
+    },
+    "PollCommandInput": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "PollCommandInputRequest",
+      "operation_id": "pollCommandInput",
+      "path": "/v2/sessions/{id}/commands/{command}/stdin/{sequence}",
+      "request": "PollCommandInputRequest",
+      "response": "SessionCommandInputReceiptOutput",
+      "server_streaming": false
+    },
+    "PollSessionCommand": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "PollSessionCommandRequest",
+      "operation_id": "pollSessionCommand",
+      "path": "/v2/sessions/{id}/commands/{command}",
+      "request": "PollSessionCommandRequest",
+      "response": "SessionCommandPageOutput",
+      "server_streaming": false
+    },
+    "PollSessionWatch": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "PollSessionWatchRequest",
+      "operation_id": "pollSessionWatch",
+      "path": "/v2/sessions/{id}/watches/{watch}",
+      "request": "PollSessionWatchRequest",
+      "response": "SessionWatchPageOutput",
+      "server_streaming": false
+    },
+    "PrometheusMetrics": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "PrometheusMetricsRequest",
+      "operation_id": "prometheusMetrics",
+      "path": "/metrics",
+      "request": "PrometheusMetricsRequest",
+      "response": "MetricsText",
+      "server_streaming": false
+    },
+    "ReadSessionArtifact": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "POST",
+      "open_request": "ReadSessionArtifactRequest",
+      "operation_id": "readSessionArtifact",
+      "path": "/v2/sessions/{id}/artifacts/{artifact}/read",
+      "request": "ReadSessionArtifactRequest",
+      "response": "SessionArtifactChunkOutput",
+      "server_streaming": false
+    },
+    "Readiness": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "ReadinessRequest",
+      "operation_id": "readiness",
+      "path": "/readyz",
+      "request": "ReadinessRequest",
+      "response": "StatusResponseOutput",
+      "server_streaming": false
+    },
+    "RemoveCodeContext": {
+      "client_streaming": false,
+      "http_status": 202,
+      "method": "DELETE",
+      "open_request": "RemoveCodeContextRequest",
+      "operation_id": "removeCodeContext",
+      "path": "/v2/sessions/{id}/contexts/{context}",
+      "request": "RemoveCodeContextRequest",
+      "response": "CodeContextRemovedResponseOutput",
+      "server_streaming": false
+    },
+    "RestartCodeContext": {
+      "client_streaming": false,
+      "http_status": 202,
+      "method": "POST",
+      "open_request": "RestartCodeContextRequest",
+      "operation_id": "restartCodeContext",
+      "path": "/v2/sessions/{id}/contexts/{context}/restart",
+      "request": "RestartCodeContextRequest",
+      "response": "CodeContextOutput",
+      "server_streaming": false
+    },
+    "RevokePreview": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "DELETE",
+      "open_request": "RevokePreviewRequest",
+      "operation_id": "revokePreview",
+      "path": "/v2/sessions/{id}/previews/{preview}",
+      "request": "RevokePreviewRequest",
+      "response": "PreviewGrantInfoOutput",
+      "server_streaming": false
+    },
+    "RunJob": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "POST",
+      "open_request": "RunJobRequest",
+      "operation_id": "runJob",
+      "path": "/v2/jobs",
+      "request": "RunJobRequest",
+      "response": "RunResultOutput",
+      "server_streaming": false
+    },
+    "RunLegacyJob": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "POST",
+      "open_request": "RunLegacyJobRequest",
+      "operation_id": "runLegacyJob",
+      "path": "/v1/jobs",
+      "request": "RunLegacyJobRequest",
+      "response": "RunResultOutput",
+      "server_streaming": false
+    },
+    "RunSessionCommand": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "POST",
+      "open_request": "RunSessionCommandRequest",
+      "operation_id": "runSessionCommand",
+      "path": "/v2/sessions/{id}/commands",
+      "request": "RunSessionCommandRequest",
+      "response": "SessionCommandResultOutput",
+      "server_streaming": false
+    },
+    "SessionCapabilities": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "SessionCapabilitiesRequest",
+      "operation_id": "sessionCapabilities",
+      "path": "/v2/sessions/{id}/capabilities",
+      "request": "SessionCapabilitiesRequest",
+      "response": "SessionCapabilityReportOutput",
+      "server_streaming": false
+    },
+    "SessionFile": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "POST",
+      "open_request": "SessionFileRequest",
+      "operation_id": "sessionFile",
+      "path": "/v2/sessions/{id}/files",
+      "request": "SessionFileRequest",
+      "response": "SessionFileResultOutput",
+      "server_streaming": false
+    },
+    "SetSessionTimeout": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "POST",
+      "open_request": "SetSessionTimeoutRequest",
+      "operation_id": "setSessionTimeout",
+      "path": "/v2/sessions/{id}/timeout",
+      "request": "SetSessionTimeoutRequest",
+      "response": "SessionInfoOutput",
+      "server_streaming": false
+    },
+    "StartSessionCommand": {
+      "client_streaming": false,
+      "http_status": 202,
+      "method": "POST",
+      "open_request": "StartSessionCommandRequest",
+      "operation_id": "startSessionCommand",
+      "path": "/v2/sessions/{id}/commands/start",
+      "request": "StartSessionCommandRequest",
+      "response": "SessionCommandInfoOutput",
+      "server_streaming": false
+    },
+    "StartSessionWatch": {
+      "client_streaming": false,
+      "http_status": 201,
+      "method": "POST",
+      "open_request": "StartSessionWatchRequest",
+      "operation_id": "startSessionWatch",
+      "path": "/v2/sessions/{id}/watches",
+      "request": "StartSessionWatchRequest",
+      "response": "SessionWatchInfoOutput",
+      "server_streaming": false
+    },
+    "StopSessionWatch": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "DELETE",
+      "open_request": "StopSessionWatchRequest",
+      "operation_id": "stopSessionWatch",
+      "path": "/v2/sessions/{id}/watches/{watch}",
+      "request": "StopSessionWatchRequest",
+      "response": "WatchStopResponseOutput",
+      "server_streaming": false
+    },
+    "StreamSessionCommand": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "StreamSessionCommandRequest",
+      "operation_id": "streamSessionCommand",
+      "path": "/v2/sessions/{id}/commands/{command}/events",
+      "request": "StreamSessionCommandRequest",
+      "response": "SessionCommandStreamEvent",
+      "server_streaming": true
+    },
+    "SubmitCodeExecution": {
+      "client_streaming": false,
+      "http_status": 202,
+      "method": "POST",
+      "open_request": "SubmitCodeExecutionRequest",
+      "operation_id": "submitCodeExecution",
+      "path": "/v2/sessions/{id}/code-executions",
+      "request": "SubmitCodeExecutionRequest",
+      "response": "CodeExecutionPageOutput",
+      "server_streaming": false
+    },
+    "SubmitCommandInput": {
+      "client_streaming": false,
+      "http_status": 202,
+      "method": "POST",
+      "open_request": "SubmitCommandInputRequest",
+      "operation_id": "submitCommandInput",
+      "path": "/v2/sessions/{id}/commands/{command}/stdin",
+      "request": "SubmitCommandInputRequest",
+      "response": "SessionCommandInputReceiptOutput",
+      "server_streaming": false
+    },
+    "TemplateCatalog": {
+      "client_streaming": false,
+      "http_status": 200,
+      "method": "GET",
+      "open_request": "TemplateCatalogRequest",
+      "operation_id": "templateCatalog",
+      "path": "/v2/templates",
+      "request": "TemplateCatalogRequest",
+      "response": "TemplateCatalogReportOutput",
+      "server_streaming": false
+    }
+  },
+  "package": "sandbox.control.v1",
+  "protocol": "osv-grpc-wire-mapping/v1"
+}

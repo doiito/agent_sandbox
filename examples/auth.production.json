@@ -1,0 +1,13 @@
+{
+  "protocol": "osv-sandbox-auth/v1",
+  "tenants": [
+    {
+      "id": "agent-platform",
+      "token_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "allowed_entrypoints": ["/bin/sh", "/bin/bash", "/bin/echo", "/bin/true", "/bin/id", "/bin/cat"],
+      "requests_per_second": 20,
+      "burst": 40,
+      "max_concurrent": 8
+    }
+  ]
+}

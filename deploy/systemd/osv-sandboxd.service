@@ -1,0 +1,29 @@
+[Unit]
+Description=AI Agent Sandbox Control Plane
+After=network.target
+
+[Service]
+Type=simple
+User=osv-sandbox
+Group=osv-sandbox
+EnvironmentFile=/etc/osv-sandbox/environment
+ExecStart=/usr/local/bin/osv-sandboxd -config /etc/osv-sandbox/config.json
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=no
+ProtectSystem=strict
+ProtectHome=yes
+ReadOnlyPaths=/var/lib/osv-sandbox/artifacts
+ReadWritePaths=/run/osv-sandbox
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+SystemCallArchitectures=native
+TasksMax=512
+LimitNOFILE=4096
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

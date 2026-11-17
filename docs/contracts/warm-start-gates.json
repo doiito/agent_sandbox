@@ -1,0 +1,76 @@
+{
+  "schema": "osv-startup-gates/v1",
+  "reference_commit": "09738dd7e0976c5fab6560eb1ab915e4b6b426af",
+  "minimum_samples": 1000,
+  "required_backend_arch": [
+    [
+      "firecracker-linux",
+      "amd64"
+    ],
+    [
+      "firecracker-osv",
+      "amd64"
+    ]
+  ],
+  "paths": {
+    "warm": {
+      "metric": "warm_start_ms",
+      "p50_ms": 5,
+      "p95_ms": 9,
+      "p99_ms": 15,
+      "required": true
+    },
+    "cold": {
+      "metric": "cold_boot_ms",
+      "p50_ms": 400,
+      "p95_ms": 600,
+      "p99_ms": 1000,
+      "required": true
+    },
+    "snapshot": {
+      "metric": "snapshot_start_ms",
+      "p50_ms": 100,
+      "p95_ms": 150,
+      "p99_ms": 250,
+      "required": false
+    }
+  },
+  "required_cases": [
+    "pristine_single_checkout",
+    "tenant_state_isolation",
+    "input_readonly",
+    "unique_identity",
+    "exclusive_owner",
+    "orphan_reconciliation",
+    "ttl",
+    "capacity_accounting",
+    "pool_exhaustion",
+    "profile_mismatch",
+    "dead_vm_checkout",
+    "refill_failure",
+    "artifact_expiry",
+    "template_rotation",
+    "checkout_cancel",
+    "api_crash",
+    "launcher_crash",
+    "shutdown_zero_residue"
+  ],
+  "evidence": [
+    {
+      "path": "results/2026-11-17-public-release/startup-gate-r1/linuxwarm-evidence.json",
+      "sha256": "1492cf36353fa1c2f3e95787a4fc2ce714c440bc1bd9c669b9327ff6c8c58ea7"
+    },
+    {
+      "path": "results/2026-11-17-public-release/startup-gate-r1/linuxcold-evidence.json",
+      "sha256": "60d437931ff890205f9fa7c80317f56c5935c19c1085c9f42a31e9609be3802e"
+    },
+    {
+      "path": "results/2026-11-17-public-release/startup-gate-r1/osvwarm-evidence.json",
+      "sha256": "292312eccd5975f30b66a1215a30609bc5c616bdd0d67ad8856b6a6cfac7a19e"
+    },
+    {
+      "path": "results/2026-11-17-public-release/startup-gate-r1/osvcold-evidence.json",
+      "sha256": "a74cdb9413152e6d5a5c3d1c6930f96c21fa24cd75ff8b0d07634ba4574c8f21"
+    }
+  ]
+}

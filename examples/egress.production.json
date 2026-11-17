@@ -1,0 +1,8 @@
+{
+  "production": true,
+  "socket_path": "/run/osv-sandbox-egress/egress.sock",
+  "auth_policy_path": "/etc/osv-sandbox/auth.json",
+  "audit_log_path": "/var/log/osv-sandbox-egress/network.jsonl",
+  "ca_file": "/etc/osv-sandbox/egress-public-roots.crt",
+  "max_concurrent": 16
+}
